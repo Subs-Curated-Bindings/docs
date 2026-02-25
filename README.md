@@ -4,6 +4,19 @@ This folder contains the documentation site for **Subliminal's Curated Bindings*
 
 If you want to improve docs, this is where you work.
 
+## Quickest path (no Docker required)
+
+You can update docs directly on GitHub:
+
+1. Open `docs-site/docs/` in the repository
+2. Click a `.md` file you want to update
+3. Click **Edit this file** (pencil icon)
+4. Commit to a branch and open a Pull Request
+
+After merge to `main`, the docs site auto-deploys via GitHub Actions.
+
+Use Docker only when you want local preview before opening a PR.
+
 ## What to edit
 
 - Edit Markdown pages in `docs-site/docs/`
@@ -80,5 +93,5 @@ It builds docs and force-pushes generated output to `gh-pages`.
 
 - Confirm `docs-site/mkdocs.toml` exists
 - Confirm `docs-site/docs/index.md` exists
-- Confirm secret `TARGET_REPO_PAT` is set in GitHub Actions secrets
+- Confirm `.github/workflows/deploy.yml` exists and is enabled
 - Confirm GitHub Pages source is `gh-pages` (root)
