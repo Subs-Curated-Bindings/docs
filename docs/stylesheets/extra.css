@@ -19,7 +19,7 @@ body[data-md-color-scheme="default"]::before {
   position: fixed;
   inset: -20px;
   z-index: -2;
-  background: url("/assets/images/astro-ledge.jpg") center center / cover no-repeat;
+  background: url("../assets/images/astro-ledge.jpg") center center / cover no-repeat;
   filter: blur(16px) brightness(0.45) saturate(0.85);
   transform: scale(1.06);
 }
