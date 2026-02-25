@@ -36,7 +36,9 @@ nav = [
   { "FAQ" = [
     { "Enhanced Bindings FAQ" = "faq/enhanced-bindings-faq.md" },
     { "General FAQ" = "faq/general-joystick-star-citizen-faq.md" }
-   ] },
+    ] },
+  { "Troubleshooting" = "troubleshooting.md" },
+    { "Contributing" = "contributing.md" },
 ]
 
 [project.theme]

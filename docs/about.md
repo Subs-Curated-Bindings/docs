@@ -1,23 +1,24 @@
 # About
 
-## Who this repository is for?
+## Project Goal
 
-- Users who have a pretty good understanding of how Joystick Gremlin works
-- Users who have a decent understanding of Star Citizen's combersom binding profiles.
-- Anyone in the Star Citizen community regardless of expertise who would like to test and give feedback on the most recent binds.
+This project exists to make joystick setup in Star Citizen less of a headache.
 
-## Who this repository IS NOT for
+Star Citizen is a broken alpha, and joystick manufacturers make niche hardware that is not always designed specifically for space sims. That combination can be frustrating, but it does not have to be.
 
-- Users who want to load the most stable Joystick Gremlin, and Star Citizen binding profiles. And forgo the initial release issues.
+## What These Bindings Are For
 
-If you are the latter please head over to the [bindings](https://subliminal.gg/bindings/) section of my website for the latest stable releases.
+- Get people started quickly with a solid baseline
+- Reduce setup friction across vJoy, HIDHide, Joystick Gremlin, and Star Citizen XML imports
+- Provide a practical default layout most users can tweak to personal preference
+- Keep profiles updated regularly for each patch cycle for users who want most of the work done for them
 
-## How to Contribute
+## What to Expect
 
-- Upon the release of a new patch, contributors would clear JG and SC binds
-- Load the fresh clean JG profile and SC binds from the previous patch
-- Consult with me via discord on what changes need to be made, if any
-- Commit changes to the SC Binding XML file, and possibly the JG profile here on GitHub
-- Once submitted I will verify, test, and tweak the binds, modify the binding chart, and upload it to my website for for an official release.
+- Most users will make small tweaks (axis inversion, preference bindings, and layout adjustments)
+- Some profiles are in active transition during patch windows
+- Stable release packages are available at [subliminal.gg/bindings](https://subliminal.gg/bindings/)
 
-For more information about contributing please head to the channel discord.
+## Want to Contribute?
+
+If you want to help test, report issues, or submit improvements, use the dedicated [Contributing](contributing.md) page.

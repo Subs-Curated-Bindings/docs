@@ -1,9 +1,25 @@
 # Downloading Binding Files
 
-([Slipsum](https://slipsum.com/) placehodler text) *read in Samuel L. Jacksons voice*.
+Use this page to choose the right source for your bind files.
 
-Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.
+## Stable vs Bleeding-Edge
 
-Normally, both your asses would be dead as fucking fried chicken, but you happen to pull this shit while I'm in a transitional period so I don't wanna kill you, I wanna help you. But I can't give you this case, it don't belong to me. Besides, I've already been through too much shit this morning over this case to hand it over to your dumb ass.
+- It's recommended to download binds from: [subliminal.gg/bindings](https://subliminal.gg/bindings/)
+- If you're an advanced user (or a glutton for punishment), feel free to use the GitHub repository. Feedback and pull requests are welcome.
 
-My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. Hey, look at me when I'm talking to you, motherfucker. You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot. You understand?
+## ZIP File
+
+- Extract the ZIP file to a desired location /downloads or desktop.
+- `Joystick Gremlin Profile*.xml` Will be used to load the joystick mappings into JG.
+- `layout_*_exported.xml` for Star Citizen
+- `layout_SUB_Clear_Bindings_exported.xml` (used to reset star citizen binds before import)
+- `.af` is for modifying the binding chart if you make changes (uses the free Adobe Illustrator alternative Affinity App)
+- `.png` files are binding charts for your reference
+- PDF versions of binding charts are included for reference (and are searchable in most PDF readers)
+**Optional**
+- Audio files let Joystick Gremlin play a clip when a mode changes. *Check your joystick README for setup details.*
+    - Audio files have two variations: HAL9000 and "Computer" from Star Trek. *These were created with an online TTS generator. Feel free to make your own.*
+
+## Next Step
+
+Continue to [Software Installation](software-installation/vjoy-installation.md) to install vJoy, HIDHide, and Joystick Gremlin in the correct order.

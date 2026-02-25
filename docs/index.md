@@ -2,34 +2,29 @@
 
 ## SubliminalsTV's Curated Joystick Bindings
 
-This is the start of making my bindings open source so I can leverage the power of the Star Citizen Community to be able to release bindings faster and for more joysticks and joystick combinations.
+This documentation covers the open-source, bleeding-edge workflow for Star Citizen joystick binds.
 
-## Currently Supported Joysticks
+!!! info "Choose your path"
+	- Stable, tested releases: [subliminal.gg/bindings](https://subliminal.gg/bindings/)
+	- Latest in-progress/community versions: [GitHub Repository](https://github.com/SubliminalsTV/Subs-Curated-Bindings)
 
-| Joystick | Patch | Status |
-| --------- | --------- | --------- |
-| [Dual SOL-R 2](/joysticks/tm-sol-r-2) | <span style="color:green">4.4 LIVE</span> | Released |
-| [Dual VKB NXT](joysticks/vkb-nxt-evo.md) | <span style="color:green">4.4 LIVE</span> | Released
-| [Dual VKB Gunfighter w/SCG Grip](joysticks/vkb-gunfighter-scg-grip.md) | <span style="color:green">4.4 LIVE</span> | Released
-| [Virpil VMAX Throttle + Aeromax-R](/joysticks/virpil-vmax-throttle-aeromax-r.md) | <span style="color:red">4.5 PTU</span> | Released
+## Before You Begin
 
-## Soon™ Supported Sticks
+- These docs are aimed toward users who would prefer a written guide to follow along with while setting up their configs. And also to house the README's for individual joystick configs.
+- However the GitHub repository is aimed at advanced users comfortable troubleshooting Joystick Gremlin and Star Citizen profiles.
+- Files in this repo may be experimental, incomplete, or in active patch transition.
+- If you want a plug-and-play setup with minimal troubleshooting, use the stable website releases.
 
-| Joystick | Patch | Status |
-| --------- | --------- | --------- |
-| [VKB STECS STG + Gladiator NXT](/[Enhanced]%20INCOMPLETE%20-%20VKB%20STECS%20STG%20+%20Gladiator%20NXT/) | <span style="color:Orange">4.2 Outdated</span> | <span style="color:Red">Incomplete</span> |
-| VKB STECS STG + Gunfighter SCG | N/A | Soon™ |
-| VKB STECS STG + MCGU | N/A | Soon™ |
-| SOL-R 4 HOTAS | N/A | Next Up |
-| Dual SOL-R 3 with AVA base | N/A | Next Up |
-| MOZA MTQ Throttle + AB6 Flight Stick | <span style="color:green">4.5 PTU</span> | Unboxing Sticks Today |
+## Quick Start
 
-## Special Thanks
+- [General Setup](general-setup/download.md) walks you through installation, configuration, and Star Citizen import.
+- Use the **Joysticks** section in the navigation for individual joystick README pages.
+- [Known Issues](known-issues.md) covers known issues with Star Citizen, Joystick Gremlin, and binding configs.
+- [FAQ](faq/enhanced-bindings-faq.md) lists enhanced-bind and general Star Citizen joystick questions.
 
-Be sure to support these projects by sharing, donating, or contributing to their open-source efforts, as well as the members of this community who help update these bindings with every patch.
+## Contributing
 
-Also, thank you also to the open source software that makes this all possible.
+Community testing and PRs are welcome, especially during patch transition windows.
 
-+ [Joystick Gremlin](https://github.com/WhiteMagic/JoystickGremlin) created and maintained by [WhiteMagic](https://github.com/WhiteMagic)
-+ [HidHide](https://github.com/nefarius/HidHide) maintained by [Nefarius](https://github.com/nefarius)
-Be sure to support those projects via, sharing, donating, or contributing toward their opensource projects. Fun Fact: Both of these projects were created by Star Citizens who saw a need to fill holes and solve issues with using peripherials in the in this busted alpha game we all enjoy playing.
+- Start with [About](about.md) for contribution expectations
+- Open issues/PRs in the GitHub repo for fixes, updates, and testing results
