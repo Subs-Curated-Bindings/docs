@@ -1,0 +1,135 @@
+[project]
+site_name = "Subliminal's Curated Bindings"
+site_description = "Sub's curated bindings for Star Citizen"
+site_url = "https://documentation.subliminal.gg" # Update this to your actual domain
+repo_url = "https://github.com/SubliminalsTV/Subs-Curated-Bindings"
+site_author = "SubliminalsTV"
+use_directory_urls = true
+dev_addr = "192.168.1.97:3000"
+extra_css = ["stylesheets/extra.css"]
+nav = [
+  { "Home" = "index.md" },
+  { "About" = "about.md" },
+  { "General Setup" = [
+      { "Downloading Bindings" = "general-setup/download.md" },
+      { "Software Installation" = [
+          { "vJoy Installation" = "general-setup/software-installation/vjoy-installation.md" },
+          { "HIDHide Installation" = "general-setup/software-installation/hidhide-installation.md" },
+          { "Joystick Gremlin Installation" = "general-setup/software-installation/joystick-gremlin-installation.md" }
+        ] },
+      { "Software Configuration" = "general-setup/software-configuration.md" },
+      { "Star Citizen Setup" = "general-setup/star-citizen-setup.md" }
+    ] },
+  { "Joysticks" = [
+    { "MOZA MTQ Throttle + AB6 Flight Stick" = "joysticks/moza-mtq-throttle-ab6-flight-stick.md" },
+    { "Thrustmaster SOL-R 2" = "joysticks/tm-sol-r-2.md" },
+    { "Virpil VMAX Throttle + Aeromax-R" = "joysticks/virpil-vmax-throttle-aeromax-r.md" },
+    { "VKB Gunfighter w/SCG Grip" = "joysticks/vkb-gunfighter-scg-grip.md" },
+    { "VKB NXT EVO" = "joysticks/vkb-nxt-evo.md" },
+    { "Soon™ SOL-R 3 with AVA base" = "joysticks/tm-dual-sol-r-3-ava.md" },
+    { "Soon™ SOL-R 4 HOTAS" = "joysticks/tm-sol-r-4.md" },
+    { "Soon™ VKB SECS STG + Gladiator NXT" = "joysticks/vkb-stecs-stg-gladiator-nxt.md" },
+    { "Soon™ VKB SECS STG + Gunfighter SCG" = "joysticks/vkb-stecs-stg-gunfighter-scg.md" },
+    { "Soon™ VKB SECS STG + MCGU" = "joysticks/vkb-stecs-stg-mcgu.md" }
+  ] },
+  { "Known Issues" = "known-issues.md" },
+  { "FAQ" = [
+    { "Enhanced Bindings FAQ" = "faq/enhanced-bindings-faq.md" },
+    { "General FAQ" = "faq/general-joystick-star-citizen-faq.md" }
+   ] },
+]
+
+[project.theme]
+variant = "modern"
+font.text = "Ubuntu"
+font.code = "JetBrains Mono"
+logo = "/assets/images/1-Year-YT.png "
+homepage = "https://docs.subliminal.gg"
+favicon = "/assets/images/favicon.ico"
+features = [ # Features are listed here:
+  "content.action.edit", # Edit this page
+  "content.action.view",  # View source of this page
+  "content.code.copy",
+  "navigation.expand",
+  "navigation.footer",
+  "navigation.instant",
+  "navigation.instant.progress",
+  "navigation.path",
+  "navigation.prune",
+  "navigation.sections",
+  "navigation.tabs",
+  "navigation.tabs.sticky",
+  "navigation.top",
+  "navigation.tracking",
+  "search.highlight",
+  "search.suggest",
+  "toc.follow",
+  # "toc.integrate",
+]
+
+[project.theme.icon]
+logo = "lucide/radar"
+
+# Palette toggle for automatic mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+accent = "amber"
+primary = "orange"
+
+# Palette toggle for light mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+accent = "amber"
+primary = "orange"
+
+# Palette toggle for dark mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+accent = "amber"
+primary = "orange"
+
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.attr_list]
+[project.markdown_extensions.pymdownx.caret]
+[project.markdown_extensions.pymdownx.details]
+[project.markdown_extensions.pymdownx.emoji]
+[project.markdown_extensions.pymdownx.highlight]
+linenums = true
+[project.markdown_extensions.pymdownx.mark]
+[project.markdown_extensions.tables]
+[project.markdown_extensions.pymdownx.superfences]
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true
+[project.markdown_extensions.pymdownx.tilde]
+[project.markdown_extensions.toc]
+permalink = true
+
+[project.extra]
+homepage = "/"
+
+[project.extra.consent]
+title = "Cookie consent"
+description = """
+    We use cookies to recognize your repeated visits and preferences, as well
+    as to measure the effectiveness of our documentation and whether users
+    find what they're searching for. With your consent, you're helping us to
+    make our documentation better.
+"""
+
+[[project.extra.social]]
+icon = "fontawesome/brands/x-twitter"
+link = "https://x.com/subliminalstv"
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/SubliminalsTV/Subs-Curated-Bindings"
+[[project.extra.social]]
+icon = "fontawesome/brands/discord"
+link = "https://discord.subliminal.gg"

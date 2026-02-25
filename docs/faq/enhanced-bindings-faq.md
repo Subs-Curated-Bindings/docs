@@ -1,0 +1,1 @@
+# Enhanced Binds Frequently Asked Questions
