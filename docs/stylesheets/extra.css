@@ -1,45 +1,74 @@
 /*
-  Global theme base for both dark and default palettes.
-  Keeps a dark fallback color behind layered background effects.
+  Global background layout shared by both themes.
 */
-body[data-md-color-scheme="slate"],
-body[data-md-color-scheme="default"] {
+body[data-md-color-scheme="default"],
+body[data-md-color-scheme="slate"] {
+  min-height: 120vh;
   position: relative;
-  min-height: 100vh;
-  background: #121217;
+  isolation: isolate;
 }
 
 /*
-  Layer 1 (furthest back): blurred background image.
-  Uses a fixed pseudo-element so content scrolls above it.
+  Shared blurred background image layer.
 */
-body[data-md-color-scheme="slate"]::before,
-body[data-md-color-scheme="default"]::before {
+body[data-md-color-scheme="default"]::before,
+body[data-md-color-scheme="slate"]::before {
   content: "";
   position: fixed;
   inset: -20px;
   z-index: -2;
-  background: url("../assets/images/astro-ledge.jpg") center center / cover no-repeat;
-  filter: blur(16px) brightness(0.45) saturate(0.85);
+  pointer-events: none;
+  background-image: url("../assets/images/astro-ledge.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  filter: blur(var(--bg-blur, 10px));
   transform: scale(1.06);
 }
 
 /*
-  Layer 2: dark tint overlay to improve contrast/readability
-  over the image while preserving depth.
+  Shared tint overlay layer (above image, below content).
 */
-body[data-md-color-scheme="slate"]::after,
-body[data-md-color-scheme="default"]::after {
+body[data-md-color-scheme="default"]::after,
+body[data-md-color-scheme="slate"]::after {
   content: "";
   position: fixed;
-  inset: 0;
+  inset: -20px;
   z-index: -1;
-  background: linear-gradient(
+  pointer-events: none;
+  background: var(--bg-tint);
+  mix-blend-mode: var(--bg-blend-mode, normal);
+}
+
+/*
+  Light mode: image with white tint for readability.
+*/
+body[data-md-color-scheme="default"] {
+  --bg-blur: 8px;
+  --bg-blend-mode: screen ;
+  --bg-tint: linear-gradient(
     180deg,
-    rgba(10, 12, 18, 0.72) 0%,
-    rgba(12, 14, 22, 0.84) 40%,
-    rgba(11, 13, 20, 0.9) 100%
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.80) 50%,
+    rgba(255, 255, 255, 0.95) 100%
   );
+  background-color: #ffffff;
+}
+
+/*
+  Dark mode: image with darker tint.
+*/
+body[data-md-color-scheme="slate"] {
+  --bg-blur: 10px;
+  --bg-blend-mode: multiply;
+  --bg-tint: linear-gradient(
+    180deg,
+    rgba(10, 12, 18, 0.80) 0%,
+    rgba(12, 14, 22, 0.60) 50%,
+    rgba(10, 12, 18, 0.80) 100%
+  );
+  background-color: #000000;
 }
 
 /*
@@ -112,4 +141,30 @@ body[data-md-color-scheme="default"] .md-footer-meta__inner {
 .md-typeset table:not([class]) th,
 .md-typeset table:not([class]) td {
   background-color: var(--md-code-bg-color);
+}
+
+/*
+  Light mode: increase admonition contrast/readability.
+*/
+body[data-md-color-scheme="default"] .md-typeset .admonition,
+body[data-md-color-scheme="default"] .md-typeset details {
+  position: relative;
+  overflow: hidden;
+}
+
+body[data-md-color-scheme="default"] .md-typeset .admonition::before,
+body[data-md-color-scheme="default"] .md-typeset details::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  opacity: 0.75;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body[data-md-color-scheme="default"] .md-typeset .admonition > *,
+body[data-md-color-scheme="default"] .md-typeset details > * {
+  position: relative;
+  z-index: 1;
 }

@@ -45,6 +45,12 @@ project-docs/
 2. Save changes - the site rebuilds automatically in the preview
 3. View changes at http://localhost:8000
 
+### Agent Workflow Note
+
+- When `docker compose up` is running for Zensical, do **not** run a full build after every markdown edit.
+- Use live reload in the browser preview for normal content/formatting changes.
+- Run a build only for milestone validation, config/schema edits, or before final handoff.
+
 ## Building for Production
 
 Create a static HTML version:

@@ -2,16 +2,16 @@
 
 ## SubliminalsTV's Curated Joystick Bindings
 
-This documentation covers the open-source, bleeding-edge workflow for Star Citizen joystick binds.
+This documentation helps you get into Star Citizen quickly with curated joystick binds, while also supporting bleeding-edge users who want to test and contribute.
 
 !!! info "Choose your path"
-	- Stable, tested releases: [subliminal.gg/bindings](https://subliminal.gg/bindings/)
-	- Latest in-progress/community versions: [GitHub Repository](https://github.com/SubliminalsTV/Subs-Curated-Bindings)
+	- I just want to play (stable, tested): [subliminal.gg/bindings](https://subliminal.gg/bindings/)
+	- I want latest/experimental and to contribute: [Contributing](contributing.md)
 
 ## Before You Begin
 
-- These docs are aimed toward users who would prefer a written guide to follow along with while setting up their configs. And also to house the README's for individual joystick configs.
-- However the GitHub repository is aimed at advanced users comfortable troubleshooting Joystick Gremlin and Star Citizen profiles.
+- These docs are for users who want a written setup guide and per-joystick README details.
+- The GitHub repository is for advanced users comfortable troubleshooting Joystick Gremlin and Star Citizen profiles.
 - Files in this repo may be experimental, incomplete, or in active patch transition.
 - If you want a plug-and-play setup with minimal troubleshooting, use the stable website releases.
 
@@ -19,12 +19,18 @@ This documentation covers the open-source, bleeding-edge workflow for Star Citiz
 
 - [General Setup](general-setup/download.md) walks you through installation, configuration, and Star Citizen import.
 - Use the **Joysticks** section in the navigation for individual joystick README pages.
-- [Known Issues](known-issues.md) covers known issues with Star Citizen, Joystick Gremlin, and binding configs.
-- [FAQ](faq/enhanced-bindings-faq.md) lists enhanced-bind and general Star Citizen joystick questions.
+- [Known Issues](known-issues.md#mfd-binds){ data-preview } covers active game/software/bind problems and workarounds.
+- [Enhanced Bindings FAQ](faq/enhanced-bindings-faq.md) and [General FAQ](faq/general-joystick-star-citizen-faq.md) cover setup and troubleshooting questions.
+
+## Just Need Your Stick README?
+
+- Open [Joysticks Overview](joysticks/index.md#release-status){ data-preview } to see release status for every setup.
+- Jump directly to your hardware page from the Joysticks table and use that README as your source of truth.
+- If your setup is niche or marked in progress, you can still save hours by continuing from the current profile baseline.
 
 ## Contributing
 
 Community testing and PRs are welcome, especially during patch transition windows.
 
-- Start with [About](about.md) for contribution expectations
-- Open issues/PRs in the GitHub repo for fixes, updates, and testing results
+- Start with [Contributing](contributing.md) for contribution expectations.
+- Open issues/PRs in GitHub for fixes, updates, and testing results.

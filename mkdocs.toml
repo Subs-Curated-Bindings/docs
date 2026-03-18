@@ -21,6 +21,7 @@ nav = [
       { "Star Citizen Setup" = "general-setup/star-citizen-setup.md" }
     ] },
   { "Joysticks" = [
+    { "Overview" = "joysticks/index.md" },
     { "MOZA MTQ Throttle + AB6 Flight Stick" = "joysticks/moza-mtq-throttle-ab6-flight-stick.md" },
     { "Thrustmaster SOL-R 2" = "joysticks/tm-sol-r-2.md" },
     { "Virpil VMAX Throttle + Aeromax-R" = "joysticks/virpil-vmax-throttle-aeromax-r.md" },
@@ -52,6 +53,7 @@ features = [ # Features are listed here:
   "content.action.edit", # Edit this page
   "content.action.view",  # View source of this page
   "content.code.copy",
+  "content.tooltips",
   "navigation.expand",
   "navigation.footer",
   "navigation.instant",
