@@ -1,138 +1,304 @@
-# Sub's curated Bindings - Dual VKB NXT Premium
+# Enhanced — Dual VKB Gladiator NXT EVO L+R
 
 !!! warning
-    THESE BINDINGS REQUIRE JOYSTICK GREMLIN!
+    THESE BINDINGS REQUIRE JOYSTICK GREMLIN.
 
-!!! quote "Support this project" 
-    These binds take me a really long time to make and keep updated. Here are a few ways you can ensure I can afford to spend the time to keep doing this. Ranging from most impactful to still awesome.
+!!! quote "Support this project"
+    These binds take a really long time to make and keep updated. Here are a few ways to make sure I can keep doing it, ordered roughly from most impactful to still awesome.
     ??? example "Twitch"
-        * Join on [Twtich](https://subs.twitch.tv/subliminalstv) Even if you don't watch live-streams this is a great way until we meet our first goal of 100 (Current 20/100)
-        * FREE: Have Amazon Prime? You get one [free Twitch Prime Sub](https://subs.twitch.tv/subliminalstv) per month! 
-        * FREE: Finally come by and hang out while I'm live. Not only will you catch me playing but I might be updating these binds or keeping up on the latest SC news and info. I will be streaming to YouTube at the same in the near future.
+        * Sub on [Twitch](https://subs.twitch.tv/subliminalstv). Even if you don't watch live, this is the biggest single help while we work toward the first goal of 100 (currently 20/100).
+        * FREE: Got Amazon Prime? You get one [free Twitch Prime sub](https://subs.twitch.tv/subliminalstv) per month.
+        * FREE: Come hang out while I'm live. Sometimes I'm playing, sometimes I'm updating these binds or covering SC news. YouTube simulcast coming soon.
     ??? note "Store"
-        * Join directly on [my store](https://store.subliminal.gg/l/supporters) - This is a great way if you don't have a twitch or amazon account. 
-        * You can also tip when you download. The button is really small but its there in checkout.
+        * Pick up something direct from [my store](https://store.subliminal.gg/l/supporters) — great if you don't have a Twitch or Amazon account.
+        * You can also tip at checkout. The button's small but it's there.
+
+A tuned dual-stick keybind setup for Star Citizen built around the VKB Gladiator NXT EVO L+R. If you've gone deep on the pledge store and you're not flying with a setup like this, you're leaving real capability on the table. Even players running a starter ship will get a noticeable upgrade going from M&K (or a single stick) to dual NXTs with a setup like this one.
+
+These binds use Joystick Gremlin to layer modifiers, mode switching, response curves, and macros on top of SC's bind system. The result: ship combat, mining, salvage, on-foot, EVA, ground vehicles, and turrets all running off the same physical inputs — once you learn the chart, the same hand positions carry across every gameplay loop.
 
 ???+ abstract "Change Log"
-    * 12.16.25 - Added a bind for `Self Repair All`
-    * 12.16.25 - Swapped Targeting Hat with Power management Hat (I need center push on a targeting hat to make it 100% intuitive so you don't have to refer to the chart)
-    * 12.16.25 - Changed the targeting hat to include sub-targeting for 4.5 engineering combat. (Very important going forward in SC)
-    * 12.16.25 - Added Pinning to the targeting hat (Great for multi-crew... very important in SC going forward lol)
-    * 12.16.25 - Changed `Tobii Eye Tracker Target` to `Eye Tracker Target` want to shed light on cheaper alternatives like [Beam Eye Tracker](https://beam.subliminal.gg) IMO EVERYONE should be using an EYE tracker. I you cant afford [Tobii Eye Tracker 5](https://tobii.subliminal.gg) then beam works great for the low price.
-    * 12.16.25 - Moved MFD binds to `R-C1 Hat` to make room for more targeting stuff.
-    * 12.16.25 - Add the TTS back... I thought it was causing issues but they didn't and people like having the audio confirmation. If you would like to remove it, mute it, adjust volume. Jump to [Removing Or Muting Text To Speech](#removing-or-muting-text-to-speech)
-    * 12.16.25 - Added notes the the JG profile to help people navigate it.
-    * 12.16.25 - Added curves so so users with cleared action maps files don't have to invert for ship axis. (FYI-Your inversion settings are saved in your `actionmaps.xml)
 
-## Known Issues
-### MFD Binds
-!!! bug
-    MFD Binds do not import properly into Star Citizen, this is a bug. 4.5 seems to have an issue with the `Stop Watch` binds not importing as well (but those binds are don't work in-game anymore lol). Any binds that dont load also have to be cleared manually to remove them. So you will need to add them manually, but then they should stick after that. You can find the binds in the advanced keybind settings under `Vehicles - Multi Function Displays (MFDs)`.
+    **4.8.0 PTU — May 2026**
 
-| Star Citizen Keybind | Physical Button | Virtual Button
-| --------- | --------- | ---------
-| MFD - Cycle Page - Forwards (Short Press) | `[M] R-C1 Right` | `button52 (Input2)`
-| MFD - Cycle Page - Backwards (Short Press) | `[M] R-C1 Left` |  `button54 (Input2)`
-| MFD - Movement - Up (Long Press) | `[M] R-C1 Up` |  `button51 (Input2)`
-| MFD - Movement - Down (Long Press) | `[M] R-C1 Down` |  `button53 (Input2)`
-| MFD - Movement - Left (Long Press) | `[M] R-C1 Left` |  `button54 (Input2)`
-| MFD - Movement - Right (Long Press) | `[M] R-C1 Right` |  `button52 (Input2)`
-| MFD - Select - Left Cast (Short Press) | `[M][DT] R-C1 Left` |  `button54 (Input2)(DT)`
-| MFD - Select - Right Cast (Short Press) | `[M][DT] R-C1 Right` |  `button51 (Input2)(DT)`
-| MFD - Quick Action - Self Repair All | `R-A2` |  `button3 (Input2)`
+    * Light amplification toggle bound on two inputs: **right stick F1 + modifier** (instant), and **left stick rapid trigger held past 0.5s**. A quick tap of the rapid trigger still fires radar ping, unchanged from before.
+    * New `Fix MFD Binds [ENH][NXT][4.8.0][PTU].bat` script ships in the folder. Works around SC's long-standing `vehicle_mfd` wipe bug. See [MFD bind fix](#mfd-bind-fix-workaround-for-sc-bug).
+    * **Axis inversion is now fully handled inside Joystick Gremlin.** The layout XML no longer ships SC-side `<options type="joystick">` invert overrides. SC's keybind-menu Invert toggles can be left at game defaults.
+    * Internal layout name updated to `ENH_NXT_480_PTU` so SC loads it under the right slug.
+    * Filename + audio cleanup batched in: `Bniding Chart [...][Print].png` → `Binding Chart [...][Print].png`, `Audio Files/Hall 9000/` → `Audio Files/Hal 9000/`, `Hall_9000_*.wav` → `Hal_9000_*.wav`, `Computer_Salgaving_Mode.wav` → `Computer_Salvaging_Mode.wav`, trailing/inner spaces stripped from `Hal_9000_Quote_*.wav`. If you had your own profile referencing any of these paths, repoint after import.
+    * **Heads up — JG R14 macro editor visual bug.** Opening a macro action in JG R14's editor can show "X Axis" on `<vjoy>` rows where the XML correctly says Button. Visual only, ignore it. See [Known Issues](#jg-r14-macro-editor-x-axis-rendering-bug).
 
-!!! tip "Tip: Double Tap Bind"
-    To make a bind [DT] or Double Tap you need to first map the bind to any button on the first stick (usually the left one), then add the double tap with y, then bind it to what you actually want.
-    Please hurry up and contribute to the [issue council report](https://issue-council.robertsspaceindustries.com/projects/STAR-CITIZEN/issues/STARC-133477) so they can fix this by Nevuary 32nd, 2955
+    **4.5.0 — December 2025**
 
-### NXT "NON-EVO" Base Encoders Switched
+    * Added a bind for `Self Repair All`.
+    * Swapped the Targeting Hat with the Power Management Hat — center push on targeting makes it 100% intuitive without referring to the chart.
+    * Targeting hat now includes sub-targeting for engineering combat. Very important going forward in SC.
+    * Added Pinning to the targeting hat (great for multi-crew).
+    * Renamed `Tobii Eye Tracker Target` to `Eye Tracker Target` — IMO everyone should be using an eye tracker. If you can't afford the [Tobii Eye Tracker 5](https://tobii.subliminal.gg), [Beam Eye Tracker](https://beam.subliminal.gg) works great for the low price.
+    * Moved MFD binds to `R-C1 Hat` to make room for more targeting stuff.
+    * Brought TTS back. Turned out it wasn't the cause of the issue I'd suspected, and people like having the audio confirmation. To remove it, see [Removing or Muting Text To Speech](#removing-or-muting-text-to-speech).
+    * Added notes to the JG profile to help users navigate it.
+    * Added baseline curves so users with cleared `actionmaps.xml` files don't have to invert axes from scratch.
 
-I recently learned if you have the non EVO version of the NXTs your encoders are switched and don't match the binding chart. So you will need to use them as is or rebind the manually. Very simple process.
+## Hardware required
 
-### Some Turret Binds don't work properly
+* **VKB Gladiator NXT EVO left + right** (the asymmetric pair). Single-stick or other VKB models won't load the profile cleanly without remapping in JG's Tools → Swap Devices. Doable, but not the supported configuration.
+* **vJoy** with at least 2 vJoy devices configured, each with 8 axes, 4 hats, 128 buttons. Standard install defaults.
+* **Joystick Gremlin R14** (14.2 or later). [Official repo](https://github.com/WhiteMagic/JoystickGremlin).
+* **Star Citizen 4.8.0 PTU** for now. Roll-forward for LIVE when 4.8 lands.
 
-I have noticed some turret binds don't work properly like gyro. Turret speed limiter and the general speed limiter do work but you need to turn speed limiter on in the IFCS MFD page first. This could also be ship dependant so im keeping the binds in and hoping CIG gets around to fixing it.
+If you don't have JG and vJoy already, install those first. Both are free, both need admin, and vJoy needs a system reboot before its devices show up in DirectInput. SC sees the vJoy devices as standard joysticks — your physical NXTs are invisible to SC; everything routes through JG.
+
+## Quick start
+
+1. Drop both layout XMLs into your SC install:
+
+    ```
+    …\StarCitizen\<channel>\user\client\0\controls\mappings\
+    ```
+
+    Files: `layout_ENH_NXT_480_PTU_exported.xml` and `layout_SUB_Clear_Bindings_exported.xml`.
+
+2. Launch SC. Open **Customization → Control Profiles → Use this profile**, pick `ENH_NXT_480_PTU`, confirm.
+
+3. Fully close SC and the RSI Launcher.
+
+4. Double-click `Fix MFD Binds [ENH][NXT][4.8.0][PTU].bat` from the unzipped folder. Pick your channel at the prompt. This works around a long-standing SC bug — see [MFD bind fix](#mfd-bind-fix-workaround-for-sc-bug) below.
+
+5. Launch JG R14, load `Joystick Gremlin Profile [ENH][NXT][4.8.0][PTU][R14].xml`. Run **Tools → Swap Devices** and remap each profile slot to your physical Gladiator NXT EVOs.
+
+6. Toggle JG to **Active** (top-right). Launch SC. Test in Arena Commander or in your hangar before flying anything important.
+
+If something looks wrong, jump to [Customizing](#customizing) below.
+
+## What makes these binds different
+
+If you'd never opened Joystick Gremlin and bound your sticks directly through SC's keybind menu, you'd hit four walls fast:
+
+* **No modifier layer.** SC has no real concept of "this button does X normally and Y while holding modifier." You'd be stuck with one function per physical button.
+* **No tap-vs-hold differentiation.** SC's bind system fires actions on press. Want one button to ping radar on a quick tap and toggle light amplification on a 0.5-second hold? SC can't do that natively.
+* **No clean macros for SC's toggle actions.** SC has actions like `v_light_amplification_toggle` that only fire on a complete press+release cycle. A sustained vJoy press doesn't trigger them. JG lets you synthesize a clean tap shape from any input gesture.
+* **Inversion is fragile.** Inversion lives in SC's keybind menu by default. It gets reset by reinstalls, patch wipes, fresh installs on a new machine. If you want it to survive any of those, it needs to live somewhere SC doesn't manage.
+
+This profile addresses all four. The next section walks through how.
+
+## The patterns explained
+
+Most physical buttons just feed a single virtual button straight through to SC. Where things get more interesting is the categories below — these are the techniques that make this setup work the way it does.
+
+### Modifier mode — doubles your usable binds
+
+Hold the modifier button (right stick base) and every other button on both sticks fires a *different* SC action. Without modifier you have around 50 useful buttons across the dual NXTs. With it, you effectively have around 100. The extra layer is where most of the niche binds live — engineering controls, advanced view options, vehicle-specific stuff.
+
+The chart shows the un-modified action in one color and the modified action in a contrasting color so you can read both layers at a glance.
+
+### Mode switching — SCM / Aux / Nav
+
+The same physical buttons behave differently depending on which mode you're in. Three core modes:
+
+=== "SCM Mode"
+    Combat / general flight. The default mode.
+
+=== "Aux Mode"
+    Auxiliary roles — mining, salvage, scanning. Trigger-stage and gimbal binds reroute to mining lasers, salvage beams, scan triggers.
+
+=== "Nav Mode"
+    Quantum / NAV travel posture. View binds shift, weapon binds quiet down.
+
+You switch modes from a dedicated physical button (see the chart). The current mode survives until you switch again — JG holds the mode state, not SC.
+
+### Tempo binds — tap vs hold
+
+A small number of binds fire one action on a quick tap and a different action on a longer hold of the same physical button. The light-amp toggle on the left rapid trigger is the canonical example: short tap = radar ping, hold past 0.5s = light amplification toggle.
+
+The threshold is 500ms by default. Tempo binds that wrap a SC toggle action use a 100ms macro tap on the long-action side, because SC's toggles only fire on a complete press+release cycle and a sustained vJoy hold won't trigger them.
+
+### Macros — clean tap shapes for stubborn SC actions
+
+Whenever a bind needs to produce a "clean tap" for SC regardless of how long the user physically holds the input, it goes through a JG macro: vJoy press → 100ms pause → vJoy release. SC sees a complete cycle and the action fires once. This is how the held-trigger light-amp toggle works without tying up the trigger button.
+
+You'll never see this from the user side — it's behind the curtain. But if you ever go editing the JG profile, knowing why these macros exist will save you from "fixing" something that wasn't broken.
+
+### Mouse axes — 3rd-person camera pan during flight
+
+In 3rd-person view, two of the right-stick's secondary axes are bound as **mouse movement** instead of as joystick axes. That gives you camera pan independent of your flight controls — keep flying with the main stick axes while looking around with the secondary axes. SC's 3rd-person camera doesn't natively know about joystick axes for view; mouse is the only language it understands.
+
+This is the kind of thing JG enables that's effectively impossible without it.
+
+### Flat response curves on every map-to-vJoy axis
+
+Every axis-to-vJoy mapping in the profile uses a baseline linear response curve. There's no curve-shaping going on for control feel — SC handles per-axis sensitivity in its own UI, that's the right place for it.
+
+The reason for the explicit curve isn't sensitivity. It's **inversion durability**. JG's response curve carries the inversion flag. By living in JG instead of SC's keybind menu, inversion survives:
+
+* SC reinstalls
+* Patch resets
+* Fresh installs on a new machine
+* The wipe (when CIG nukes character data and bindings on a major release)
+
+If your inversion is in SC, you reset it every time. If it's in JG, you set it once and it travels with the profile.
+
+The 4.8.0 release strips out the SC-side `<options type="joystick">` invert overrides earlier versions of these binds shipped. Inversion is now exclusively a JG concern. SC's keybind menu Invert toggles can stay at game defaults — JG handles the rest.
+
+### Multi-tap activation on MFD soft-select
+
+Two MFD bindings (`v_mfd_soft_select_cast_left/right_short`) require a double-tap of the same physical input that does standard MFD navigation on a single tap. You'll see this called out in the binding chart and in the MFD fix script — it's the only place multi-tap activation is used.
+
+## MFD bind fix (workaround for SC bug)
+
+!!! bug "SC `vehicle_mfd` wipe — worked around by the shipped fix script"
+    Star Citizen has a long-standing bug where the `vehicle_mfd` actionmap gets stripped every time you load a control profile over an existing one. Specifically:
+
+    * 7 MFD actions get reset to unbound (`<rebind input="js2_ "/>`).
+    * 2 actions (`v_mfd_soft_select_cast_left/right_short`) get **deleted** from `actionmaps.xml` outright.
+
+    The bug is silent — the keybind menu shows the actions normally, just unbound or missing. Most users find out when an MFD action stops working in-game.
+
+The shipped `Fix MFD Binds [ENH][NXT][4.8.0][PTU].bat` script puts them all back. Workflow:
+
+1. Load the NXT layout in-game (Customization → Control Profiles → Use this profile).
+2. Fully close Star Citizen and the RSI Launcher.
+3. Double-click the `.bat`. Pick your SC channel at the prompt (LIVE / PTU / EPTU / HOTFIX / TECH-PREVIEW).
+4. Launch SC. MFDs work.
+
+The script:
+
+* Makes a timestamped backup of `actionmaps.xml` before any change.
+* Refuses to run if SC or RSI Launcher is alive (would lose the fix to SC's auto-write on close).
+* Is **idempotent** — running it twice gives identical results, no double-bindings.
+* Self-heals if SC ever nukes the entire `vehicle_mfd` actionmap (rare but possible) by rebuilding the block from scratch.
+
+If you'd rather rebind manually via SC's keybind UI instead of running the script, here's the table:
+
+### Manual fallback — re-bind via SC's keybind menu
+
+| SC action (Customization → Keybindings → MFD) | Physical input | vJoy mapping |
+| --- | --- | --- |
+| MFD - Cycle Page - Backwards (Short Press) | `[M] R-C1 Left` | `button54 (Input2)` |
+| MFD - Cycle Page - Forwards (Short Press) | `[M] R-C1 Right` | `button52 (Input2)` |
+| MFD - Movement - Up (Long Press) | `[M] R-C1 Up` | `button51 (Input2)` |
+| MFD - Movement - Down (Long Press) | `[M] R-C1 Down` | `button53 (Input2)` |
+| MFD - Movement - Left (Long Press) | `[M] R-C1 Left` | `button54 (Input2)` |
+| MFD - Movement - Right (Long Press) | `[M] R-C1 Right` | `button52 (Input2)` |
+| MFD - Select - Left Cast (Short Press) | `[M][DT] R-C1 Left` | `button54 (Input2)` ×2 |
+| MFD - Select - Right Cast (Short Press) | `[M][DT] R-C1 Right` | `button52 (Input2)` ×2 |
+| MFD - Quick Action - Self Repair All | `R-A2` | `button3 (Input2)` |
+
+!!! tip "Multi-tap (double-tap) binds in SC's keybind UI"
+    For the two `Select - * Cast (Short Press)` rows above, SC's bind UI needs the multi-tap activation set explicitly. The pattern: first map any button on stick 1, *then* add the multi-tap with `y`, *then* rebind to the actual physical input.
+
+    Please contribute to the [issue council report](https://issue-council.robertsspaceindustries.com/projects/STAR-CITIZEN/issues/STARC-133477) so CIG can fix this by Nevuary 32nd, 2955.
 
 ## Features and Functions
 
 ### Free-look
 
-To use free-look. Go into 3rd person (up on `L-A4 Hat`). Now press the `R-A1 Mini-stick` in, to change the mode to analog (Red Light should turn on). Now you are free to look around. Click and HOLD in on the `L-A4 Hat` to reset view.
+To use free-look, go into 3rd-person (up on `L-A4 Hat`). Press the `R-A1 Mini-stick` in to change the mode to analog (red light should turn on). You're now free to look around. Click and **hold** in on `L-A4 Hat` to reset view.
 
 ### Eye Tracker Targeting
 
-The main way I Target in Star Citizen is via an Eye Tracker. This adds to immersion and is a lot easier than using the native binds. Just look at the target, press a button and then they are locked. There are two eye trackers I recommend.
+My main way to target in Star Citizen is via an eye tracker. Adds to immersion and is way easier than the native binds — look at the target, press a button, locked. Two eye trackers worth considering:
 
-* Tobii Eye Tracker is next generation head and eye tracking. Unlock unique features that deepen your level of immersion in your favorite games including Star Citizen, Microsoft Flight Simulator, DCS, and more.
+* **Tobii Eye Tracker** is the next-generation head + eye tracking option. Unlocks unique features that deepen immersion in Star Citizen, MSFS, DCS, and more. For 5% off, visit <https://tobii.subliminal.gg> and use code `subliminal` at checkout. *Purchases through that link support the curation of these binds.*
 
-* For more info and 5% off visit <https://tobii.subliminal.gg> "Purchases using the link and code `subliminal` at checkout support the curation of these binds."
-
-* For a more budget friendly alternative check out Beam Eye Tracker. It is software only, and does require you to use your own webcam. It has some limitations like playing in a dark room or seeing through your glasses. But if you have a webcam and want to try eye tracking this is a MUST HAVE IMO. There is a free trail on steam. Or you can buy it directly from beam.
-
-* For more info visit <https://beam.subliminal.gg> "Purchases using the link and purchasing through Beam directly support the curation of these binds. Purchasing through steam does not."
+* **Beam Eye Tracker** is a more budget-friendly alternative — software-only, runs off your existing webcam. Limitations around dark rooms and seeing through glasses, but if you've got a webcam and want to try eye tracking, it's a must-have IMO. Free trial on Steam, or buy direct. For more info: <https://beam.subliminal.gg>. *Direct purchases through that link support the curation of these binds; Steam purchases do not.*
 
 ## Text to Speech & Play Sounds
 
-In a past update I removed the "play audio file" action from the JG profile and also the Text To Speech feature. I'm sorry but im adding the TTS back. It turns out there was no issue with the Text To Speech. And users enjoy having confirmation that the mode switched in JG.
-
-If you would like to use the audio files I created instead of the TTS or if you would like to remove or "mute" the TTS, below are instructions on how to do that.
+The JG profile includes Text To Speech callouts when modes switch (SCM / Aux / Nav). If you'd rather use the bundled audio files instead — or remove the TTS entirely — here's how.
 
 ### Adding Audio Files
 
-- In the upper right hand corner of JG, you can select which mode you would like to edit. In the `SCM Mode`, `Aux Mode`, and `NAV Mode`, the left joystick `Button 3` cycles modes. To add the audio files you will need to add an action for `Play Sound` to audibly confirm when JG changes Modes.
+* In the top-right of JG, select which mode you'd like to edit. In `SCM Mode`, `Aux Mode`, and `NAV Mode`, the left joystick `Button 3` cycles modes. To swap TTS for audio files, you'll add a `play sound` action under that button.
 
-- To add the provided audio files, click `Button 3` then look towards the bottom of the action panel underneath the last action. Click the remap drop down and select `play sound`. Then click the `Add` button next to it. Clicking the pencil button will allow you to use windows explorer to tell JG where to find the audio files.
+* Click `Button 3`, then towards the bottom of the action panel, click the remap dropdown and select `play sound`. Click **Add**. The pencil icon opens a file picker — point it at the audio file for the mode you're switching into.
 
-- There are multiple options for what audio files you can use and of course you could use your own. The audio files I provide are either voices from "Computer" aka/LCARS from Star Trek or HAL9000. And HAL9000 has two variations of dialogue.
+* The bundled audio files live in `Audio Files/`. Two voice options:
 
-- The Salvage and Mining audio files are for those who only mine OR salvage and want to hear a more personalized message. auxiliary is for those who mine and salvage. (This has no effect on the binds or game.)
+    * **Computer** (LCARS-style from Star Trek) — folder `Audio Files/Computer/`
+    * **Hal 9000** — folder `Audio Files/Hal 9000/` (two dialogue variations available)
 
-- Simply load the .wave audio file for the corresponding mode. To know which one to use just read whatever I have in the Cycle Modes long press box inside JG.
+* The Salvaging and Mining audio files are for users who *only* mine or *only* salvage and want a more personalized message. The Auxiliary file is the generic option for users who do both.
 
-- Remember to do this for `button 3` in `SCM Mode`, `Aux Mode`, and `NAV Mode` for the left stick only
+* Load the `.wav` for the matching mode. To know which one to use, just read whatever's in the **Cycle Modes long press** box inside JG.
 
-!!! Tip
-    You must save the JG profile after making changes to avoid having to repeat this every time JG or your PC restarts. It is a good practice to `Save As` and not overright my original JG file in case you may need to reload that working one in the future.
+* Repeat for `Button 3` in `SCM Mode`, `Aux Mode`, and `NAV Mode` on the **left stick** only.
 
-### Removing or Muting Text To speech
+!!! tip
+    Save the JG profile after making changes — otherwise you'll repeat this every time JG or your PC restarts. Good practice to **Save As** so you don't overwrite the original profile.
 
-There are many ways to remove or mute joystick gremlin.
+### Removing or Muting Text To Speech
 
-* The most simple way is to simply mute or reduce the volume in inside of `Windows Volume Mixer`
+A few options, easiest first:
 
-* If you would like to remove the TTS following the same steps as seen in the [Adding Audio Files](#adding-audio-files) to locate the TTS action and remove it by clicking the `X` in the upper right hand corner of the TTS box.
+* Mute or reduce the volume in **Windows Volume Mixer** for Joystick Gremlin.
+* Follow the same path as [Adding Audio Files](#adding-audio-files) to find the TTS action, then click the `X` in the upper-right of the TTS box to remove it.
+* Reduce the audio volume inside the JG action itself, or edit the text in the TTS box.
 
-* And of course you can reduce the audio in JG as well. Or remove or change the text in the TTS box. But make sure you head the warning below if you are going to do that.
+!!! tip
+    Same as above — save the JG profile, and **Save As** so you don't overwrite the original.
 
-!!! Tip 
-    You must save the JG profile after making changes to avoid having to repeat this every time JG or your PC restarts. It is a good practice to `Save As` and not overright my original JG file in case you may need to reload that working one in the future.
+## Customizing
+
+* **Different physical sticks.** If you have other VKB hardware (Gladiator EVO non-NXT, Gunfighter, etc.) the profile's device GUIDs won't match. JG R14's **Tools → Swap Devices** is the path: pick the profile's slots, point them at your physical sticks, save.
+
+* **Different inversion preferences.** Open the JG profile, find the axis you want to flip, edit the response-curve action — there's an Invert toggle on the curve itself. Save. Don't touch SC's keybind menu Invert toggles; they're meant to stay at defaults for this profile.
+
+* **Different modifier button.** The modifier button is a single physical input mapped as the modifier "shift" in JG. Find the input that drives Modifier mode, swap it for whichever physical button you'd rather use. JG's UI is safer for this than editing the XML directly.
+
+* **Disable audio prompts.** Open the JG profile, find any `play-sound` action, and either delete it or unhook it from the action chain. The audio files themselves can stay or go — JG only loads them when called.
+
+* **Tweak tempo timing.** The light-amp tempo's threshold is 500ms. To change it, find the tempo action in the JG library and update the `threshold` value. 250ms is more sensitive (briefer holds count); 750ms is more deliberate.
+
+## Known Issues
+
+### JG R14 macro-editor "X Axis" rendering bug
+
+Project-wide — affects every stick in this pack, not just the NXTs. When you open a macro action in Joystick Gremlin R14's editor, the input-type dropdown on `<vjoy>` rows can render as **"X Axis"** even when the underlying XML correctly says **Button**. Visual-only — confirmed by saving from this state and byte-comparing the resulting XML, identical to before. The macro fires real button presses in-game regardless of what the dropdown shows.
+
+If you see it: **ignore it.** Don't try to "fix" the dropdown unless you know what you're doing — saving from a misclick *might* commit the wrong type. Trust the in-game behavior. Reported upstream to WhiteMagic.
+
+### NXT "NON-EVO" base encoders are switched
+
+If you have the non-EVO version of the NXTs, the encoders are switched and don't match the binding chart. Either use them as-is or rebind them manually — it's a simple process.
+
+### Some turret binds don't work properly
+
+A few turret binds (gyro in particular) don't behave the way you'd expect. Turret speed limiter and the general speed limiter do work, but you need to turn the speed limiter on in the IFCS MFD page first. This may be ship-dependent — keeping the binds in and hoping CIG sorts it.
 
 ## Troubleshooting
 
-Common Enhanced bind issues and their fixes can be found in the FAQ In  [Enhanced Binds FAQ](https://discord.com/channels/303670222097874945/1297919077062279209) in the channel discord
+Common Enhanced bind issues and their fixes live in the [Enhanced Binds FAQ](https://discord.com/channels/303670222097874945/1297919077062279209) in the Discord.
 
-Common Joystick/Star Citizen related issues and their fixes can be found in [Peripherial FAQ](https://discord.com/channels/303670222097874945/1154143410215731201) in the channel discord
+Common joystick / Star Citizen issues and their fixes live in the [Peripheral FAQ](https://discord.com/channels/303670222097874945/1154143410215731201) in the Discord.
 
 !!! note
-    If you have an issue not found in either of the FAQs, please read and follow the simple instructions in the pinned post in the [Enhanced Bindings Support Forum](<https://discord.com/channels/303670222097874945/1006954369800998992>) before posting your question or concern.
+    If you have an issue not found in either FAQ, please read and follow the simple instructions in the pinned post in the [Enhanced Bindings Support Forum](https://discord.com/channels/303670222097874945/1006954369800998992) before posting.
 
 ## Binding Charts
 
-### NO MORE ADOBE!!!
+### NO MORE ADOBE
 
-I have finally escaped Adobe's firm grasp and now moved the the free alternative [Affinity](https://www.affinity.studio/get-affinity)
-Plus Affinty is now FREE!! Meaning anyone can open the .af files and edit them.
+I finally escaped Adobe's grip and moved over to the free alternative [Affinity](https://www.affinity.studio/get-affinity). Affinity is now FREE, which means anyone can open the `.af` files and edit them.
 
-### PDF Files are back
+### PDF files are back
 
-I figured out how to make searchable PDFs in affinity!
+Searchable PDFs in Affinity — figured it out, they're back.
 
-### Printer Friendly Binding Chart
+### Printer-friendly binding chart
 
-The chart labeled `[Print]` has a white background to conserve ink for people who would like to print it.
+The chart labeled `[Print]` has a white background to conserve ink for people who'd like to print it.
 
-PRO TIP: If you have the paid version of adobe acrobat you can open the PNG file inside it and select the "Poster" option in the print settings and change the scale from %100 to 30% and it will split the chart into two pages with 1 stick on each page. For other programs just remember that scaled down to 30% its small enough to fit each stick on its own page.
+!!! tip
+    If you have the paid version of Adobe Acrobat you can open the PNG inside it and select the **Poster** option in the print settings, then change the scale from 100% to 30%. The chart splits into two pages, one stick per page. For other programs, scaled to 30% the chart fits each stick on its own page.
+
+## Support
+
+Patch-day chaos is normal. Give it a couple of days after a major SC patch before assuming the binds are broken; usually it's CIG breaking something downstream and I'm already sorting it. Hit me up via the support channels above or in the SubliminalsTV Discord.
+
+Full disclosure — VKB is a sponsor of the channel. These binds are tuned for VKB hardware because that's what I fly with, not because of the sponsorship. The Gladiator NXT EVO L+R is the best dual-stick option for SC right now and that's why I run it. Take the recommendation as you will.
 
 ## Open Source Notice
+
 !!! note
-    My binds are now open source. I need contributors to assist with small updates when a patch drops. DM me on discord if you are interested. <https://github.com/SubliminalsTV/Subs-Curated-Bindings>
+    These binds are open source. I need contributors to assist with small updates when a patch drops. DM me on Discord if you're interested. <https://github.com/SubliminalsTV/Subs-Curated-Bindings>
