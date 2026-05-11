@@ -1,1 +1,237 @@
-# VKB Gunfighter w/SCG Grip
+# Enhanced — Dual VKB Gunfighter with SCG Grip
+
+!!! warning
+    THESE BINDINGS REQUIRE JOYSTICK GREMLIN.
+
+!!! quote "Support this project"
+    These binds take a really long time to make and keep updated. Here are a few ways to make sure I can keep doing it, ordered roughly from most impactful to still awesome.
+    ??? example "Twitch"
+        * Sub on [Twitch](https://subs.twitch.tv/subliminalstv). Even if you don't watch live, this is the biggest single help while we work toward the first goal of 100 (currently 20/100).
+        * FREE: Got Amazon Prime? You get one [free Twitch Prime sub](https://subs.twitch.tv/subliminalstv) per month.
+        * FREE: Come hang out while I'm live. Sometimes I'm playing, sometimes I'm updating these binds or covering SC news. YouTube simulcast coming soon.
+    ??? note "Store"
+        * Pick up something direct from [my store](https://store.subliminal.gg/l/supporters) — great if you don't have a Twitch or Amazon account.
+        * You can also tip at checkout. The button's small but it's there.
+
+A tuned dual-stick keybind setup for Star Citizen built around the VKB Gunfighter with SCG grips. Same Enhanced philosophy as the rest of the pack — modifier layers, mode switching (SCM / Aux / Nav), tempo-driven tap-vs-hold binds, JG-owned inversion that survives SC's wipes and reinstalls.
+
+These binds use Joystick Gremlin to layer modifiers, mode switching, response curves, and macros on top of SC's bind system. Ship combat, mining, salvage, on-foot, EVA, ground vehicles, and turrets all run off the same physical inputs — once you learn the chart, the same hand positions carry across every gameplay loop.
+
+???+ abstract "Change Log"
+
+    **4.8.0 PTU — May 2026**
+
+    * **Light amplification toggle** bound on two left-stick inputs, both using the tempo + macro pattern (threshold 0.5s):
+        * **Left stick rapid-fire trigger up (btn 26)** — tap < 0.5s fires `v_invoke_ping` (radar ping, unchanged); hold ≥ 0.5s fires light amp toggle.
+        * **Left stick btn 11** — tap < 0.5s fires the existing flight-ready / ship-lights / port-locks chain (unchanged); hold ≥ 0.5s fires the same toggle.
+    * New `Fix MFD Binds [ENH][GF][4.8.0][PTU].bat` script ships in the folder. Works around SC's long-standing `vehicle_mfd` wipe bug. See [MFD bind fix](#mfd-bind-fix-workaround-for-sc-bug).
+    * **Axis inversion is now fully handled inside Joystick Gremlin.** The layout XML no longer ships SC-side `<options type="joystick">` invert overrides. SC's keybind-menu Invert toggles can be left at game defaults.
+    * Internal layout name updated to `ENH_GF_480_PTU` so SC loads it under the right slug.
+    * Filename cleanup: long-standing `Biniding Chart` typo fixed to `Binding Chart`, print-suffix standardized to `[Print].png`.
+    * Removed a leftover contributor screenshot from the folder that shouldn't have been in the release tree.
+    * **Heads up — JG R14 macro editor visual bug.** Opening a macro action in JG R14's editor can show "X Axis" on `<vjoy>` rows where the XML correctly says Button. Visual only, ignore it. See [Known Issues](#jg-r14-macro-editor-x-axis-rendering-bug).
+
+## Hardware required
+
+* **VKB Gunfighter dual setup with SCG grips.** Other VKB grips or hardware won't load the profile cleanly without remapping in JG's Tools → Swap Devices. Doable, but not the supported configuration.
+* **vJoy** with at least 2 vJoy devices configured, each with 8 axes, 4 hats, 128 buttons. Standard install defaults.
+* **Joystick Gremlin R14** (14.2 or later). [Official repo](https://github.com/WhiteMagic/JoystickGremlin).
+* **Star Citizen 4.8.0 PTU** for now. Roll-forward for LIVE when 4.8 lands.
+
+If you don't have JG and vJoy already, install those first. Both are free, both need admin, and vJoy needs a system reboot before its devices show up in DirectInput. SC sees the vJoy devices as standard joysticks — your physical Gunfighters are invisible to SC; everything routes through JG.
+
+## Quick start
+
+1. Drop both layout XMLs into your SC install:
+
+    ```
+    …\StarCitizen\<channel>\user\client\0\controls\mappings\
+    ```
+
+    Files: `layout_ENH_GF_480_PTU_exported.xml` and `layout_SUB_Clear_Bindings_exported.xml`.
+
+2. Launch SC. Open **Customization → Control Profiles → Use this profile**, pick `ENH_GF_480_PTU`, confirm.
+
+3. Fully close SC and the RSI Launcher.
+
+4. Double-click `Fix MFD Binds [ENH][GF][4.8.0][PTU].bat` from the unzipped folder. Pick your channel at the prompt. This works around a long-standing SC bug — see [MFD bind fix](#mfd-bind-fix-workaround-for-sc-bug) below.
+
+5. Launch JG R14, load `Joystick Gremlin Profile [ENH][GF][4.8.0][PTU][R14].xml`. Run **Tools → Swap Devices** and remap each profile slot to your physical Gunfighters.
+
+6. Toggle JG to **Active** (top-right). Launch SC. Test in Arena Commander or in your hangar before flying anything important.
+
+If something looks wrong, jump to [Customizing](#customizing) below.
+
+## What makes these binds different
+
+If you'd never opened Joystick Gremlin and bound your sticks directly through SC's keybind menu, you'd hit four walls fast:
+
+* **No modifier layer.** SC has no real concept of "this button does X normally and Y while holding modifier." You'd be stuck with one function per physical button.
+* **No tap-vs-hold differentiation.** SC's bind system fires actions on press. Want one button to ping radar on a quick tap and toggle light amplification on a 0.5-second hold? SC can't do that natively.
+* **No clean macros for SC's toggle actions.** SC has actions like `v_light_amplification_toggle` that only fire on a complete press+release cycle. A sustained vJoy press doesn't trigger them. JG lets you synthesize a clean tap shape from any input gesture.
+* **Inversion is fragile.** Inversion lives in SC's keybind menu by default. It gets reset by reinstalls, patch wipes, fresh installs on a new machine. If you want it to survive any of those, it needs to live somewhere SC doesn't manage.
+
+This profile addresses all four. The next section walks through how.
+
+## The patterns explained
+
+### Modifier mode — doubles your usable binds
+
+Hold the modifier button and every other button on both sticks fires a *different* SC action. The extra layer is where most of the niche binds live — engineering controls, advanced view options, vehicle-specific stuff. The chart shows the un-modified action in one color and the modified action in a contrasting color so you can read both layers at a glance.
+
+### Mode switching — SCM / Aux / Nav
+
+The same physical buttons behave differently depending on which mode you're in. Three core modes:
+
+=== "SCM Mode"
+    Combat / general flight. The default mode.
+
+=== "Aux Mode"
+    Auxiliary roles — mining, salvage, scanning. Trigger-stage and gimbal binds reroute to mining lasers, salvage beams, scan triggers.
+
+=== "Nav Mode"
+    Quantum / NAV travel posture. View binds shift, weapon binds quiet down.
+
+You switch modes from a dedicated physical button (see the chart). The current mode survives until you switch again — JG holds the mode state, not SC.
+
+### Tempo binds — tap vs hold
+
+A small number of binds fire one action on a quick tap and a different action on a longer hold of the same physical button. On the Gunfighter, both light-amp routes (left rapid trigger + left button 11) use this pattern.
+
+The threshold is 500ms by default. Tempo binds that wrap a SC toggle action use a 100ms macro tap on the long-action side, because SC's toggles only fire on a complete press+release cycle and a sustained vJoy hold won't trigger them.
+
+### Macros — clean tap shapes for stubborn SC actions
+
+Whenever a bind needs to produce a "clean tap" for SC regardless of how long the user physically holds the input, it goes through a JG macro: vJoy press → 100ms pause → vJoy release. SC sees a complete cycle and the action fires once. Both Gunfighter light-amp routes share the same 100ms-tap macro under the hood, mapped to vJoy 2 button 46.
+
+### Flat response curves on every map-to-vJoy axis
+
+Every axis-to-vJoy mapping in the profile uses a baseline linear response curve. There's no curve-shaping going on for control feel — SC handles per-axis sensitivity in its own UI, that's the right place for it.
+
+The reason for the explicit curve isn't sensitivity. It's **inversion durability**. JG's response curve carries the inversion flag. By living in JG instead of SC's keybind menu, inversion survives:
+
+* SC reinstalls
+* Patch resets
+* Fresh installs on a new machine
+* The wipe (when CIG nukes character data and bindings on a major release)
+
+If your inversion is in SC, you reset it every time. If it's in JG, you set it once and it travels with the profile.
+
+The 4.8.0 release strips out the SC-side `<options type="joystick">` invert overrides earlier versions of these binds shipped. Inversion is now exclusively a JG concern. SC's keybind menu Invert toggles can stay at game defaults — JG handles the rest.
+
+### Multi-tap activation on MFD soft-select
+
+Two MFD bindings (`v_mfd_soft_select_cast_left/right_short`) require a double-tap of the same hat direction that does standard MFD navigation on a single tap. You'll see this called out in the binding chart and in the MFD fix script — it's the only place multi-tap activation is used.
+
+## MFD bind fix (workaround for SC bug)
+
+!!! bug "SC `vehicle_mfd` wipe — worked around by the shipped fix script"
+    Star Citizen has a long-standing bug where the `vehicle_mfd` actionmap gets stripped every time you load a control profile over an existing one. Specifically:
+
+    * 7 MFD actions get reset to unbound (`<rebind input="js2_ "/>`).
+    * 2 actions (`v_mfd_soft_select_cast_left/right_short`) get **deleted** from `actionmaps.xml` outright.
+
+    The bug is silent — the keybind menu shows the actions normally, just unbound or missing. Most users find out when an MFD action stops working in-game.
+
+The shipped `Fix MFD Binds [ENH][GF][4.8.0][PTU].bat` script puts them all back. Workflow:
+
+1. Load the Gunfighter layout in-game (Customization → Control Profiles → Use this profile).
+2. Fully close Star Citizen and the RSI Launcher.
+3. Double-click the `.bat`. Pick your SC channel at the prompt (LIVE / PTU / EPTU / HOTFIX / TECH-PREVIEW).
+4. Launch SC. MFDs work.
+
+The script:
+
+* Makes a timestamped backup of `actionmaps.xml` before any change.
+* Refuses to run if SC or RSI Launcher is alive (would lose the fix to SC's auto-write on close).
+* Is **idempotent** — running it twice gives identical results, no double-bindings.
+* Self-heals if SC ever nukes the entire `vehicle_mfd` actionmap (rare but possible) by rebuilding the block from scratch.
+
+If you'd rather rebind manually via SC's keybind UI instead of running the script, here's the table:
+
+### Manual fallback — re-bind via SC's keybind menu
+
+| SC action (Customization → Keybindings → MFD) | vJoy mapping |
+| --- | --- |
+| MFD - Cycle Page - Backwards (Short Press) | `hat2_left (Input2)` |
+| MFD - Cycle Page - Forwards (Short Press) | `hat2_right (Input2)` |
+| MFD - Movement - Up (Long Press) | `hat2_up (Input2)` |
+| MFD - Movement - Down (Long Press) | `hat2_down (Input2)` |
+| MFD - Movement - Left (Long Press) | `hat2_left (Input2)` |
+| MFD - Movement - Right (Long Press) | `hat2_right (Input2)` |
+| MFD - Select - Left Cast (Short Press) | `hat2_left (Input2)` ×2 |
+| MFD - Select - Right Cast (Short Press) | `hat2_right (Input2)` ×2 |
+
+Physical input labels for these are on the binding chart — all MFD nav lives on the right-stick MFD hat.
+
+!!! tip "Multi-tap (double-tap) binds in SC's keybind UI"
+    For the two `Select - * Cast (Short Press)` rows above, SC's bind UI needs the multi-tap activation set explicitly. The pattern: first map any button on stick 1, *then* add the multi-tap with `y`, *then* rebind to the actual physical input.
+
+## Features and Functions
+
+### Free-look
+
+Free-look is bound on the Gunfighter — see the binding chart for the exact location. Same gesture pattern as the rest of the Enhanced binds: enter 3rd-person, toggle to analog look mode, look around independently of flight controls.
+
+### Eye Tracker Targeting
+
+My main way to target in Star Citizen is via an eye tracker. Adds to immersion and is way easier than the native binds — look at the target, press a button, locked. Two eye trackers worth considering:
+
+* **Tobii Eye Tracker** is the next-generation head + eye tracking option. Unlocks unique features that deepen immersion in Star Citizen, MSFS, DCS, and more. For 5% off, visit <https://tobii.subliminal.gg> and use code `subliminal` at checkout. *Purchases through that link support the curation of these binds.*
+
+* **Beam Eye Tracker** is a more budget-friendly alternative — software-only, runs off your existing webcam. Limitations around dark rooms and seeing through glasses, but if you've got a webcam and want to try eye tracking, it's a must-have IMO. Free trial on Steam, or buy direct. For more info: <https://beam.subliminal.gg>. *Direct purchases through that link support the curation of these binds; Steam purchases do not.*
+
+## Customizing
+
+* **Different physical sticks.** If you have other VKB hardware (Gladiator EVO, NXT, etc.) the profile's device GUIDs won't match. JG R14's **Tools → Swap Devices** is the path: pick the profile's slots, point them at your physical sticks, save.
+
+* **Different grip on your Gunfighter.** SCG grips have a different button layout from the older MCG / KG12 grips. If you're on a non-SCG grip, Tools → Swap Devices won't be enough; you'll need to remap the per-button assignments in the JG profile manually.
+
+* **Different inversion preferences.** Open the JG profile, find the axis you want to flip, edit the response-curve action — there's an Invert toggle on the curve itself. Save. Don't touch SC's keybind menu Invert toggles; they're meant to stay at defaults for this profile.
+
+* **Different modifier button.** The modifier button is a single physical input mapped as the modifier "shift" in JG. Find the input that drives Modifier mode, swap it for whichever physical button you'd rather use. JG's UI is safer for this than editing the XML directly.
+
+* **Tweak tempo timing.** The light-amp tempos default to a 500ms threshold. To change them, find the tempo actions in the JG library and update the `threshold` value. 250ms is more sensitive (briefer holds count); 750ms is more deliberate. Both routes share the same threshold by default.
+
+## Known Issues
+
+### JG R14 macro-editor "X Axis" rendering bug
+
+Project-wide — affects every stick in this pack. When you open a macro action in Joystick Gremlin R14's editor, the input-type dropdown on `<vjoy>` rows can render as **"X Axis"** even when the underlying XML correctly says **Button**. Visual-only — confirmed by saving from this state and byte-comparing the resulting XML, identical to before. The macro fires real button presses in-game regardless of what the dropdown shows.
+
+If you see it: **ignore it.** Don't try to "fix" the dropdown unless you know what you're doing — saving from a misclick *might* commit the wrong type. Trust the in-game behavior. Reported upstream to WhiteMagic.
+
+## Troubleshooting
+
+Common Enhanced bind issues and their fixes live in the [Enhanced Binds FAQ](https://discord.com/channels/303670222097874945/1297919077062279209) in the Discord.
+
+Common joystick / Star Citizen issues and their fixes live in the [Peripheral FAQ](https://discord.com/channels/303670222097874945/1154143410215731201) in the Discord.
+
+!!! note
+    If you have an issue not found in either FAQ, please read and follow the simple instructions in the pinned post in the [Enhanced Bindings Support Forum](https://discord.com/channels/303670222097874945/1006954369800998992) before posting.
+
+## Binding Charts
+
+### NO MORE ADOBE
+
+The charts are authored in the free alternative [Affinity](https://www.affinity.studio/get-affinity). Affinity is now FREE, which means anyone can open the `.af` files and edit them.
+
+### PDF files are back
+
+Searchable PDFs in Affinity — they're back.
+
+### Printer-friendly binding chart
+
+The chart labeled `[Print]` has a white background to conserve ink for people who'd like to print it.
+
+!!! tip
+    If you have the paid version of Adobe Acrobat you can open the PNG inside it and select the **Poster** option in the print settings, then change the scale from 100% to 30%. The chart splits into two pages, one stick per page. For other programs, scaled to 30% the chart fits each stick on its own page.
+
+## Support
+
+Patch-day chaos is normal. Give it a couple of days after a major SC patch before assuming the binds are broken; usually it's CIG breaking something downstream and I'm already sorting it. Hit me up via the support channels above or in the SubliminalsTV Discord.
+
+## Open Source Notice
+
+!!! note
+    These binds are open source. I need contributors to assist with small updates when a patch drops. DM me on Discord if you're interested. <https://github.com/SubliminalsTV/Subs-Curated-Bindings>
