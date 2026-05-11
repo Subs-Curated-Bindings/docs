@@ -28,18 +28,6 @@ These binds use Joystick Gremlin to layer modifiers, mode switching, response cu
     * Filename + audio cleanup batched in: `Bniding Chart [...][Print].png` → `Binding Chart [...][Print].png`, `Audio Files/Hall 9000/` → `Audio Files/Hal 9000/`, `Hall_9000_*.wav` → `Hal_9000_*.wav`, `Computer_Salgaving_Mode.wav` → `Computer_Salvaging_Mode.wav`, trailing/inner spaces stripped from `Hal_9000_Quote_*.wav`. If you had your own profile referencing any of these paths, repoint after import.
     * **Heads up — JG R14 macro editor visual bug.** Opening a macro action in JG R14's editor can show "X Axis" on `<vjoy>` rows where the XML correctly says Button. Visual only, ignore it. See [Known Issues](#jg-r14-macro-editor-x-axis-rendering-bug).
 
-    **4.5.0 — December 2025**
-
-    * Added a bind for `Self Repair All`.
-    * Swapped the Targeting Hat with the Power Management Hat — center push on targeting makes it 100% intuitive without referring to the chart.
-    * Targeting hat now includes sub-targeting for engineering combat. Very important going forward in SC.
-    * Added Pinning to the targeting hat (great for multi-crew).
-    * Renamed `Tobii Eye Tracker Target` to `Eye Tracker Target` — IMO everyone should be using an eye tracker. If you can't afford the [Tobii Eye Tracker 5](https://tobii.subliminal.gg), [Beam Eye Tracker](https://beam.subliminal.gg) works great for the low price.
-    * Moved MFD binds to `R-C1 Hat` to make room for more targeting stuff.
-    * Brought TTS back. Turned out it wasn't the cause of the issue I'd suspected, and people like having the audio confirmation. To remove it, see [Removing or Muting Text To Speech](#removing-or-muting-text-to-speech).
-    * Added notes to the JG profile to help users navigate it.
-    * Added baseline curves so users with cleared `actionmaps.xml` files don't have to invert axes from scratch.
-
 ## Hardware required
 
 * **VKB Gladiator NXT EVO left + right** (the asymmetric pair). Single-stick or other VKB models won't load the profile cleanly without remapping in JG's Tools → Swap Devices. Doable, but not the supported configuration.
@@ -195,6 +183,10 @@ If you'd rather rebind manually via SC's keybind UI instead of running the scrip
 
 To use free-look, go into 3rd-person (up on `L-A4 Hat`). Press the `R-A1 Mini-stick` in to change the mode to analog (red light should turn on). You're now free to look around. Click and **hold** in on `L-A4 Hat` to reset view.
 
+### Head Tracking
+
+Head tracking has dedicated binds on the **L-A4 4-Way Hat — left direction**: tap toggles head tracking on/off. Reset Head Tracking lives on the same hat (see the binding chart for the exact slot). The bind talks to whatever head-tracker software you're running (Tobii / Beam Eye Tracker / TrackIR) — it's a hotkey for that app, not an SC action — so SC itself doesn't know head tracking exists; only your tracker software does.
+
 ### Eye Tracker Targeting
 
 My main way to target in Star Citizen is via an eye tracker. Adds to immersion and is way easier than the native binds — look at the target, press a button, locked. Two eye trackers worth considering:
@@ -203,41 +195,6 @@ My main way to target in Star Citizen is via an eye tracker. Adds to immersion a
 
 * **Beam Eye Tracker** is a more budget-friendly alternative — software-only, runs off your existing webcam. Limitations around dark rooms and seeing through glasses, but if you've got a webcam and want to try eye tracking, it's a must-have IMO. Free trial on Steam, or buy direct. For more info: <https://beam.subliminal.gg>. *Direct purchases through that link support the curation of these binds; Steam purchases do not.*
 
-## Text to Speech & Play Sounds
-
-The JG profile includes Text To Speech callouts when modes switch (SCM / Aux / Nav). If you'd rather use the bundled audio files instead — or remove the TTS entirely — here's how.
-
-### Adding Audio Files
-
-* In the top-right of JG, select which mode you'd like to edit. In `SCM Mode`, `Aux Mode`, and `NAV Mode`, the left joystick `Button 3` cycles modes. To swap TTS for audio files, you'll add a `play sound` action under that button.
-
-* Click `Button 3`, then towards the bottom of the action panel, click the remap dropdown and select `play sound`. Click **Add**. The pencil icon opens a file picker — point it at the audio file for the mode you're switching into.
-
-* The bundled audio files live in `Audio Files/`. Two voice options:
-
-    * **Computer** (LCARS-style from Star Trek) — folder `Audio Files/Computer/`
-    * **Hal 9000** — folder `Audio Files/Hal 9000/` (two dialogue variations available)
-
-* The Salvaging and Mining audio files are for users who *only* mine or *only* salvage and want a more personalized message. The Auxiliary file is the generic option for users who do both.
-
-* Load the `.wav` for the matching mode. To know which one to use, just read whatever's in the **Cycle Modes long press** box inside JG.
-
-* Repeat for `Button 3` in `SCM Mode`, `Aux Mode`, and `NAV Mode` on the **left stick** only.
-
-!!! tip
-    Save the JG profile after making changes — otherwise you'll repeat this every time JG or your PC restarts. Good practice to **Save As** so you don't overwrite the original profile.
-
-### Removing or Muting Text To Speech
-
-A few options, easiest first:
-
-* Mute or reduce the volume in **Windows Volume Mixer** for Joystick Gremlin.
-* Follow the same path as [Adding Audio Files](#adding-audio-files) to find the TTS action, then click the `X` in the upper-right of the TTS box to remove it.
-* Reduce the audio volume inside the JG action itself, or edit the text in the TTS box.
-
-!!! tip
-    Same as above — save the JG profile, and **Save As** so you don't overwrite the original.
-
 ## Customizing
 
 * **Different physical sticks.** If you have other VKB hardware (Gladiator EVO non-NXT, Gunfighter, etc.) the profile's device GUIDs won't match. JG R14's **Tools → Swap Devices** is the path: pick the profile's slots, point them at your physical sticks, save.
@@ -245,8 +202,6 @@ A few options, easiest first:
 * **Different inversion preferences.** Open the JG profile, find the axis you want to flip, edit the response-curve action — there's an Invert toggle on the curve itself. Save. Don't touch SC's keybind menu Invert toggles; they're meant to stay at defaults for this profile.
 
 * **Different modifier button.** The modifier button is a single physical input mapped as the modifier "shift" in JG. Find the input that drives Modifier mode, swap it for whichever physical button you'd rather use. JG's UI is safer for this than editing the XML directly.
-
-* **Disable audio prompts.** Open the JG profile, find any `play-sound` action, and either delete it or unhook it from the action chain. The audio files themselves can stay or go — JG only loads them when called.
 
 * **Tweak tempo timing.** The light-amp tempo's threshold is 500ms. To change it, find the tempo action in the JG library and update the `threshold` value. 250ms is more sensitive (briefer holds count); 750ms is more deliberate.
 
