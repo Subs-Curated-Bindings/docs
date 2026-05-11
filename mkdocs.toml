@@ -22,7 +22,7 @@ nav = [
     ] },
   { "Joysticks" = [
     { "Overview" = "joysticks/index.md" },
-    { "MOZA MTQ Throttle + AB6 Flight Stick" = "joysticks/moza-mtq-throttle-ab6-flight-stick.md" },
+    { "MOZA MTQ Throttle + MHG Grip" = "joysticks/moza-mtq-throttle-ab6-flight-stick.md" },
     { "Thrustmaster SOL-R 2" = "joysticks/tm-sol-r-2.md" },
     { "Virpil VMAX Throttle + Aeromax-R" = "joysticks/virpil-vmax-throttle-aeromax-r.md" },
     { "VKB Gunfighter w/SCG Grip" = "joysticks/vkb-gunfighter-scg-grip.md" },
