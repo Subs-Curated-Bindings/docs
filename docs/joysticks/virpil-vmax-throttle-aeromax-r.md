@@ -1,21 +1,11 @@
 # Enhanced — Virpil VMAX Throttle + Aeromax-R
 
-!!! warning
-    THESE BINDINGS REQUIRE JOYSTICK GREMLIN.
-
-!!! quote "Support this project"
-    These binds take a really long time to make and keep updated. Here are a few ways to make sure I can keep doing it, ordered roughly from most impactful to still awesome.
-    ??? example "Twitch"
-        * Sub on [Twitch](https://subs.twitch.tv/subliminalstv). Even if you don't watch live, this is the biggest single help while we work toward the first goal of 100 (currently 20/100).
-        * FREE: Got Amazon Prime? You get one [free Twitch Prime sub](https://subs.twitch.tv/subliminalstv) per month.
-        * FREE: Come hang out while I'm live. Sometimes I'm playing, sometimes I'm updating these binds or covering SC news. YouTube simulcast coming soon.
-    ??? note "Store"
-        * Pick up something direct from [my store](https://store.subliminal.gg/l/supporters) — great if you don't have a Twitch or Amazon account.
-        * You can also tip at checkout. The button's small but it's there.
+!!! warning "Requires Joystick Gremlin R14"
+    These binds run on Joystick Gremlin R14 (14.2 or later). R13 is no longer supported — if you're still on R13, update before loading this profile.
 
 A tuned throttle + flight-stick keybind setup for Star Citizen built around the Virpil VMAX throttle and Aeromax-R grip. Same Enhanced philosophy as the rest of the pack — modifier layers, mode switching (SCM / Aux / Nav), tempo-driven tap-vs-hold binds, JG-owned inversion that survives SC's wipes and reinstalls.
 
-These binds use Joystick Gremlin to layer modifiers, mode switching, response curves, and macros on top of SC's bind system. Ship combat, mining, salvage, on-foot, EVA, ground vehicles, and turrets all run off the same physical inputs — once you learn the chart, the same hand positions carry across every gameplay loop.
+These binds use Joystick Gremlin to layer modifiers, mode switching, response curves, and macros on top of SC's bind system. Ship combat, mining, salvage, ground vehicles, and turrets all run off the same physical inputs — once you learn the chart, the same hand positions carry across every gameplay loop.
 
 ???+ abstract "Change Log"
 
@@ -26,48 +16,21 @@ These binds use Joystick Gremlin to layer modifiers, mode switching, response cu
         * **Hold (≥ 0.5s)** — `v_light_amplification_toggle` via a 100ms macro tap on vJoy 1 button 23.
     * **vJoy slot for light amp moved from 2/btn 46 → 1/btn 23.** Previous slot was a leftover from when light-amp lived on the Aeromax (right side). With the throttle-side placement, keeping ping and light-amp both on vJoy 1 is cleaner. If you'd customized your own profile pointing at the old slot, repoint after import.
     * New `Fix MFD Binds [ENH][VMAX+AERO][4.8.0][PTU].bat` script ships in the folder. Works around SC's long-standing `vehicle_mfd` wipe bug. See [MFD bind fix](#mfd-bind-fix-workaround-for-sc-bug).
-    * **Axis inversion is now fully handled inside Joystick Gremlin.** The layout XML no longer ships SC-side `<options type="joystick">` invert overrides. SC's keybind-menu Invert toggles can be left at game defaults.
-    * Internal layout name updated to `ENH_VMAX_AERO_480_PTU`.
-    * **JG profile cleanups under the hood** (don't change behavior, just hygiene): removed two placeholder `<device>` entries left over from distribution prep, removed two ghost `<device>` entries left by JG R14's Swap Devices, fixed invalid vJoy axis indices on Aeromax axes 4–5 (R13 source recorded Virpil DirectInput axis IDs 37/38 verbatim, which R14 hard-rejects), and removed an orphan Aeromax Modifier Mode btn 6 → vJoy 2 btn 46 mapping that became dead-end cruft after the light-amp slot move. Aeromax Modifier Mode btn 6 is now unbound and free for future use.
+    * **Axis inversion is now fully handled inside Joystick Gremlin.** The layout XML no longer ships SC-side `<options type="joystick">` invert overrides — SC's keybind-menu Invert toggles can stay at game defaults. If you do want to flip an axis, you can do it in SC's keybind menu or in JG by flipping the response curve. JG is the one that sticks — patches, wipes, and fresh installs all reset SC's setting; the JG flip travels with the profile.
     * **Heads up — JG R14 macro editor visual bug.** Opening a macro action in JG R14's editor can show "X Axis" on `<vjoy>` rows where the XML correctly says Button. Visual only, ignore it. See [Known Issues](#jg-r14-macro-editor-x-axis-rendering-bug).
 
 ## Hardware required
 
 * **Virpil VMAX throttle** + **Virpil Aeromax-R grip** mounted on a Virpil base.
-* **vJoy** with at least 2 vJoy devices configured, each with 8 axes, 4 hats, 128 buttons. Standard install defaults.
-* **Joystick Gremlin R14** (14.2 or later). [Official repo](https://github.com/WhiteMagic/JoystickGremlin).
-* **Star Citizen 4.8.0 PTU** for now. Roll-forward for LIVE when 4.8 lands.
 
-If you don't have JG and vJoy already, install those first. Both are free, both need admin, and vJoy needs a system reboot before its devices show up in DirectInput. SC sees the vJoy devices as standard joysticks — your physical VMAX and Aeromax are invisible to SC; everything routes through JG.
-
-## Quick start
-
-1. Drop both layout XMLs into your SC install:
-
-    ```
-    …\StarCitizen\<channel>\user\client\0\controls\mappings\
-    ```
-
-    Files: `layout_ENH_VMAX_AERO_480_PTU_exported.xml` and `layout_SUB_Clear_Bindings_exported.xml`.
-
-2. Launch SC. Open **Customization → Control Profiles → Use this profile**, pick `ENH_VMAX_AERO_480_PTU`, confirm.
-
-3. Fully close SC and the RSI Launcher.
-
-4. Double-click `Fix MFD Binds [ENH][VMAX+AERO][4.8.0][PTU].bat` from the unzipped folder. Pick your channel at the prompt. This works around a long-standing SC bug — see [MFD bind fix](#mfd-bind-fix-workaround-for-sc-bug) below.
-
-5. Launch JG R14, load `Joystick Gremlin Profile [ENH][VMAX+AERO][4.8.0][PTU][R14].xml`. Run **Tools → Swap Devices** and remap each profile slot to your physical VMAX + Aeromax.
-
-6. Toggle JG to **Active** (top-right). Launch SC. Test in Arena Commander or in your hangar before flying anything important.
-
-If something looks wrong, jump to [Customizing](#customizing) below.
+If you don't have Joystick Gremlin and vJoy installed yet, walk through the [general setup guide](../general-setup/software-installation/vjoy-installation.md) first.
 
 ## What makes these binds different
 
 If you'd never opened Joystick Gremlin and bound your sticks directly through SC's keybind menu, you'd hit four walls fast:
 
 * **No modifier layer.** SC has no real concept of "this button does X normally and Y while holding modifier." You'd be stuck with one function per physical button.
-* **No tap-vs-hold differentiation.** SC's bind system fires actions on press. Want one button to ping radar on a quick tap and toggle light amplification on a 0.5-second hold? SC can't do that natively.
+* **No custom hold timing.** SC's bind system supports multi-tap, but hold behavior is baked into each action — if CIG shipped a "Long Press" variant you can bind that, otherwise you can't add one. JG sidesteps this by synthesizing the gesture: a 0.5-second hold on VMAX throttle btn 2 fires the light amplification toggle (a quick tap fires scan ping), even though SC has no "hold to toggle" option for that action.
 * **No clean macros for SC's toggle actions.** SC has actions like `v_light_amplification_toggle` that only fire on a complete press+release cycle. A sustained vJoy press doesn't trigger them. JG lets you synthesize a clean tap shape from any input gesture.
 * **Inversion is fragile.** Inversion lives in SC's keybind menu by default. It gets reset by reinstalls, patch wipes, fresh installs on a new machine. If you want it to survive any of those, it needs to live somewhere SC doesn't manage.
 
@@ -166,8 +129,6 @@ My main way to target in Star Citizen is via an eye tracker. Adds to immersion a
 
 ## Customizing
 
-* **Different physical hardware.** If you have other Virpil gear (different grip, different throttle) the profile's device GUIDs won't match. JG R14's **Tools → Swap Devices** is the path: pick the profile's slots, point them at your physical devices, save.
-
 * **Different inversion preferences.** Open the JG profile, find the axis you want to flip, edit the response-curve action — there's an Invert toggle on the curve itself. Save. Don't touch SC's keybind menu Invert toggles; they're meant to stay at defaults for this profile.
 
 * **Different modifier button.** The modifier button is a single physical input mapped as the modifier "shift" in JG. Find the input that drives Modifier mode, swap it for whichever physical button you'd rather use. JG's UI is safer for this than editing the XML directly.
@@ -197,21 +158,23 @@ Common joystick / Star Citizen issues and their fixes live in the [Peripheral FA
 
 ## Binding Charts
 
-### NO MORE ADOBE
+### Online chart viewer
 
-The charts are authored in the free alternative [Affinity](https://www.affinity.studio/get-affinity). Affinity is now FREE, which means anyone can open the `.af` files and edit them.
-
-### PDF files are back
-
-Searchable PDFs in Affinity — they're back.
+The [VMAX + AERO chart viewer](https://dev.subliminal.gg/bindings/virpil-vmax-aeromax-r/chart) on subliminal.gg lets you browse the chart in a browser — handy when you're learning the binds and don't want to keep flipping back to a PDF.
 
 ### Printer-friendly binding chart
 
 The chart labeled `[Print]` has a white background to conserve ink for people who'd like to print it.
 
-## Support
-
-Patch-day chaos is normal. Give it a couple of days after a major SC patch before assuming the binds are broken; usually it's CIG breaking something downstream and I'm already sorting it. Hit me up via the support channels above or in the SubliminalsTV Discord.
+!!! quote "Support this project"
+    These binds take a really long time to make and keep updated. Here are a few ways to make sure I can keep doing it, ordered roughly from most impactful to still awesome.
+    ??? example "Twitch"
+        * Sub on [Twitch](https://subs.twitch.tv/subliminalstv). Even if you don't watch live, this is the biggest single help while we work toward the first goal of 100 (currently 20/100).
+        * FREE: Got Amazon Prime? You get one [free Twitch Prime sub](https://subs.twitch.tv/subliminalstv) per month.
+        * FREE: Come hang out while I'm live. Sometimes I'm playing, sometimes I'm updating these binds or covering SC news. YouTube simulcast coming soon.
+    ??? note "Store"
+        * Pick up something direct from [my store](https://store.subliminal.gg/l/supporters) — great if you don't have a Twitch or Amazon account.
+        * You can also tip at checkout. The button's small but it's there.
 
 ## Open Source Notice
 

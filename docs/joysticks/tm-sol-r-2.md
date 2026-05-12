@@ -1,21 +1,11 @@
 # Enhanced — Dual Thrustmaster SOL-R 2
 
-!!! warning
-    THESE BINDINGS REQUIRE JOYSTICK GREMLIN.
-
-!!! quote "Support this project"
-    These binds take a really long time to make and keep updated. Here are a few ways to make sure I can keep doing it, ordered roughly from most impactful to still awesome.
-    ??? example "Twitch"
-        * Sub on [Twitch](https://subs.twitch.tv/subliminalstv). Even if you don't watch live, this is the biggest single help while we work toward the first goal of 100 (currently 20/100).
-        * FREE: Got Amazon Prime? You get one [free Twitch Prime sub](https://subs.twitch.tv/subliminalstv) per month.
-        * FREE: Come hang out while I'm live. Sometimes I'm playing, sometimes I'm updating these binds or covering SC news. YouTube simulcast coming soon.
-    ??? note "Store"
-        * Pick up something direct from [my store](https://store.subliminal.gg/l/supporters) — great if you don't have a Twitch or Amazon account.
-        * You can also tip at checkout. The button's small but it's there.
+!!! warning "Requires Joystick Gremlin R14"
+    These binds run on Joystick Gremlin R14 (14.2 or later). R13 is no longer supported — if you're still on R13, update before loading this profile.
 
 A tuned dual-stick keybind setup for Star Citizen built around the Thrustmaster SOL-R 2. Same philosophy as the rest of the Enhanced binds — modifier layers, mode switching (SCM / Aux / Nav), tempo-driven tap-vs-hold binds, JG-owned inversion that survives SC's wipes and reinstalls.
 
-These binds use Joystick Gremlin to layer modifiers, mode switching, response curves, and macros on top of SC's bind system. Ship combat, mining, salvage, on-foot, EVA, ground vehicles, and turrets all run off the same physical inputs — once you learn the chart, the same hand positions carry across every gameplay loop.
+These binds use Joystick Gremlin to layer modifiers, mode switching, response curves, and macros on top of SC's bind system. Ship combat, mining, salvage, ground vehicles, and turrets all run off the same physical inputs — once you learn the chart, the same hand positions carry across every gameplay loop.
 
 ???+ abstract "Change Log"
 
@@ -25,48 +15,22 @@ These binds use Joystick Gremlin to layer modifiers, mode switching, response cu
         * **Left rapid-fire trigger** — tap < 0.5s fires `v_invoke_ping` (unchanged); hold ≥ 0.5s fires light amp toggle.
         * **Left button 19** — tap < 0.5s fires the existing ship-lights / flashlight chain (unchanged); hold ≥ 0.5s fires the same toggle.
     * New `Fix MFD Binds [ENH][SOL-R 2][4.8.0][PTU].bat` script works around SC's long-standing `vehicle_mfd` wipe bug. See [MFD bind fix](#mfd-bind-fix-workaround-for-sc-bug).
-    * **Axis inversion is now fully handled inside Joystick Gremlin.** The layout XML no longer ships SC-side `<options type="joystick">` invert overrides. SC's keybind-menu Invert toggles can be left at game defaults.
-    * **Layout internal name realigned to `ENH_SOL-R2_480_PTU`** (previously `480_ENH_PTU_SOLR2`). End-user impact: in **Customization → Control Profiles**, the entry now displays as `ENH_SOL-R2_480_PTU` instead of the older slug. If you have an old `actionmaps.xml` referencing the previous slug, re-load the profile once.
-    * Audio Files cleanup: `Audio Files/Hall 9000/` → `Audio Files/Hal 9000/`, `Hall_9000_*.wav` → `Hal_9000_*.wav`, `Computer_Salgaving_Mode.wav` → `Computer_Salvaging_Mode.wav`, trailing/inner spaces stripped from `Hal_9000_Quote_*.wav`. If you had your own profile referencing those paths, repoint after import.
+    * **Axis inversion is now fully handled inside Joystick Gremlin.** The layout XML no longer ships SC-side `<options type="joystick">` invert overrides — SC's keybind-menu Invert toggles can stay at game defaults. If you do want to flip an axis, you can do it in SC's keybind menu or in JG by flipping the response curve. JG is the one that sticks — patches, wipes, and fresh installs all reset SC's setting; the JG flip travels with the profile.
+    * Various spelling errors across audio file paths fixed. If you had a custom profile referencing the old paths, repoint after import.
     * **Heads up — JG R14 macro editor visual bug.** Opening a macro action in JG R14's editor can show "X Axis" on `<vjoy>` rows where the XML correctly says Button. Visual only, ignore it. See [Known Issues](#jg-r14-macro-editor-x-axis-rendering-bug).
 
 ## Hardware required
 
 * **Thrustmaster SOL-R 2 dual stick setup.** Other Thrustmaster hardware won't load the profile cleanly without remapping in JG's Tools → Swap Devices. Doable, but not the supported configuration.
-* **vJoy** with at least 2 vJoy devices configured, each with 8 axes, 4 hats, 128 buttons. Standard install defaults.
-* **Joystick Gremlin R14** (14.2 or later). [Official repo](https://github.com/WhiteMagic/JoystickGremlin).
-* **Star Citizen 4.8.0 PTU** for now. Roll-forward for LIVE when 4.8 lands.
 
-If you don't have JG and vJoy already, install those first. Both are free, both need admin, and vJoy needs a system reboot before its devices show up in DirectInput. SC sees the vJoy devices as standard joysticks — your physical SOL-R 2s are invisible to SC; everything routes through JG.
-
-## Quick start
-
-1. Drop both layout XMLs into your SC install:
-
-    ```
-    …\StarCitizen\<channel>\user\client\0\controls\mappings\
-    ```
-
-    Files: `layout_ENH_SOL-R2_480_PTU_exported.xml` and `layout_SUB_Clear_Bindings_exported.xml`.
-
-2. Launch SC. Open **Customization → Control Profiles → Use this profile**, pick `ENH_SOL-R2_480_PTU`, confirm.
-
-3. Fully close SC and the RSI Launcher.
-
-4. Double-click `Fix MFD Binds [ENH][SOL-R 2][4.8.0][PTU].bat` from the unzipped folder. Pick your channel at the prompt. This works around a long-standing SC bug — see [MFD bind fix](#mfd-bind-fix-workaround-for-sc-bug) below.
-
-5. Launch JG R14, load `Joystick Gremlin Profile [ENH][SOL-R 2][4.8.0][PTU][R14].xml`. Run **Tools → Swap Devices** and remap each profile slot to your physical SOL-R 2s.
-
-6. Toggle JG to **Active** (top-right). Launch SC. Test in Arena Commander or in your hangar before flying anything important.
-
-If something looks wrong, jump to [Customizing](#customizing) below.
+If you don't have Joystick Gremlin and vJoy installed yet, walk through the [general setup guide](../general-setup/software-installation/vjoy-installation.md) first.
 
 ## What makes these binds different
 
 If you'd never opened Joystick Gremlin and bound your sticks directly through SC's keybind menu, you'd hit four walls fast:
 
 * **No modifier layer.** SC has no real concept of "this button does X normally and Y while holding modifier." You'd be stuck with one function per physical button.
-* **No tap-vs-hold differentiation.** SC's bind system fires actions on press. Want one button to ping radar on a quick tap and toggle light amplification on a 0.5-second hold? SC can't do that natively.
+* **No custom hold timing.** SC's bind system supports multi-tap, but hold behavior is baked into each action — if CIG shipped a "Long Press" variant you can bind that, otherwise you can't add one. JG sidesteps this by synthesizing the gesture: a 0.5-second hold on the left rapid trigger fires the light amplification toggle, even though SC has no "hold to toggle" option for that action.
 * **No clean macros for SC's toggle actions.** SC has actions like `v_light_amplification_toggle` that only fire on a complete press+release cycle. A sustained vJoy press doesn't trigger them. JG lets you synthesize a clean tap shape from any input gesture.
 * **Inversion is fragile.** Inversion lives in SC's keybind menu by default. It gets reset by reinstalls, patch wipes, fresh installs on a new machine. If you want it to survive any of those, it needs to live somewhere SC doesn't manage.
 
@@ -179,8 +143,6 @@ My main way to target in Star Citizen is via an eye tracker. Adds to immersion a
 
 ## Customizing
 
-* **Different physical sticks.** If you have other Thrustmaster hardware the profile's device GUIDs won't match. JG R14's **Tools → Swap Devices** is the path: pick the profile's slots, point them at your physical sticks, save.
-
 * **Different inversion preferences.** Open the JG profile, find the axis you want to flip, edit the response-curve action — there's an Invert toggle on the curve itself. Save. Don't touch SC's keybind menu Invert toggles; they're meant to stay at defaults for this profile.
 
 * **Different modifier button.** The modifier button is a single physical input mapped as the modifier "shift" in JG. Find the input that drives Modifier mode, swap it for whichever physical button you'd rather use. JG's UI is safer for this than editing the XML directly.
@@ -206,13 +168,9 @@ Common joystick / Star Citizen issues and their fixes live in the [Peripheral FA
 
 ## Binding Charts
 
-### NO MORE ADOBE
+### Online chart viewer
 
-The charts are authored in the free alternative [Affinity](https://www.affinity.studio/get-affinity). Affinity is now FREE, which means anyone can open the `.af` files and edit them.
-
-### PDF files are back
-
-Searchable PDFs in Affinity — they're back.
+The [SOL-R 2 chart viewer](https://dev.subliminal.gg/bindings/tm-sol-r-2-dual/chart) on subliminal.gg lets you browse the chart in a browser — handy when you're learning the binds and don't want to keep flipping back to a PDF.
 
 ### Printer-friendly binding chart
 
@@ -221,9 +179,15 @@ The chart labeled `[Print]` has a white background to conserve ink for people wh
 !!! tip
     If you have the paid version of Adobe Acrobat you can open the PNG inside it and select the **Poster** option in the print settings, then change the scale from 100% to 30%. The chart splits into two pages, one stick per page. For other programs, scaled to 30% the chart fits each stick on its own page.
 
-## Support
-
-Patch-day chaos is normal. Give it a couple of days after a major SC patch before assuming the binds are broken; usually it's CIG breaking something downstream and I'm already sorting it. Hit me up via the support channels above or in the SubliminalsTV Discord.
+!!! quote "Support this project"
+    These binds take a really long time to make and keep updated. Here are a few ways to make sure I can keep doing it, ordered roughly from most impactful to still awesome.
+    ??? example "Twitch"
+        * Sub on [Twitch](https://subs.twitch.tv/subliminalstv). Even if you don't watch live, this is the biggest single help while we work toward the first goal of 100 (currently 20/100).
+        * FREE: Got Amazon Prime? You get one [free Twitch Prime sub](https://subs.twitch.tv/subliminalstv) per month.
+        * FREE: Come hang out while I'm live. Sometimes I'm playing, sometimes I'm updating these binds or covering SC news. YouTube simulcast coming soon.
+    ??? note "Store"
+        * Pick up something direct from [my store](https://store.subliminal.gg/l/supporters) — great if you don't have a Twitch or Amazon account.
+        * You can also tip at checkout. The button's small but it's there.
 
 ## Open Source Notice
 
