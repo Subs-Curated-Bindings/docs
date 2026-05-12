@@ -4,7 +4,7 @@ This step imports the Star Citizen XML files and validates your profile in game.
 
 ## Files You Need
 
-- `layout_SUB_Clear_Bindings_exported.xml`
+- `layout_SUB_Clear_Bindings_480_exported.xml`
 - The joystick-specific `layout_*_exported.xml`
 
 ## Import Process
@@ -13,7 +13,7 @@ This step imports the Star Citizen XML files and validates your profile in game.
     `C:\Program Files\Roberts Space Industries\StarCitizen\LIVE\USER\Client\0\Controls\Mappings`
 2. Launch Star Citizen.
 3. Open **Options → Keybindings → Advanced Controls Customization**.
-4. Import `layout_SUB_Clear_Bindings_exported.xml` first. This should clear existing binds. It's still good practice to manually confirm everything is empty by expanding each binding category and removing any stragglers.
+4. Import `layout_SUB_Clear_Bindings_480_exported.xml` first. This should clear existing binds. It's still good practice to manually confirm everything is empty by expanding each binding category and removing any stragglers.
 5. Import your joystick-specific `layout_*_exported.xml` second.
 
 ## Activation Order (Important)

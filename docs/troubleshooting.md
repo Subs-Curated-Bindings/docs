@@ -6,7 +6,7 @@ If your binds are not working as expected, use this page before opening a suppor
 
 1. Re-check [Software Configuration](general-setup/software-configuration.md)
 2. Re-check [Star Citizen Setup](general-setup/star-citizen-setup.md)
-3. Confirm you imported `layout_SUB_Clear_Bindings_exported.xml` first, then your joystick-specific layout file
+3. Confirm you imported `layout_SUB_Clear_Bindings_480_exported.xml` first, then your joystick-specific layout file
 4. Confirm Joystick Gremlin profile is active before launching Star Citizen
 
 ## Discord FAQ Channels

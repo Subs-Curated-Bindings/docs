@@ -12,7 +12,7 @@ Use this page to choose the right source for your bind files.
 - Extract the ZIP file to a desired location /downloads or desktop.
 - `Joystick Gremlin Profile*.xml` Will be used to load the joystick mappings into JG.
 - `layout_*_exported.xml` for Star Citizen
-- `layout_SUB_Clear_Bindings_exported.xml` (used to reset star citizen binds before import)
+- `layout_SUB_Clear_Bindings_480_exported.xml` (used to reset star citizen binds before import)
 - `.af` is for modifying the binding chart if you make changes (uses the free Adobe Illustrator alternative Affinity App)
 - `.png` files are binding charts for your reference
 - PDF versions of binding charts are included for reference (and are searchable in most PDF readers)
