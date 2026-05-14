@@ -203,7 +203,7 @@ Common joystick / Star Citizen issues and their fixes live in the [Peripheral FA
 
 ### Online chart viewer
 
-The [MTQ + MHG chart viewer](https://dev.subliminal.gg/bindings/moza-ab6-mhg-mtq/chart) on subliminal.gg lets you browse the chart in a browser — handy when you're learning the binds and don't want to keep flipping back to a PDF.
+The [MTQ + MHG chart viewer](https://subliminal.gg/bindings/moza-ab6-mhg-mtq/chart) on subliminal.gg lets you browse the chart in a browser — handy when you're learning the binds and don't want to keep flipping back to a PDF.
 
 ### Printer-friendly binding chart
 

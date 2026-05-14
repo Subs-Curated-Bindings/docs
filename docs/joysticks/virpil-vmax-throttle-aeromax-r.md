@@ -163,7 +163,7 @@ Common joystick / Star Citizen issues and their fixes live in the [Peripheral FA
 
 ### Online chart viewer
 
-The [VMAX + AERO chart viewer](https://dev.subliminal.gg/bindings/virpil-vmax-aeromax-r/chart) on subliminal.gg lets you browse the chart in a browser — handy when you're learning the binds and don't want to keep flipping back to a PDF.
+The [VMAX + AERO chart viewer](https://subliminal.gg/bindings/virpil-vmax-aeromax-r/chart) on subliminal.gg lets you browse the chart in a browser — handy when you're learning the binds and don't want to keep flipping back to a PDF.
 
 ### Printer-friendly binding chart
 

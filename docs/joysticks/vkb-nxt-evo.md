@@ -199,7 +199,7 @@ Common joystick / Star Citizen issues and their fixes live in the [Peripheral FA
 
 ### Online chart viewer
 
-The [NXT chart viewer](https://dev.subliminal.gg/bindings/vkb-gladiator-dual/chart) on subliminal.gg lets you browse the chart in a browser — handy when you're learning the binds and don't want to keep flipping back to a PDF.
+The [NXT chart viewer](https://subliminal.gg/bindings/vkb-gladiator-dual/chart) on subliminal.gg lets you browse the chart in a browser — handy when you're learning the binds and don't want to keep flipping back to a PDF.
 
 ### Printer-friendly binding chart
 
