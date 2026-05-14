@@ -12,7 +12,7 @@ These binds use Joystick Gremlin to layer modifiers, mode switching, response cu
     **4.8.0 PTU — May 2026**
 
     * Light amplification toggle bound on two inputs: **right stick F1 + modifier** (instant), and **left stick rapid trigger held past 0.5s**. A quick tap of the rapid trigger still fires radar ping, unchanged from before.
-    * New `Fix MFD Binds [ENH][NXT][4.8.0][PTU].bat` script ships in the folder. Works around SC's long-standing `vehicle_mfd` wipe bug. See [MFD bind fix](#mfd-bind-fix-workaround-for-sc-bug).
+    * New `Bindings Toolkit [ENH][NXT][4.8.0][PTU].bat` script ships in the `Tools/` folder. Menu-driven utility — the first option works around SC's long-standing `vehicle_mfd` wipe bug; others handle axis-inversion reset, backup/restore, diagnostics, and old-backup pruning. See [MFD bind fix](#mfd-bind-fix-workaround-for-sc-bug).
     * **Axis inversion is now fully handled inside Joystick Gremlin.** The layout XML no longer ships SC-side `<options type="joystick">` invert overrides — SC's keybind-menu Invert toggles can stay at game defaults. If you do want to flip an axis, you can do it in SC's keybind menu or in JG by flipping the response curve. JG is the one that sticks — patches, wipes, and fresh installs all reset SC's setting; the JG flip travels with the profile.
     * Various spelling errors across filenames and audio paths fixed. If you had a custom profile referencing those old paths, repoint after import.
     * **Heads up — JG R14 macro editor visual bug.** Opening a macro action in JG R14's editor can show "X Axis" on `<vjoy>` rows where the XML correctly says Button. Visual only, ignore it. See [Known Issues](#jg-r14-macro-editor-x-axis-rendering-bug).
@@ -106,12 +106,15 @@ Two MFD bindings (`v_mfd_soft_select_cast_left/right_short`) require a double-ta
 
     The bug is silent — the keybind menu shows the actions normally, just unbound or missing. Most users find out when an MFD action stops working in-game.
 
-The shipped `Fix MFD Binds [ENH][NXT][4.8.0][PTU].bat` script puts them all back. Workflow:
+The shipped `Bindings Toolkit [ENH][NXT][4.8.0][PTU].bat` script (in the `Tools/` folder) puts them all back. Pick option 1 (Fix MFD binds) from the menu. Workflow:
 
 1. Load the NXT layout in-game (Customization → Control Profiles → Use this profile).
 2. Fully close Star Citizen and the RSI Launcher.
 3. Double-click the `.bat`. Pick your SC channel at the prompt (LIVE / PTU / EPTU / HOTFIX / TECH-PREVIEW).
 4. Launch SC. MFDs work.
+
+!!! tip "Star Citizen installed on a different drive?"
+    If your install isn't at the default `C:\Program Files\Roberts Space Industries\StarCitizen\` location, the script prompts you for the path to your install folder (the one that contains `LIVE` / `PTU` / `EPTU` subfolders) before the channel prompt. Paste the path and continue as normal.
 
 The script:
 

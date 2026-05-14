@@ -103,6 +103,9 @@ The shipped `Fix MFD Binds [ENH][GF][4.8.0][PTU].bat` script puts them all back.
 3. Double-click the `.bat`. Pick your SC channel at the prompt (LIVE / PTU / EPTU / HOTFIX / TECH-PREVIEW).
 4. Launch SC. MFDs work.
 
+!!! tip "Star Citizen installed on a different drive?"
+    If your install isn't at the default `C:\Program Files\Roberts Space Industries\StarCitizen\` location, the script prompts you for the path to your install folder (the one that contains `LIVE` / `PTU` / `EPTU` subfolders) before the channel prompt. Paste the path and continue as normal.
+
 The script:
 
 * Makes a timestamped backup of `actionmaps.xml` before any change.
