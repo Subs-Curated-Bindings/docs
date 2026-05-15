@@ -12,6 +12,11 @@ These binds use Joystick Gremlin to layer modifiers, mode switching, response cu
 
     Run **Tools → Swap Devices** in JG, point each profile slot at your physical sticks. **Save the profile** afterwards (Ctrl+S) — without the save, you'll be redoing this every time JG starts.
 
+!!! note "VKB Configurator: leave axis inversions at defaults"
+    These binds own axis inversion inside Joystick Gremlin so you don't have to fight SC's keybind menu (which gets wiped by patches, reinstalls, and character wipes) or VKB Configurator (which works but is fiddly). One toggle per axis in JG, one save, and it carries with the profile across Star Citizen patches and other games.
+
+    For that one-click model to hold up, your VKB Configurator (Devcfg) needs to be at defaults — no axis inversions set there. Same for SC's keybind-menu Invert toggles. Let JG be the only place inversion lives.
+
 ???+ abstract "Change Log"
 
     **4.8.0 PTU — May 2026**

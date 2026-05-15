@@ -39,3 +39,7 @@ This step imports the Star Citizen XML files and validates your profile in game.
     - If you prefer a different setup it only takes a few seconds to change it. You can change what axis are bound to what in **Advanced Controls Customization → Flight Movement → Pitch, Yaw, Roll, etc.**.
 
 If controls look doubled, incorrect, or missing, return to [Software Configuration](software-configuration.md) and re-check HIDHide plus vJoy visibility.
+
+## Next: read your stick's README
+
+You're set up. Head to the [joystick overview](../joysticks/index.md), open the page for your stick, and read it through. That's the canonical source for what each input does, the Swap Devices flow, your vendor software's required defaults, the MFD fix script, and anything specific to your hardware. The general setup walkthrough gets you working; the stick page is where you actually learn the binds.
