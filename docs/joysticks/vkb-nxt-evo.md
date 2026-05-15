@@ -3,6 +3,11 @@
 !!! warning "Requires Joystick Gremlin R14"
     These binds run on Joystick Gremlin R14 (14.2 or later). R13 is no longer supported — if you're still on R13, update before loading this profile.
 
+!!! note "First load: binds will look blank — that's intended"
+    When you first load this profile in JG R14, all the binds will look blank. That's intended, not broken. The profile ships against the device GUIDs of the sticks we exported on, so your hardware needs to be matched in.
+
+    Run **Tools → Swap Devices** in JG, point each profile slot at your physical sticks. **Save the profile** afterwards (Ctrl+S) — without the save, you'll be redoing this every time JG starts.
+
 A dual-stick keybind setup for Star Citizen built around the VKB Gladiator NXT EVO L+R. These binds are well thought out and designed with intuitiveness in mind — every input lives where it does on purpose, so the layout makes sense as you learn it.
 
 These binds use Joystick Gremlin to layer modifiers, mode switching, response curves, and macros on top of SC's bind system. The result: ship combat, mining, salvage, ground vehicles, and turrets all running off the same physical inputs — once you learn the chart, the same hand positions carry across every gameplay loop.
