@@ -1,5 +1,9 @@
 # Enhanced — Virpil VMAX Throttle + Aeromax-R
 
+A tuned throttle + flight-stick keybind setup for Star Citizen built around the Virpil VMAX throttle and Aeromax-R grip. Same Enhanced philosophy as the rest of the pack — modifier layers, mode switching (SCM / Aux / Nav), tempo-driven tap-vs-hold binds, JG-owned inversion that survives SC's wipes and reinstalls.
+
+These binds use Joystick Gremlin to layer modifiers, mode switching, response curves, and macros on top of SC's bind system. Ship combat, mining, salvage, ground vehicles, and turrets all run off the same physical inputs — once you learn the chart, the same hand positions carry across every gameplay loop.
+
 !!! warning "Requires Joystick Gremlin R14"
     These binds run on Joystick Gremlin R14 (14.2 or later). R13 is no longer supported — if you're still on R13, update before loading this profile.
 
@@ -7,10 +11,6 @@
     When you first load this profile in JG R14, all the binds will look blank. That's intended, not broken. The profile ships against the device GUIDs of the sticks we exported on, so your hardware needs to be matched in.
 
     Run **Tools → Swap Devices** in JG, point each profile slot at your physical sticks. **Save the profile** afterwards (Ctrl+S) — without the save, you'll be redoing this every time JG starts.
-
-A tuned throttle + flight-stick keybind setup for Star Citizen built around the Virpil VMAX throttle and Aeromax-R grip. Same Enhanced philosophy as the rest of the pack — modifier layers, mode switching (SCM / Aux / Nav), tempo-driven tap-vs-hold binds, JG-owned inversion that survives SC's wipes and reinstalls.
-
-These binds use Joystick Gremlin to layer modifiers, mode switching, response curves, and macros on top of SC's bind system. Ship combat, mining, salvage, ground vehicles, and turrets all run off the same physical inputs — once you learn the chart, the same hand positions carry across every gameplay loop.
 
 ???+ abstract "Change Log"
 
