@@ -41,7 +41,7 @@ If you'd never opened Joystick Gremlin and bound your sticks directly through SC
 
 This profile addresses all four. The next section walks through how.
 
-## The patterns explained
+## Included functions
 
 Most physical buttons just feed a single virtual button straight through to SC. Where things get more interesting is the categories below — these are the techniques that make this setup work the way it does.
 
@@ -143,15 +143,13 @@ Free-look is bound on the SOL-R 2 — see the binding chart for the exact locati
 
 ### Eye Tracker Targeting
 
-My main way to target in Star Citizen is via an eye tracker. Adds to immersion and is way easier than the native binds — look at the target, press a button, locked. Two eye trackers worth considering:
+My main way to target in Star Citizen is via an eye tracker. Adds to immersion and is way easier than the native binds — look at the target, press a button, locked. For SC, the Tobii Eye Tracker is the one to get:
 
 * **Tobii Eye Tracker** is the next-generation head + eye tracking option. Unlocks unique features that deepen immersion in Star Citizen, MSFS, DCS, and more. For 5% off, visit <https://tobii.subliminal.gg> and use code `subliminal` at checkout. *Purchases through that link support the curation of these binds.*
 
-* **Beam Eye Tracker** is a more budget-friendly alternative — software-only, runs off your existing webcam. Limitations around dark rooms and seeing through glasses, but if you've got a webcam and want to try eye tracking, it's a must-have IMO. Free trial on Steam, or buy direct. For more info: <https://beam.subliminal.gg>. *Direct purchases through that link support the curation of these binds; Steam purchases do not.*
-
 ## Customizing
 
-* **Different inversion preferences.** Open the JG profile, find the axis you want to flip, edit the response-curve action — there's an Invert toggle on the curve itself. Save. Don't touch SC's keybind menu Invert toggles; they're meant to stay at defaults for this profile.
+* **Different inversion preferences.** Open the JG profile and find the axis you want to flip. The Invert option lives on the response-curve action if the axis has one — otherwise it's on the map-to-vjoy action. Toggle it, save the profile. Don't touch SC's keybind menu Invert toggles; they're meant to stay at defaults for this profile.
 
 * **Different modifier button.** The modifier button is a single physical input mapped as the modifier "shift" in JG. Find the input that drives Modifier mode, swap it for whichever physical button you'd rather use. JG's UI is safer for this than editing the XML directly.
 
