@@ -14,13 +14,13 @@ These binds use Joystick Gremlin to layer modifiers, mode switching, response cu
 
 ???+ abstract "Change Log"
 
-    **4.8.0 PTU — May 2026**
+    **4.8.0 LIVE — May 2026**
 
     * **Light amplification toggle paired with scan ping** on VMAX throttle btn 2. Tempo + macro pattern (threshold 0.5s):
         * **Tap (< 0.5s)** — `v_invoke_ping` (scan ping, unchanged).
         * **Hold (≥ 0.5s)** — `v_light_amplification_toggle` via a 100ms macro tap on vJoy 1 button 23.
     * **vJoy slot for light amp moved from 2/btn 46 → 1/btn 23.** Previous slot was a leftover from when light-amp lived on the Aeromax (right side). With the throttle-side placement, keeping ping and light-amp both on vJoy 1 is cleaner. If you'd customized your own profile pointing at the old slot, repoint after import.
-    * New `Fix MFD Binds [ENH][VMAX+AERO][4.8.0][PTU].bat` script ships in the folder. Works around SC's long-standing `vehicle_mfd` wipe bug. See [MFD bind fix](#mfd-bind-fix-workaround-for-sc-bug).
+    * New `Fix MFD Binds [ENH][VMAX+AERO][4.8.0][LIVE].bat` script ships in the folder. Works around SC's long-standing `vehicle_mfd` wipe bug. See [MFD bind fix](#mfd-bind-fix-workaround-for-sc-bug).
     * **Axis inversion is now fully handled inside Joystick Gremlin.** The layout XML no longer ships SC-side `<options type="joystick">` invert overrides — SC's keybind-menu Invert toggles can stay at game defaults. If you do want to flip an axis, you can do it in SC's keybind menu or in JG by flipping the response curve. JG is the one that sticks — patches, wipes, and fresh installs all reset SC's setting; the JG flip travels with the profile.
     * **Heads up — JG R14 macro editor visual bug.** Opening a macro action in JG R14's editor can show "X Axis" on `<vjoy>` rows where the XML correctly says Button. Visual only, ignore it. See [Known Issues](#jg-r14-macro-editor-x-axis-rendering-bug).
 
@@ -92,7 +92,7 @@ The 4.8.0 release strips out the SC-side `<options type="joystick">` invert over
 !!! bug "SC `vehicle_mfd` wipe — worked around by the shipped fix script"
     Star Citizen has a long-standing bug where the `vehicle_mfd` actionmap gets stripped every time you load a control profile over an existing one. The bug is silent — the keybind menu shows the actions normally, just unbound or missing. Most users find out when an MFD action stops working in-game.
 
-The shipped `Fix MFD Binds [ENH][VMAX+AERO][4.8.0][PTU].bat` script puts them all back. Workflow:
+The shipped `Fix MFD Binds [ENH][VMAX+AERO][4.8.0][LIVE].bat` script puts them all back. Workflow:
 
 1. Load the VMAX+AERO layout in-game (Customization → Control Profiles → Use this profile).
 2. Fully close Star Citizen and the RSI Launcher.

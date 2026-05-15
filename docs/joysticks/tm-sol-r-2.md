@@ -14,12 +14,12 @@ These binds use Joystick Gremlin to layer modifiers, mode switching, response cu
 
 ???+ abstract "Change Log"
 
-    **4.8.0 PTU — May 2026**
+    **4.8.0 LIVE — May 2026**
 
     * **Light amplification toggle** bound on two left-stick inputs:
         * **Left rapid-fire trigger** — tap < 0.5s fires `v_invoke_ping` (unchanged); hold ≥ 0.5s fires light amp toggle.
         * **Left button 19** — tap < 0.5s fires the existing ship-lights / flashlight chain (unchanged); hold ≥ 0.5s fires the same toggle.
-    * New `Fix MFD Binds [ENH][SOL-R 2][4.8.0][PTU].bat` script works around SC's long-standing `vehicle_mfd` wipe bug. See [MFD bind fix](#mfd-bind-fix-workaround-for-sc-bug).
+    * New `Fix MFD Binds [ENH][SOL-R 2][4.8.0][LIVE].bat` script works around SC's long-standing `vehicle_mfd` wipe bug. See [MFD bind fix](#mfd-bind-fix-workaround-for-sc-bug).
     * **Axis inversion is now fully handled inside Joystick Gremlin.** The layout XML no longer ships SC-side `<options type="joystick">` invert overrides — SC's keybind-menu Invert toggles can stay at game defaults. If you do want to flip an axis, you can do it in SC's keybind menu or in JG by flipping the response curve. JG is the one that sticks — patches, wipes, and fresh installs all reset SC's setting; the JG flip travels with the profile.
     * Various spelling errors across audio file paths fixed. If you had a custom profile referencing the old paths, repoint after import.
     * **Heads up — JG R14 macro editor visual bug.** Opening a macro action in JG R14's editor can show "X Axis" on `<vjoy>` rows where the XML correctly says Button. Visual only, ignore it. See [Known Issues](#jg-r14-macro-editor-x-axis-rendering-bug).
@@ -101,7 +101,7 @@ The 4.8.0 release strips out the SC-side `<options type="joystick">` invert over
 
     The bug is silent — the keybind menu shows the actions normally, just unbound or missing. Most users find out when an MFD action stops working in-game.
 
-The shipped `Fix MFD Binds [ENH][SOL-R 2][4.8.0][PTU].bat` script puts them all back. Workflow:
+The shipped `Fix MFD Binds [ENH][SOL-R 2][4.8.0][LIVE].bat` script puts them all back. Workflow:
 
 1. Load the SOL-R 2 layout in-game (Customization → Control Profiles → Use this profile).
 2. Fully close Star Citizen and the RSI Launcher.
