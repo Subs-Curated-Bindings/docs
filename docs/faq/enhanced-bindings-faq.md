@@ -52,13 +52,14 @@ This is a bug with Star Citizen. Check out [Known Issues - MFD Binds](../known-i
 
 ## I loaded your profile but it's empty or there are no mappings
 
-After you load a profile, you need to `Swap Devices` in Joystick Gremlin. You should see your physical devices on the left, and what devices they are assigned to on the right. Contrary to its name, you aren't necessarily "swapping" devices; you are syncing them. Press the white box to the right of your first physical stick, then move an axis on that stick. Then **STOP** and double-check that the physical sticks didn't reorder themselves. If they did, redo the first device, and possibly the second.
+That's intended, not broken. The profile ships against the device GUIDs of the sticks I exported on, so your hardware needs to be matched in before binds appear.
+
+In Joystick Gremlin, open **Tools → Swap Devices**. You'll see your physical devices on the left, and what devices they're assigned to on the right. Contrary to its name, you aren't necessarily "swapping" devices; you are syncing them. Press the white box to the right of your first physical stick, then move an axis on that stick. Then **STOP** and double-check that the physical sticks didn't reorder themselves. If they did, redo the first device, and possibly the second.
+
+**Save the profile afterwards (Ctrl+S)** — without the save, every time JG starts you'll be back to a blank-looking profile and have to redo this.
 
 !!! example "Explanation"
     What you just did replaced my device IDs with your own and synced the vJoy devices to the correct sticks.
-
-!!! tip "Pro Tip"
-       Save the profile right after this so you don't have to repeat the action.
 
 ## I am getting a vJoy error
 
