@@ -192,7 +192,12 @@ Two hardware-level differences from the EVO base mean a non-EVO NXT user has som
 
 * **Encoder positions are different.** The non-EVO encoders sit in different spots than the EVO and don't match the binding chart. Either use them as-is or rebind them manually in JG — it's a simple process.
 
-* **Three axes report inverted relative to the EVO** — left stick X, left stick Y, and right stick Y. To flip them so flight feels the way the chart describes:
+* **Three axes report inverted relative to the EVO** — left stick X, left stick Y, and right stick Y. Two ways to flip them so flight feels the way the chart describes:
+
+    **Easy way (recommended for non-EVO users): use the Bindings Toolkit.** In the stick folder, open `Tools/Bindings Toolkit [ENH][NXT][4.8.0][LIVE].bat` and pick option **[7] Non-EVO axis flip**. It identifies the three affected axes after you confirm which physical stick is left vs right, backs up the profile, and flips all three response curves in one step. Close Joystick Gremlin first (the toolkit will refuse if JG is running).
+
+    **Manual way (if you'd rather do it in JG):**
+
     1. Open the JG profile and click the device tab for the stick that has the axis you need to flip (left stick first, then right stick).
     2. Click the axis in the input list on the left (**X Axis** or **Y Axis**). The right pane shows that axis's actions.
     3. Find the **Response Curve** action and click the **Invert Curve** button in its header (sitting next to the curve-type dropdown).
