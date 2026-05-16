@@ -11,7 +11,7 @@ A tuned throttle + flight-stick keybind setup for Star Citizen built around the 
 !!! note "First load: binds will look blank — that's intended"
     When you first load this profile in JG R14, all the binds will look blank. That's intended, not broken. The profile ships against the device GUIDs of the sticks we exported on, so your hardware needs to be matched in.
 
-    Run **Tools → Swap Devices** in JG, point each profile slot at your physical sticks. **Save the profile** afterwards (Ctrl+S) — without the save, you'll be redoing this every time JG starts.
+    Run **Tools → Swap Devices** in JG, point each profile slot at your physical sticks. **Save the profile** afterwards by clicking the Save icon in the toolbar — the page with a down arrow on it. Ctrl+S doesn't work in JG; the toolbar icon is the only save. Without the save, you'll be redoing this every time JG starts.
 
     JG also opens the profile to **Auxiliary Mode** by default (the "Configuring mode" dropdown in the upper right of the JG window), which is intentionally blank. Switch the dropdown to **SCM Mode** to see the main binds.
 
@@ -179,7 +179,7 @@ My main way to target in Star Citizen is via an eye tracker. Adds to immersion a
 
 ## Customizing
 
-* **Different inversion preferences.** Every axis on this profile ships with a flat **Response Curve** action, so flipping one is the same flow everywhere. Open the JG profile, click the device tab for the stick with the axis you want to flip, then click that axis in the input list on the left. The right pane shows the axis's actions — find the Response Curve and click the **Invert Curve** button in its header (sitting next to the curve-type dropdown). For the change to take effect, **deactivate the profile** by clicking the blue Activate icon in the toolbar (turns it off), then **reactivate it** (click it again), then **save the profile** with Ctrl+S. Don't touch SC's keybind menu Invert toggles; they're meant to stay at defaults for this profile.
+* **Different inversion preferences.** Every axis on this profile ships with a flat **Response Curve** action, so flipping one is the same flow everywhere. Open the JG profile, click the device tab for the stick with the axis you want to flip, then click that axis in the input list on the left. The right pane shows the axis's actions — find the Response Curve and click the **Invert Curve** button in its header (sitting next to the curve-type dropdown). For the change to take effect, **deactivate the profile** by clicking the blue Activate icon in the toolbar (turns it off), then **reactivate it** (click it again), then **save the profile** by clicking the Save icon in the toolbar (the page with a down arrow on it — Ctrl+S doesn't work in JG). Don't touch SC's keybind menu Invert toggles; they're meant to stay at defaults for this profile.
 
 * **Tweak the AB threshold or the V-plateau curve.** The afterburner-on-rocker triggers at +/-0.9 of axis travel. To change it, find the rocker's axis input in the JG profile, locate the `<virtual-button>` block on the button-behavior action-configuration, and edit `lower-limit` / `upper-limit`. To reshape the rocker's V-plateau shaping curve, edit the rocker's existing (shaped) response-curve action — both rotations have separate curve bodies, edit each independently.
 

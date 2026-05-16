@@ -56,7 +56,7 @@ That's intended, not broken. The profile ships against the device GUIDs of the s
 
 In Joystick Gremlin, open **Tools → Swap Devices**. You'll see your physical devices on the left, and what devices they're assigned to on the right. Contrary to its name, you aren't necessarily "swapping" devices; you are syncing them. Press the white box to the right of your first physical stick, then move an axis on that stick. Then **STOP** and double-check that the physical sticks didn't reorder themselves. If they did, redo the first device, and possibly the second.
 
-**Save the profile afterwards (Ctrl+S)** — without the save, every time JG starts you'll be back to a blank-looking profile and have to redo this.
+**Save the profile afterwards** by clicking the Save icon in the toolbar — the page with a down arrow on it. Ctrl+S won't do anything in JG; the toolbar icon is the only save. Without the save, every time JG starts you'll be back to a blank-looking profile and have to redo this.
 
 !!! example "Explanation"
     What you just did replaced my device IDs with your own and synced the vJoy devices to the correct sticks.
