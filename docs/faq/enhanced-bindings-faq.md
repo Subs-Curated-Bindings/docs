@@ -30,7 +30,7 @@ Installing the Enhanced binds is very simple but due to game bugs or slight user
 
 7. Put your setup-specific `layout_*_exported.xml` file (for example: `layout_ENH_450_NXT_exported.xml`) and `layout_SUB_Clear_Bindings_480_exported.xml` into `Roberts Space Industries\StarCitizen\LIVE\USER\Client\0\Controls\Mappings`
 
-8. Make sure the JG profile is on (🎮  icon should be green). This must be done every time JG starts, unless you enable auto-load/auto-start in settings.
+8. Make sure the JG profile is on (🎮  icon should be blue). This must be done every time JG starts, unless you enable auto-load/auto-start in settings.
 
 9. You must [properly clear bindings](general-joystick-star-citizen-faq.md#how-to-properly-clear-bindings){ data-preview }. There are many ways to do this, and the linked section explains the quickest reliable method.
 

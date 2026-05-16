@@ -57,7 +57,7 @@ This is where we blacklist all physical devices that might interfere with SC.
 2. Load the Joystick Gremlin profile from your stick's folder. The filename starts with `Joystick Gremlin Profile` and ends in `[R14].xml`. (The other `.xml` files in the folder — the `layout_*_exported.xml` ones — are for Star Citizen's keybind menu, not JG; don't pick them here.)
 3. Run **Tools → Swap Devices** to pair your physical hardware IDs with the profile's virtual slots. You'll see physical devices on the left and profile slots on the right. Press the white box next to your first physical stick, move an axis on that stick, then repeat for the second stick. **Save the profile** afterwards (Ctrl+S) — without the save you'll redo this every time JG starts.
 4. Verify each physical input resolves to the expected virtual output in JG's `Input Viewer`.
-5. Activate the profile (Green Controller Icon).
+5. Activate the profile by clicking the blue Activate icon in the toolbar.
 
 !!! note
     Run Joystick Gremlin with the same privilege level each launch to avoid inconsistent behavior.

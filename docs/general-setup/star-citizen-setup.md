@@ -28,7 +28,7 @@ This step imports the Star Citizen XML files and validates your profile in game.
 This is the order you'll follow **every session**, not just during first-time setup — Joystick Gremlin doesn't auto-start with Star Citizen, so you have to bring it up and activate your profile before the game launches.
 
 1. Start Joystick Gremlin
-2. Activate your Gremlin profile (click the green Activate icon)
+2. Activate your Gremlin profile (click the blue Activate icon)
 3. Launch Star Citizen
 
 !!! tip "Pro Tip"

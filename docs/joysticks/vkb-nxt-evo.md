@@ -174,7 +174,7 @@ My main way to target in Star Citizen is via an eye tracker. Adds to immersion a
 
 ## Customizing
 
-* **Different inversion preferences.** Every axis on this profile ships with a flat **Response Curve** action, so flipping one is the same flow everywhere. Open the JG profile, click the device tab for the stick with the axis you want to flip, then click that axis in the input list on the left. The right pane shows the axis's actions — find the Response Curve and click the **Invert Curve** button in its header (sitting next to the curve-type dropdown). For the change to take effect, **deactivate the profile** by clicking the green Activate icon in the toolbar (turns it off), then **reactivate it** (click it again), then **save the profile** with Ctrl+S. Don't touch SC's keybind menu Invert toggles; they're meant to stay at defaults for this profile.
+* **Different inversion preferences.** Every axis on this profile ships with a flat **Response Curve** action, so flipping one is the same flow everywhere. Open the JG profile, click the device tab for the stick with the axis you want to flip, then click that axis in the input list on the left. The right pane shows the axis's actions — find the Response Curve and click the **Invert Curve** button in its header (sitting next to the curve-type dropdown). For the change to take effect, **deactivate the profile** by clicking the blue Activate icon in the toolbar (turns it off), then **reactivate it** (click it again), then **save the profile** with Ctrl+S. Don't touch SC's keybind menu Invert toggles; they're meant to stay at defaults for this profile.
 
 * **Tweak tempo timing.** A "tempo" is a JG action that fires one thing on a quick tap and a different thing on a held press of the same physical input — a duration threshold (in seconds) is what decides which side runs. Several binds in this profile use tempos. To adjust one, find the tempo action in the JG library and update its duration value. Lower means a briefer hold counts as a hold; higher means you have to commit longer before the hold-side fires.
 
@@ -197,7 +197,7 @@ Two hardware-level differences from the EVO base mean a non-EVO NXT user has som
     2. Click the axis in the input list on the left (**X Axis** or **Y Axis**). The right pane shows that axis's actions.
     3. Find the **Response Curve** action and click the **Invert Curve** button in its header (sitting next to the curve-type dropdown).
     4. Repeat across all three affected axes — left stick X, left stick Y, right stick Y.
-    5. For the changes to take effect, **deactivate the profile** by clicking the green Activate icon in the toolbar (turns it off), then **reactivate it** (click it again), then **save the profile** with Ctrl+S.
+    5. For the changes to take effect, **deactivate the profile** by clicking the blue Activate icon in the toolbar (turns it off), then **reactivate it** (click it again), then **save the profile** with Ctrl+S.
 
 ### Some turret binds don't work properly
 
