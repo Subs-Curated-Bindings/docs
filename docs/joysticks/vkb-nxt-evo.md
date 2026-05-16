@@ -186,9 +186,18 @@ Project-wide — affects every stick in this pack, not just the NXTs. When you o
 
 If you see it: **ignore it.** Don't try to "fix" the dropdown unless you know what you're doing — saving from a misclick *might* commit the wrong type. Trust the in-game behavior. Reported upstream to WhiteMagic.
 
-### NXT "NON-EVO" base encoders are switched
+### NXT non-EVO: encoder positions + three inverted axes
 
-If you have the non-EVO version of the NXTs, the encoders are switched and don't match the binding chart. Either use them as-is or rebind them manually — it's a simple process.
+Two hardware-level differences from the EVO base mean a non-EVO NXT user has some extra setup to do before the profile feels right:
+
+* **Encoder positions are different.** The non-EVO encoders sit in different spots than the EVO and don't match the binding chart. Either use them as-is or rebind them manually in JG — it's a simple process.
+
+* **Three axes report inverted relative to the EVO** — left stick X, left stick Y, and right stick Y. To flip them so flight feels the way the chart describes:
+    1. Open the JG profile and click the device tab for the stick that has the axis you need to flip (left stick first, then right stick).
+    2. Click the axis in the input list on the left (**X Axis** or **Y Axis**). The right pane shows that axis's actions.
+    3. Find the **Response Curve** action and click the **Invert Curve** button in its header (sitting next to the curve-type dropdown).
+    4. Repeat across all three affected axes — left stick X, left stick Y, right stick Y.
+    5. For the changes to take effect, **deactivate the profile** by clicking the green Activate icon in the toolbar (turns it off), then **reactivate it** (click it again), then **save the profile** with Ctrl+S.
 
 ### Some turret binds don't work properly
 
