@@ -12,6 +12,8 @@ These binds use Joystick Gremlin to layer modifiers, mode switching, response cu
 
     Run **Tools → Swap Devices** in JG, point each profile slot at your physical sticks. **Save the profile** afterwards (Ctrl+S) — without the save, you'll be redoing this every time JG starts.
 
+    JG also opens the profile to **Auxiliary Mode** by default (the "Configuring mode" dropdown in the upper right of the JG window), which is intentionally blank. Switch the dropdown to **SCM Mode** to see the main binds.
+
 !!! note "VKB Configurator: leave axis inversions at defaults"
     These binds own axis inversion inside Joystick Gremlin so you don't have to fight SC's keybind menu (which gets wiped by patches, reinstalls, and character wipes) or VKB Configurator (which works but is fiddly). One toggle per axis in JG, one save, and it carries with the profile across Star Citizen patches and other games.
 
@@ -172,11 +174,9 @@ My main way to target in Star Citizen is via an eye tracker. Adds to immersion a
 
 ## Customizing
 
-* **Different inversion preferences.** Open the JG profile and find the axis you want to flip. The Invert option lives on the response-curve action if the axis has one — otherwise it's on the map-to-vjoy action. Toggle it, save the profile. Don't touch SC's keybind menu Invert toggles; they're meant to stay at defaults for this profile.
+* **Different inversion preferences.** Every axis on this profile ships with a flat **Response Curve** action, so flipping one is the same flow everywhere. Open the JG profile, click the device tab for the stick with the axis you want to flip, then click that axis in the input list on the left. The right pane shows the axis's actions — find the Response Curve and click the **Invert Curve** button in its header (sitting next to the curve-type dropdown). For the change to take effect, **deactivate the profile** by clicking the green Activate icon in the toolbar (turns it off), then **reactivate it** (click it again), then **save the profile** with Ctrl+S. Don't touch SC's keybind menu Invert toggles; they're meant to stay at defaults for this profile.
 
-* **Different modifier button.** The modifier button is a single physical input mapped as the modifier "shift" in JG. Find the input that drives Modifier mode, swap it for whichever physical button you'd rather use. JG's UI is safer for this than editing the XML directly.
-
-* **Tweak tempo timing.** The light-amp tempo's threshold is 500ms. To change it, find the tempo action in the JG library and update the `threshold` value. 250ms is more sensitive (briefer holds count); 750ms is more deliberate.
+* **Tweak tempo timing.** A "tempo" is a JG action that fires one thing on a quick tap and a different thing on a held press of the same physical input — a duration threshold (in seconds) is what decides which side runs. Several binds in this profile use tempos. To adjust one, find the tempo action in the JG library and update its duration value. Lower means a briefer hold counts as a hold; higher means you have to commit longer before the hold-side fires.
 
 ## Known Issues
 
