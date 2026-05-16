@@ -9,19 +9,46 @@ This step imports the Star Citizen XML files and validates your profile in game.
 
 ## Import Process
 
-1. Place both XML files in your Star Citizen controls import directory. Typical default path — **`LIVE` here is a wildcard**; replace it with whichever channel you're setting up (`LIVE`, `PTU`, `EPTU`, `TECH-PREVIEW`, etc.):
-    `C:\Program Files\Roberts Space Industries\StarCitizen\LIVE\USER\Client\0\Controls\Mappings`
+**Step 1. Drop the XML files where SC can see them.** Both files go in your Star Citizen controls mapping directory. Typical default path:
 
-    If you play on more than one channel (e.g. LIVE *and* PTU during a test cycle), repeat this step for each — files dropped into `LIVE\...\Mappings` are not visible to `PTU` and vice versa.
-2. Launch Star Citizen.
-3. Open **Options → Keybindings → Advanced Controls Customization**.
-4. **Import `layout_SUB_Clear_Bindings_4xx_exported.xml` first.** This is not optional — these profiles assume a fully empty starting state, and any leftover bind from a previous setup will cause conflicts, doubled inputs, or actions that silently fight each other in flight.
-5. **Manually verify the wipe took.** Scroll to the **bottom** of the keybindings list, then work your way upward and click each category header to expand it. You can rip through every category in seconds this way. Once they're all open, scroll back through and visually scan for anything still bound — the clear file gets the vast majority, but SC occasionally leaves stragglers. Remove anything you find before continuing.
-6. Import your joystick-specific `layout_*_exported.xml` last.
-7. **Quick sanity check before you fly out.** Launch Arena Commander → Free Flight. Move your stick — pitch, roll, and yaw should respond. Push your throttle — forward thrust should register. Press a button you know is bound (e.g. landing gear). If anything's wrong here, fix it now rather than discovering it in the PU — head to [troubleshooting](../troubleshooting.md).
+```
+C:\Program Files\Roberts Space Industries\StarCitizen\LIVE\USER\Client\0\Controls\Mappings
+```
 
-!!! warning "Skipping the clear file will break things"
-    Don't try to import the joystick layout on top of your existing binds. Even one leftover bind on the same action can cause SC to either reject the import partially or run two conflicting actions on the same input. Always clear first, verify, then import the stick.
+**`LIVE` here is a wildcard** — replace it with whichever channel you're setting up (`LIVE`, `PTU`, `EPTU`, `TECH-PREVIEW`, etc.). If you play on more than one channel (e.g. LIVE *and* PTU during a test cycle), drop the files into each channel's `Mappings` folder — files don't carry between channels.
+
+**Step 2. Launch Star Citizen.**
+
+**Step 3.** Open **Options → Keybindings → Control Profiles**. You should see both of your newly-dropped layouts listed there alongside SC's default profiles.
+
+**Step 4. Load `SUB_Clear_Bindings_4xx` first.** Click it in the Control Profiles list. SC pops up a dialog asking which devices to apply the profile to — **check all four (Mouse, Keyboard, Joystick 1, Joystick 2)** and confirm.
+
+This file is empty by design — it wipes SC's binds so the joystick layout can land on a clean slate. Loading it first is not optional; any leftover bind from a previous setup will cause conflicts, doubled inputs, or actions that silently fight each other in flight.
+
+!!! warning "Loading the Clear file to Mouse + Keyboard overwrites your existing binds"
+    If you've customized your SC keyboard or mouse profile and want to keep those binds, **un-check Mouse and Keyboard in this dialog** — load to Joystick 1 + Joystick 2 only. See [Keep my keyboard / mouse binds](#keep-my-keyboard--mouse-binds) below for the trade-off (a couple of macros expect specific keyboard keys to remain bound to their SC defaults).
+
+**Step 5. Manually verify the wipe took.** Open **Options → Keybindings → Advanced Controls Customization** and scroll through the categories. Quickest way: scroll to the bottom, click each category header upward to expand them all, then scan back through. The clear file gets the vast majority, but SC occasionally leaves a stray entry — remove anything you find before continuing.
+
+**Step 6. Load the joystick layout the same way.** Back on **Control Profiles**, click your stick's layout file (e.g. `ENH_NXT_480_LIVE`, `ENH_SOL-R2_480_LIVE`, etc.). Same dialog as Step 4 — **load to all four (Mouse, Keyboard, Joystick 1, Joystick 2)** unless you're keeping your kb/mouse profiles, in which case load to Joystick 1 + 2 only.
+
+**Step 7. Quick sanity check before you fly out.** Launch Arena Commander → Free Flight. Move your stick — pitch, roll, and yaw should respond. Push your throttle — forward thrust should register. Press a button you know is bound (e.g. landing gear). If anything's wrong here, fix it now rather than discovering it in the PU — head to [troubleshooting](../troubleshooting.md).
+
+### Keep my keyboard / mouse binds
+
+If you skipped Mouse + Keyboard in the load dialogs at steps 4 and 6, your existing keyboard / mouse profile stays intact. **What you lose** by not loading to those slots:
+
+* **Four alternate keyboard binds** the shipped layout carries. These are convenience extras — the same actions are already bound to joystick buttons, so functionally nothing is missing:
+    * `kb_up` → Enter remote turret 1
+    * `kb_right` → Enter remote turret 2
+    * `kb_left` → Enter remote turret 3
+    * `kb_h` → Toggle helmet attach
+
+* **A couple of macros press keyboard keys** that need real SC actions bound for the macro to do anything. These keys aren't in the shipped layout — they assume SC's defaults are in place:
+    * **F4** (all sticks) — pressed by the *Recenter freelook* macro. SC's default keyboard bind for F4 is **Toggle Free Look** — keep that intact (or manually re-add it) or the macro's keyboard side does nothing.
+    * **Numpad ★** (SOL-R only) — pressed in chord with F4 for an SC action that doesn't allow a joystick bind. SC's default for Numpad ★ needs to stay in place too.
+
+If a macro stops doing what it says, the fastest check is **Options → Keybindings → Keyboard / Mouse → search "Free Look"** and confirm F4 is still bound. Re-bind manually if needed.
 
 ## Every-time-you-play startup order
 
