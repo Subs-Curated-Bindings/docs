@@ -128,26 +128,39 @@ Adding an audio clip to a button is simple:
 
 1. Select physical button 3 for example. This will open up a view of the actions.
 2. There is usually a TTS action added here by default. You should delete this or risk hearing both TTS and the audio file.
-3. Click the pencil icon and point it to where the audio file is located on your hard drive. *Make sure you dont have them saved to a location like your desktop or downloads folder that you may delete later.*
+3. Click the pencil icon and point it to where the audio file is located on your hard drive. *Make sure you don't have them saved to a location like your desktop or downloads folder that you may delete later.*
 4. Repeat for each stick in Auxiliary, Nav, and SCM modes.
 5. Turn the profile off and then back on.
 
 ??? tip "Save As, Pro Tip"
-    Its a good practivce to `Save As` whenever you make a change to my default config. That way if you break something you have it to fall back on. Also if you are doing lots of changes it is a good best practice to `Save As` occationally incase you break something after spending an evening getting it just right. Since you cant *undo* your cange if you corrupt a JG profile you will need to fix the syntax manually to fix it and thats a pain. Ask me how I know...
+    It's a good practice to `Save As` whenever you make a change to my default config. That way if you break something you have it to fall back on. Also if you're doing lots of changes it's a good best practice to `Save As` occasionally in case you break something after spending an evening getting it just right. Since you can't *undo* your change if you corrupt a JG profile, you'll need to fix the syntax manually — that's a pain. Ask me how I know...
 
 ## Can I add Rudder Pedals/Button Box to the Enhanced Binds?
 
-Absolutely. In fact you can do it so quickly with Joystick Gremlin you'll probably spend more time reading this than getting it ready. And if the game is open you dont even need to restart it.
+Absolutely — and if the game is already open, you don't need to restart it. One thing changed in JG R14 from older versions of Gremlin: it **no longer auto-picks the next available vJoy slot** when you add a Map to vJoy action. You have to choose a free vJoy axis (or button) explicitly. Here's the flow:
 
-Step 1: Plug in your rudder pedals. Joystick Gremlin should add a new tab for the physical device.
-Step 2: Open the tab for that device click the axis you want to bind. And then remap that axis to the first available axis. *Joystick Gremlin will automatically select the next available vjoy axis.*
-Step 3: If your profile was on turn it off and back on. If the profile was off then just turn it on.
-Step 4: Open Star Citizen and go to Advanced Controls, find the bind for roll/yaw (depending on what team your on :lol:) and rebind it to the Rudder Pedals.
+**Step 1. Plug in your rudder pedals (or button box).** Joystick Gremlin picks the device up and adds a tab for it along the top.
 
-If you are adding a button box the process is the same, you'll need to map it's physical buttons to available virtual ones and then add the keybinds ingame.
+**Step 2. Figure out which vJoy slot is free.** Easiest way:
+
+* Open **Tools → Input Viewer** in JG with the Enhanced profile **activated**.
+* In the device list on the left, tick the box for **vJoy Device 1** (and Device 2 if you want to see both). vJoy shows up alongside your physical devices.
+* Move every physical input you currently have bound — sticks, throttle, hats, etc.
+* Watch the vJoy axis indicators. Any axis that **never moves** while you exercise every existing binding is unused — that's a free slot you can grab. Same for vJoy buttons: any that don't light up are free.
+* The shipped profiles only output to **vJoy 1** and **vJoy 2**. They never use vJoy 3 or higher, so if you have those configured in vJoy Setup you can also just pick any axis on those without checking.
+
+If the Input Viewer feels fussy, the Windows control-panel shortcut **`joy.cpl`** (run from Start menu or Win+R) shows the same thing — pick `vJoy Device` from the dropdown and watch the axis bars while you wiggle everything you already have bound. Unmoved bars = unused.
+
+**Step 3. Map the rudder axis to the free vJoy slot you found.** Click the rudder's device tab in JG, click the axis (usually labeled `X Axis` or similar on the left), then add a **Map to vJoy** action. In the action's dropdowns, set vJoy Device + Input ID to the free slot you identified in Step 2.
+
+**Step 4. Cycle the profile.** Click the blue Activate icon to turn the profile off, then click it again to turn it back on. Then **save the profile** by clicking the Save icon in the toolbar (the page with a down arrow on it — Ctrl+S doesn't work in JG).
+
+**Step 5. Tell SC about the new axis.** Launch Star Citizen → **Options → Keybindings → Advanced Controls Customization → Flight Movement**. Find Roll or Yaw (whichever you're moving to the pedals — depends on which team you're on 😅), clear the existing joystick binding, then add a new one and move the rudder. SC captures the input. Save the keybind profile before exiting.
+
+For a button box, the flow is identical — just substitute "free vJoy button" for "free vJoy axis" in Step 2 (Input Viewer shows buttons in the same panel as axes) and "Map to vJoy" set to a button input ID in Step 3.
 
 ??? tip "Save As, Pro Tip"
-    Its a good practivce to `Save As` whenever you make a change to my default config. That way if you break something you have it to fall back on. Also if you are doing lots of changes it is a good best practice to `Save As` occationally incase you break something after spending an evening getting it just right. Since you cant *undo* your change if you corrupt a JG profile you will need to fix the syntax manually to fix it and thats a pain. Ask me how I know...
+    It's a good practice to `Save As` whenever you make a change to my default config. That way if you break something you have it to fall back on. Also if you're doing lots of changes it's a good best practice to `Save As` occasionally in case you break something after spending an evening getting it just right. Since you can't *undo* your change if you corrupt a JG profile, you'll need to fix the syntax manually — that's a pain. Ask me how I know...
 
 ## Video Guides
 
