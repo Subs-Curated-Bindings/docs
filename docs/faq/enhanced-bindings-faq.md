@@ -28,7 +28,7 @@ Installing the Enhanced binds is very simple but due to game bugs or slight user
     ??? tip "Pro Tip"
         That file houses the current binds SC has loaded, inversion settings, etc. Basically all the settings you can change inside SC for keybinds. 
 
-7. Put your setup-specific `layout_*_exported.xml` file (for example: `layout_ENH_450_NXT_exported.xml`) and `layout_SUB_Clear_Bindings_480_exported.xml` into `Roberts Space Industries\StarCitizen\LIVE\USER\Client\0\Controls\Mappings`
+7. Put your setup-specific `layout_*_exported.xml` file (for example: `layout_ENH_450_NXT_exported.xml`) and `layout_SUB_Clear_Bindings_4xx_exported.xml` into `Roberts Space Industries\StarCitizen\LIVE\USER\Client\0\Controls\Mappings`
 
 8. Make sure the JG profile is on (🎮  icon should be blue). This must be done every time JG starts, unless you enable auto-load/auto-start in settings.
 
