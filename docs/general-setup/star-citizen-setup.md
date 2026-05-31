@@ -64,22 +64,39 @@ This is the order you'll follow **every session**. By default Joystick Gremlin d
 
 ## Axis Mapping and Inversion Settings
 
-**Invert your axes in Joystick Gremlin — not in Star Citizen.** Every axis on the profile already has a flat (identity) response curve, so inverting is a single click, and once you **Save** the profile it *persists* — through game patches, reinstalls, and bind wipes. Inverting inside SC's own **Settings → Options** gets wiped whenever CIG resets controls, which is exactly why we keep all inversion in one place.
+**Invert your axes in Joystick Gremlin — not in Star Citizen.** Every axis on the profile already ships with a flat response curve, so flipping one is a single click, and once you **Save** the profile it *persists* — through patches, reinstalls, and bind wipes. Inversions set inside SC get wiped whenever CIG resets controls, which is exactly why we keep all inversion in one place.
 
-To flip an axis:
+First, though, start from a clean baseline — **Star Citizen axes at default and your stick at its vendor defaults.** If an old setup left inverts stacked in either spot, they'll fight Joystick Gremlin and you'll chase your tail.
+
+- **Reset Star Citizen to default** — untick any inverts under **Options → Inversion Settings**, or run the **Reset Axis Inversions** option in your stick's `Tools` Bindings Toolkit (it strips every invert flag out of `actionmaps.xml`, and backs the file up first). The tool is the faster, no-guessing route.
+- **Vendor software** — don't overthink this one. Axis inversion lives deep in VKBDevCfg / Virpil / MOZA / TARGET, and you don't stumble into it by accident. If you don't remember ever flipping an axis in there, you didn't — skip it. Only go look if an axis is *still* backwards after JG and SC are both squared away.
+
+### Flip an axis in Joystick Gremlin
 
 1. Open Joystick Gremlin and select your stick from the device tabs.
 2. Click the axis you want to invert.
 3. Click the **Invert Curve** button on that axis's response curve.
-4. **Save** the profile (toolbar Save icon — the page-with-a-down-arrow; Ctrl+S does nothing in R14.x).
+4. **Save** the profile (toolbar Save icon — the page-with-a-down-arrow; Ctrl+S does nothing in R14.x), then deactivate and reactivate so it takes effect.
 
-!!! tip "How many will I need to flip?"
-    If you've never inverted anything inside your stick's vendor software (VKBDevCfg, Virpil, MOZA tools, Thrustmaster TARGET, etc.), you should only need to flip one or two axes to match personal preference. Keep **all** inversion in Joystick Gremlin so there's a single source of truth — don't stack in-game or vendor-software inversion on top, or they'll fight each other.
+If you've never touched inversion in your vendor software, you'll usually only flip one or two axes to match personal preference. Keep **all** inversion in JG — don't stack in-game or vendor-software inversion on top, or they'll fight each other.
+
+!!! notice "Flip didn't take? Check the mode."
+    Look at the **Configuring mode** dropdown in the top-right of the JG editor. It doesn't default to the mode you actually fly in — it lands on the first mode alphabetically — so it's easy to edit an axis in a mode you never use and swear nothing changed. Set it to the mode you fly in (**SCM Mode** for most people).
 
 !!! tip "Save a clean personal copy"
-    Once everything's inverted and set the way you like, use **File → Save As** to save your tweaked profile under a new name. That keeps the original shipped profile pristine as a fallback, and you'll never accidentally overwrite it.
+    Once everything's set the way you like, use **File → Save As** to save your tweaked profile under a new name. That keeps the shipped profile pristine as a fallback so you never accidentally overwrite it.
 
-Axis *choices* (which physical axis drives yaw vs roll vs strafe) are subjective. This setup is optimized for dual-stick 6DOF spaceship control and may feel different if you come from traditional flight sims.
+### Inverting in Star Citizen (the backup)
+
+You *can* flip axes in-game instead — the steps are in the FAQ: [My Throttle/Roll/Any Axis is inverted?](../faq/general-joystick-star-citizen-faq.md#my-throttlerollany-axis-is-inverted). Just know the trade-off: **SC-side inversions don't persist.** A reinstall, a wipe, or sometimes just a patch wipes them out and you're redoing it. Use it as a quick fix, not the permanent home.
+
+The specific axes that need flipping depend on your stick and base revision — for example, the non-EVO Gladiator NXT base reports a few axes inverted that the EVO doesn't. Your stick's own page lists the inversions recommended for that setup.
+
+### Change axis to your preference
+
+Axis *choices* (which physical axis drives yaw vs roll vs strafe) are subjective. This setup is optimized for dual-stick 6DOF spaceship control and may feel different if you come from traditional flight sims. To remap, head to **Advanced Controls Customization → Flight Movement → Pitch, Yaw, Roll, etc.** — it only takes a few seconds.
+
+If controls look doubled, incorrect, or missing, return to [Software Configuration](software-configuration.md) and re-check HIDHide plus vJoy visibility.
 
 ## Next: read your stick's README
 
