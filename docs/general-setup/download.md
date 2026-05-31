@@ -11,7 +11,7 @@ Use this page to choose the right source for your bind files.
 
 - Extract the ZIP file to a desired location /downloads or desktop.
 - `Joystick Gremlin Profile*.xml` Will be used to load the joystick mappings into JG.
-- `layout_*_exported.xml` for Star Citizen
+- `layout_ENH_*_4xx_<channel>_exported.xml` — the joystick-specific layout for Star Citizen's keybind menu (`*` = your stick's code, `4xx` = SC patch, `<channel>` = `LIVE` / `PTU` / etc.)
 - `layout_SUB_Clear_Bindings_4xx_exported.xml` (used to reset star citizen binds before import; `4xx` matches the current SC patch — e.g. `480` for 4.8.0)
 - `.af` is for modifying the binding chart if you make changes (uses the free Adobe Illustrator alternative Affinity App)
 - `.png` files are binding charts for your reference

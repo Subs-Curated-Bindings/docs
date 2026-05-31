@@ -51,13 +51,16 @@ This is where we blacklist all physical devices that might interfere with SC.
     - Leaving gamepads/keypads/analog keyboards unhidden
     - Adding Star Citizen to the allow-list
 
+!!! important "Re-plug your sticks after enabling Device Hiding"
+    HIDHide only starts cloaking a device the **next time Windows enumerates it.** After the allow-list is done and **Enable Device Hiding** is ticked, **unplug your joysticks and plug them back in** (or reboot). Until you do, Star Citizen can still see the raw physical sticks — doubled inputs / wrong axes — even though HIDHide is configured correctly. This is a frequent "I did everything right but it's still broken" snag.
+
 ## Joystick Gremlin Configuration
 
-1. Open Joystick Gremlin (R14, 14.2 or later — R13 is no longer supported).
-2. Load the Joystick Gremlin profile from your stick's folder. The filename starts with `Joystick Gremlin Profile` and ends in `[R14].xml`. (The other `.xml` files in the folder — the `layout_*_exported.xml` ones — are for Star Citizen's keybind menu, not JG; don't pick them here.)
+1. Open Joystick Gremlin (R14.x — 14.3 or newer; R13 is no longer supported).
+2. Load the Joystick Gremlin profile from your stick's folder. The filename starts with `Joystick Gremlin Profile` and ends in `[R14].xml`. (The other `.xml` files in the folder — the `layout_ENH_*_exported.xml` ones — are for Star Citizen's keybind menu, not JG; don't pick them here.)
 3. Run **Tools → Swap Devices** to pair your physical hardware IDs with the profile's virtual slots. You'll see physical devices on the left and profile slots on the right. Press the white box next to your first physical stick, move an axis on that stick, then repeat for the second stick. **Save the profile** afterwards by clicking the Save icon in the toolbar — the page with a down arrow on it. Ctrl+S doesn't work in JG; the toolbar icon is the only save. Without the save you'll redo this every time JG starts.
 4. Verify each physical input resolves to the expected virtual output in JG's `Input Viewer`.
-5. Activate the profile by clicking the blue Activate icon in the toolbar.
+5. Activate the profile by clicking the **joystick icon** in the toolbar ( <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" style="vertical-align:text-bottom"><path d="M10 2a2 2 0 0 1-1.5 1.937v5.087c.863.083 1.5.377 1.5.726 0 .414-.895.75-2 .75s-2-.336-2-.75c0-.35.637-.643 1.5-.726V3.937A2 2 0 1 1 10 2"/><path d="M0 9.665v1.717a1 1 0 0 0 .553.894l6.553 3.277a2 2 0 0 0 1.788 0l6.553-3.277a1 1 0 0 0 .553-.894V9.665c0-.1-.06-.19-.152-.23L9.5 6.715v.993l5.227 2.178a.125.125 0 0 1 .001.23l-5.94 2.546a2 2 0 0 1-1.576 0l-5.94-2.546a.125.125 0 0 1 .001-.23L6.5 7.708l-.013-.988L.152 9.435a.25.25 0 0 0-.152.23"/></svg> ). It turns **blue** when the profile is live. If your axes don't move in the Input Viewer, it's off.
 
 !!! note
     Run Joystick Gremlin with the same privilege level each launch to avoid inconsistent behavior.

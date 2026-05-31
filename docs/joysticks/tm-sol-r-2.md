@@ -161,6 +161,13 @@ My main way to target in Star Citizen is via an eye tracker. Adds to immersion a
 
 * **Tweak tempo timing.** A "tempo" is a JG action that fires one thing on a quick tap and a different thing on a held press of the same physical input — a duration threshold (in seconds) is what decides which side runs. Several binds in this profile use tempos. To adjust one, find the tempo action in the JG library and update its duration value. Lower means a briefer hold counts as a hold; higher means you have to commit longer before the hold-side fires.
 
+## Keyboard Binds Used
+
+A few binds in this layout depend on certain **keyboard** keys staying bound to their Star Citizen defaults — mostly macros that press a key SC won't let you bind to a joystick. If you loaded the Clear Bindings profile to your Keyboard slot (or run your own keyboard profile), you may need to re-add these.
+
+!!! note "TBD"
+    The exact list of keyboard binds this layout relies on is still being compiled. If a macro isn't firing, check **Options → Keybindings → Keyboard / Mouse**, search for the action, and confirm its SC default is still bound.
+
 ## Known Issues
 
 ### JG R14 macro-editor "X Axis" rendering bug
