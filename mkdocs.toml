@@ -1,7 +1,7 @@
 [project]
 site_name = "Subliminal's Curated Bindings"
 site_description = "Sub's curated bindings for Star Citizen"
-site_url = "https://documentation.subliminal.gg" # Update this to your actual domain
+site_url = "https://subliminalstv.github.io/Subs-Curated-Bindings/"
 repo_url = "https://github.com/SubliminalsTV/Subs-Curated-Bindings"
 site_author = "SubliminalsTV"
 use_directory_urls = true
@@ -116,6 +116,12 @@ alternate_style = true
 [project.markdown_extensions.pymdownx.tilde]
 [project.markdown_extensions.toc]
 permalink = true
+
+# Instant previews (hover-card link previews via { data-preview }).
+# targets.include = ["**"] enables previews for links to any page site-wide.
+# Requires site_url to be set correctly (previews resolve via sitemap.xml).
+[[project.markdown_extensions.zensical.extensions.preview.configurations]]
+targets.include = ["**"]
 
 [project.extra]
 homepage = "/"
