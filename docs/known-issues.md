@@ -2,18 +2,17 @@
 
 ## MFD Binds
 
-!!! bug
-    MFD Binds do not import properly into Star Citizen, this is a bug. 4.5 seems to have an issue with the `Stop Watch` binds not importing as well (but those binds are don't work in-game anymore lol). Any binds that dont load also have to be cleared manually to remove them. So you will need to add them manually, but then they should stick after that. You can find the binds in the advanced keybind settings under `Vehicles - Multi Function Displays (MFDs)`.
+!!! bug "SC `vehicle_mfd` wipe — worked around by the shipped fix script"
+    Star Citizen has a long-standing bug where the `vehicle_mfd` actionmap gets stripped every time you load a control profile over an existing one:
 
-    To find out what minds to add consult your joysticks binds read me.
+    * 7 MFD actions get reset to unbound (`<rebind input="js2_ "/>`).
+    * 2 actions (`v_mfd_soft_select_cast_left/right_short`) get **deleted** from `actionmaps.xml` outright.
 
-## The Joystick Gremlin profile turns itself off randomly
+    The bug is silent — the keybind menu shows the actions normally, just unbound or missing. Most users only find out when an MFD action stops working in-game.
 
-!!! warning
-	There is a known issue with JG where the profile can stop when a HID device disconnects or reconnects.
+Every Enhanced package ships a fix script in its `Tools/` folder (named `Fix MFD Binds [ENH]…` or, on newer sets, the `Bindings Toolkit [ENH]…` menu). Load your layout, fully close Star Citizen and the RSI Launcher, run the script and pick your SC channel, then relaunch — MFDs work. The script backs up `actionmaps.xml` first, refuses to run while SC is open, and is safe to run twice.
 
-- If you have any device that randomly disconnects/reconnects, or a flaky USB hub, that is likely the cause.
-- Joystick Gremlin R14 is expected to have a codebase that handles this better. The developer works on it in spare time, so there is no short-term ETA, but at least we know why it happens and how to reduce it.
+For the exact script name, step-by-step workflow, and a manual rebind fallback table, see the **MFD bind fix** section on your joystick's [README page](joysticks/index.md).
 
 ## Failed to Execute Script Joystick Gremlin
 
