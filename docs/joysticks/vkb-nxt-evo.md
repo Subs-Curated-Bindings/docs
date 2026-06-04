@@ -31,7 +31,6 @@ These binds use Joystick Gremlin to layer modifiers, mode switching, response cu
     * **Salvage cycle-modifier binds** (left / right / structural) re-slotted and no longer rely on SC's double-tap activation.
     * **Turret ESP toggle and gyro-mode** re-slotted to clear conflicts in the turret context.
     * **13 accidental double-binds** swept out of the profile.
-    * **EVA view pitch/yaw** lost its explicit mouse rebind — reverts to SC's default EVA mouse-look.
     * **Binding charts now render on the website chart viewer** on demand — the download no longer ships PDF/PNG/SVG chart files, so the zip is much smaller (~18 MB → ~2 MB). Use the viewer's PNG export for a printable copy.
     * Chart template refreshed (drop shadow moved to site styling, legend footer removed, "Joystick Gremlin required" badge added) and a **Setup Guide** shortcut added to the folder.
 
