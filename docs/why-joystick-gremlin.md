@@ -17,7 +17,7 @@ Joystick Gremlin is how I get that space back. It sits between your physical sti
 | **vJoy** | Creates the two clean *virtual* sticks the game binds against, so JG can remap freely. |
 | **HIDHide** | Hides your *physical* sticks from Star Citizen so the game only ever sees the virtual ones. No double-inputs, no `pp_resortdevices` roulette. |
 
-You configure vJoy and HIDHide once and basically never touch them again. JG is the only one you interact with day to day, and even that's a single profile toggle. There's an up-front time cost to getting it all set up, but the benefits far outweigh it — once it's done, it's done.
+You configure vJoy and HIDHide once and basically never touch them again. JG is the only one you interact with day to day, and even that's a single profile toggle. Setup is genuinely easy — follow the guide step by step and you're looking at 20–30 minutes, once, and then it's done.
 
 ## What you get that Star Citizen can't do alone
 
@@ -93,6 +93,6 @@ I don't make basic, vanilla-SC binds anymore, and I don't plan to. It's not gate
 
 Joystick Gremlin is what fixes that. Modes, modifiers, and tempo give every input a logical home, so the chart actually *teaches* you the stick instead of being a list of arbitrary placements to memorize. That's the whole reason these are the only binds I make now.
 
-The honest part: there's a real setup cost — vJoy, HIDHide, Joystick Gremlin, and the import dance. I don't have a video walkthrough for the R14 workflow yet, so for now your best path is the [General Setup](general-setup/download.md) guide. Follow it top to bottom, in order, and don't skip the configuration screenshots — that's where most snags come from. It's a one-time thing, and once it's done you've got a setup that carries across patches and games and basically maintains itself.
+And don't let the four-program list scare you off — the setup is easier than it looks. If you can read, you can do it. I don't have a video walkthrough for the R14 workflow yet, so for now your best path is the [General Setup](general-setup/download.md) guide. Follow it top to bottom, in order, and don't skip the configuration screenshots — that's where the handful of snags come from. It's about 20–30 minutes, one time, and then you've got a setup that carries across patches and games and basically maintains itself.
 
 Pick your hardware from the [Joysticks](joysticks/index.md) section, then start the [General Setup](general-setup/download.md) guide.
