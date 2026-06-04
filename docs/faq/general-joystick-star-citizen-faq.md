@@ -28,7 +28,7 @@ The binding profile XML files can be found at:
 
 ## How to hide devices from Star Citizen
 
-You can use HIDHide to hide devices from SC. I have a setup video guide for downloading and configuring HIDHide.
+You can use HIDHide to hide devices from SC. See [HIDHide Installation](../general-setup/software-installation/hidhide-installation.md){ data-preview } for the step-by-step setup and the video guide for downloading and configuring HIDHide.
 
 ## My sticks are out of order/swapped?/One stick does not work?
 
@@ -38,6 +38,9 @@ You can use HIDHide to hide devices from SC. I have a setup video guide for down
 ### Only two devices
 
 If it is only two, enter AC or the PU and press `~` to open the console. Then type `pp_resortdevices joystick 1 2`.
+
+!!! warning "Check your connected devices first"
+    Before you run this, make sure SC is actually only seeing your two vJoy devices — [check what peripherals are connected](#how-to-check-what-peripherals-are-connected){ data-preview }. If a stray controller, hub, or un-hidden stick is still visible, `pp_resortdevices joystick 1 2` may not take, or it'll re-break later when the device order shifts again. Hide or unplug the extras first, then resort.
 
 ### More than two devices
 
@@ -65,6 +68,9 @@ Some VKB Gladiator NXT EVOs have an inverted throttle. This is an easy in-game f
 
 If you have a different `Throttle - Forward/Backward` binding, invert that one instead.
 
+!!! tip "Using the Enhanced binds? Invert in Joystick Gremlin instead"
+    If you're running my Enhanced binds, don't invert in-game — flip the axis inside Joystick Gremlin. SC-side inversions get wiped by patches, reinstalls, and bind resets, but a JG flip lives on the profile and travels with it. Every axis already ships with a flat response curve, so it's a one-click toggle. The step-by-step is in [Axis Mapping and Inversion Settings](../general-setup/star-citizen-setup.md#axis-mapping-and-inversion-settings){ data-preview }.
+
 ## Basic Binds Notice
 
 I no longer recommend basic binds. Master Modes was the tipping point for how many buttons can realistically be bound on a joystick. You get tap and double tap, and sometimes hold if CIG gives it to us. Even at three actions per button across 29 buttons, options are finite. This also doesn't include conflicts (like double tap collisions). Recent patches added MFD and MFD Cast controls; MFDs alone add 54 binds and need at least 8 to function well. I simply can't find the room anymore.
@@ -80,10 +86,10 @@ But with current resources it's much easier: step-by-step videos, a snag checkli
 - No need to run `pp_resortdevices` all the time. There is a 50/50 chance you may need `pp_resortdevices joystick 1 2` when you first load my profile, then NEVER AGAIN.
 - A modifier button doubles your bindable button count. SC adds more binds every patch.
 - Create double tap, and short/long press actions when SC doesn't!
-- The right mini stick's two axes are remapped to mouse X/Y, so you can freelook while controlling the ship.
+- The right mini stick's two axes are remapped to mouse X/Y, so you can free look in third person while still being able to fly your ship.
 - If you have other peripherals like rudders, gamepads, button boxes, etc. They can be added to the two virtual devices. My profiles leave 4-6 axes open and hundreds of unbound buttons.
 - Map buttons to keyboard or mouse clicks
-- Create macros to automate tasks.
+- Create macros to automate tasks — handy when Star Citizen won't let you set up a bind the way you want, or when your hardware isn't laid out in a way that lets the bind work how you need it to.
 - Play audio file when you press a button or change modes
 - The new SCM and NAV modes allow tinkerers to have binds and response curves depending on what Master Mode you are in.
 - And more...
@@ -99,7 +105,7 @@ But with current resources it's much easier: step-by-step videos, a snag checkli
 
 - If you forget to start JG, you can start it while playing. No need to restart SC.
 - If you forget to turn the profile on, you can do so at any time without restarting the game.
-- There are settings to launch JG with Windows, launch minimized to tray, auto-load profile (can cause startup timing issues for some users), and enable profile when SC opens.
+- There are settings to launch JG with Windows, launch minimized to tray, auto-load profile, and enable profile when SC opens.
 
 This means once the software is configured you don't even have to look at it anymore.
 
@@ -116,7 +122,8 @@ This means once the software is configured you don't even have to look at it any
 
 #### "Joystick Gremlin is buggy and causes issues on my PC"
 
-- I only come across issues when I am "tinkering" and since I provide the profiles for you, you should not have issues.
+- On the new Joystick Gremlin R14 I have not run into any bugs that weren't extremely obvious how to fix.
+- There is no perceivable input lag.
 - If vJoy conflicts with other games, just turn off the JG profile so sticks don't send input. You can also hide vJoy devices with HIDHide.
 - I may occasionally release a profile with a bug after tinkering, but I fix those quickly and I don't plan to change profiles often unless CIG changes force updates or I discover a meaningful improvement.
 

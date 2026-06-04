@@ -40,16 +40,6 @@ Installing the Enhanced binds is very simple but due to game bugs or slight user
 
 12. Axis inverted? See the [Inverted Throggle](general-joystick-star-citizen-faq.md#my-throttlerollany-axis-is-inverted){ data-preview }
 
-## Known Issues
-
-### Failed to Execute Script Joystick Gremlin
-
-See [Known Issues - Failed to Execute Script Joystick Gremlin](../known-issues.md#failed-to-execute-script-joystick-gremlin) for details and workaround notes.
-
-### Loaded the SC bindings but the MFD binds are missing
-
-This is a bug with Star Citizen. Check out [Known Issues - MFD Binds](../known-issues.md#mfd-binds){ data-preview } for the workaround.
-
 ## I loaded your profile but it's empty or there are no mappings
 
 That's intended, not broken. The profile ships against the device GUIDs of the sticks I exported on, so your hardware needs to be matched in before binds appear.
@@ -91,26 +81,6 @@ If one of your sticks isn't working in SC, that usually means SC is seeing more 
 
 !!! tip
 	Turn off "Input Repeater".
-
-## Modifier or Operator Mode becomes a toggle instead of a temp hold
-
-This can happen for multiple reasons:
-
-1. First, try turning the profile off and back on.
-2. You might be using the 13.3 DEBUG version of JG.
-    - This version is designed to fix three specific issues. If you don't have those issues, this version is not intended for use. This is not a proper full release and should not be needed if R13.3 is not causing issues. From what I have seen, this version is not compatible with sharing from the main version. Please download the regular release.
-3. Check for an old profile getting auto-loaded.
-    - This bug was fixed in the 10.24.24 release. Your JG settings might be set to auto-load a profile either on launch or when SC starts. Make sure that file is a fresh profile from the download page. Your Joystick Gremlin may be loading an old file I or you already fixed. It's best to throw old profiles away.
-
-## Known Issues
-
-### Failed to Execute Script Joystick Gremlin
-
-See [Known Issues - Failed to Execute Script Joystick Gremlin](../known-issues.md#failed-to-execute-script-joystick-gremlin) for details and workaround notes.
-
-### Loaded the SC bindings but the MFD binds are missing
-
-This is a bug with Star Citizen. Check out [Known Issues - MFD Binds](../known-issues.md#mfd-binds){ data-preview } for the workaround.
 
 ## How to add TTS dialogue when I switch between Master Modes
 
