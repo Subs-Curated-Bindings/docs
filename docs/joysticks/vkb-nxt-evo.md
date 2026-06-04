@@ -21,10 +21,24 @@ These binds use Joystick Gremlin to layer modifiers, mode switching, response cu
 
 ???+ abstract "Change Log"
 
+    **4.8.1 LIVE — June 2026**
+
+    Star Citizen 4.8.1 added no new bindable actions, but plenty of refinement landed since the 4.8.0 release:
+
+    * **Left-stick EN1 encoder is now a context dial** — it drives increase/decrease for scan focus level, bombing HUD range, and tractor-beam distance depending on the active mode.
+    * **VTOL toggle is now bound** (`v_vtol_toggle`). It was meant to ship in 4.8.0 — a bug left it unbound. Now fixed.
+    * **Toggle Docking** added on the left stick (button 8), via a Right Alt+N macro.
+    * **Salvage cycle-modifier binds** (left / right / structural) re-slotted and no longer rely on SC's double-tap activation.
+    * **Turret ESP toggle and gyro-mode** re-slotted to clear conflicts in the turret context.
+    * **13 accidental double-binds** swept out of the profile.
+    * **EVA view pitch/yaw** lost its explicit mouse rebind — reverts to SC's default EVA mouse-look.
+    * **Binding charts now render on the website chart viewer** on demand — the download no longer ships PDF/PNG/SVG chart files, so the zip is much smaller (~18 MB → ~2 MB). Use the viewer's PNG export for a printable copy.
+    * Chart template refreshed (drop shadow moved to site styling, legend footer removed, "Joystick Gremlin required" badge added) and a **Setup Guide** shortcut added to the folder.
+
     **4.8.0 LIVE — May 2026**
 
     * Light amplification toggle bound on two inputs: **right stick F1 + modifier** (instant), and **left stick rapid trigger held past 0.5s**. A quick tap of the rapid trigger still fires radar ping, unchanged from before.
-    * New `Bindings Toolkit [ENH][NXT][4.8.0][LIVE].bat` script ships in the `Tools/` folder. Menu-driven utility — the first option works around SC's long-standing `vehicle_mfd` wipe bug; others handle axis-inversion reset, backup/restore, diagnostics, and old-backup pruning. See [MFD bind fix](#mfd-bind-fix-workaround-for-sc-bug).
+    * New `Bindings Toolkit [ENH][NXT][4.8.1][LIVE].bat` script ships in the `Tools/` folder. Menu-driven utility — the first option works around SC's long-standing `vehicle_mfd` wipe bug; others handle axis-inversion reset, backup/restore, diagnostics, and old-backup pruning. See [MFD bind fix](#mfd-bind-fix-workaround-for-sc-bug).
     * **Axis inversion is now fully handled inside Joystick Gremlin.** The layout XML no longer ships SC-side `<options type="joystick">` invert overrides — SC's keybind-menu Invert toggles can stay at game defaults. If you do want to flip an axis, you can do it in SC's keybind menu or in JG by flipping the response curve. JG is the one that sticks — patches, wipes, and fresh installs all reset SC's setting; the JG flip travels with the profile.
     * Various spelling errors across filenames and audio paths fixed. If you had a custom profile referencing those old paths, repoint after import.
     * **Heads up — JG R14 macro editor visual bug.** Opening a macro action in JG R14's editor can show "X Axis" on `<vjoy>` rows where the XML correctly says Button. Visual only, ignore it. See [Known Issues](#jg-r14-macro-editor-x-axis-rendering-bug).
@@ -118,7 +132,7 @@ Two MFD bindings (`v_mfd_soft_select_cast_left/right_short`) require a double-ta
 
     The bug is silent — the keybind menu shows the actions normally, just unbound or missing. Most users find out when an MFD action stops working in-game.
 
-The shipped `Bindings Toolkit [ENH][NXT][4.8.0][LIVE].bat` script (in the `Tools/` folder) puts them all back. Pick option 1 (Fix MFD binds) from the menu. Workflow:
+The shipped `Bindings Toolkit [ENH][NXT][4.8.1][LIVE].bat` script (in the `Tools/` folder) puts them all back. Pick option 1 (Fix MFD binds) from the menu. Workflow:
 
 1. Load the NXT layout in-game (Customization → Control Profiles → Use this profile).
 2. Fully close Star Citizen and the RSI Launcher.
@@ -207,7 +221,7 @@ Two hardware-level differences from the EVO base mean a non-EVO NXT user has som
 
 * **Three axes report inverted relative to the EVO** — left stick X, left stick Y, and right stick Y. Two ways to flip them so flight feels the way the chart describes:
 
-    **Easy way (recommended for non-EVO users): use the Bindings Toolkit.** In the stick folder, open `Tools/Bindings Toolkit [ENH][NXT][4.8.0][LIVE].bat` and pick option **[7] Non-EVO axis flip**. It identifies the three affected axes after you confirm which physical stick is left vs right, backs up the profile, and flips all three response curves in one step. Close Joystick Gremlin first (the toolkit will refuse if JG is running).
+    **Easy way (recommended for non-EVO users): use the Bindings Toolkit.** In the stick folder, open `Tools/Bindings Toolkit [ENH][NXT][4.8.1][LIVE].bat` and pick option **[7] Non-EVO axis flip**. It identifies the three affected axes after you confirm which physical stick is left vs right, backs up the profile, and flips all three response curves in one step. Close Joystick Gremlin first (the toolkit will refuse if JG is running).
 
     **Manual way (if you'd rather do it in JG):**
 
@@ -234,14 +248,10 @@ Common joystick / Star Citizen issues and their fixes live in the [Peripheral FA
 
 ### Online chart viewer
 
-The [NXT chart viewer](https://subliminal.gg/bindings/vkb-gladiator-dual/chart) on subliminal.gg lets you browse the chart in a browser — handy when you're learning the binds and don't want to keep flipping back to a PDF.
+The [NXT chart viewer](https://subliminal.gg/bindings/vkb-gladiator-dual/chart) renders the chart in your browser — dark/light toggle, search, and a **PNG export** if you want a local copy or something to print. It's handy when you're learning the binds.
 
-### Printer-friendly binding chart
-
-The chart labeled `[Print]` has a white background to conserve ink for people who'd like to print it.
-
-!!! tip
-    If you have the paid version of Adobe Acrobat you can open the PNG inside it and select the **Poster** option in the print settings, then change the scale from 100% to 30%. The chart splits into two pages, one stick per page. For other programs, scaled to 30% the chart fits each stick on its own page.
+!!! tip "Printing the chart"
+    Use the viewer's light mode and **PNG export**, then print at ~30% scale to fit each stick on its own page. (We no longer ship a separate `[Print]` chart file — charts render on the website on demand now.)
 
 !!! quote "Support this project"
     These binds take a really long time to make and keep updated. Here are a few ways to make sure I can keep doing it, ordered roughly from most impactful to still awesome.
