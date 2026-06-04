@@ -12,7 +12,7 @@
 
 Every Enhanced package ships a fix script in its `Tools/` folder (named `Fix MFD Binds [ENH]…` or, on newer sets, the `Bindings Toolkit [ENH]…` menu). Load your layout, fully close Star Citizen and the RSI Launcher, run the script and pick your SC channel, then relaunch — MFDs work. The script backs up `actionmaps.xml` first, refuses to run while SC is open, and is safe to run twice.
 
-For the exact script name, step-by-step workflow, and a manual rebind fallback table, see the **MFD bind fix** section on your joystick's [README page](joysticks/index.md).
+For the exact script name, step-by-step workflow, and a manual rebind fallback table, see the **MFD bind fix** section on your joystick's [README page](joysticks/index.md){ data-preview }.
 
 ## Failed to Execute Script Joystick Gremlin
 

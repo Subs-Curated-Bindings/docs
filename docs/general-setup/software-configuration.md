@@ -72,4 +72,4 @@ This is where we blacklist all physical devices that might interfere with SC.
 
 ## Next Step
 
-Only after those checks pass, Continue with [Star Citizen Setup](star-citizen-setup.md).
+Only after those checks pass, Continue with [Star Citizen Setup](star-citizen-setup.md){ data-preview }.

@@ -3,7 +3,7 @@
 HIDHide prevents games from seeing your physical controllers directly. This avoids double input when Star Citizen is supposed to read only vJoy output from Joystick Gremlin.
 
 !!! note
-    This page only covers installation. For exact allow-list, hidden device rules, and Star Citizen-specific safety settings, use [Software Configuration](../software-configuration.md).
+    This page only covers installation. For exact allow-list, hidden device rules, and Star Citizen-specific safety settings, use [Software Configuration](../software-configuration.md){ data-preview }.
 
 ## Install Steps
 
@@ -15,7 +15,7 @@ HIDHide prevents games from seeing your physical controllers directly. This avoi
 
 - Launch `HIDHide Configuration Client`
 - Confirm the application opens without driver/service errors
-- Keep default behavior until you reach [Software Configuration](../software-configuration.md)
+- Keep default behavior until you reach [Software Configuration](../software-configuration.md){ data-preview }
 
 ## Video Guide (Optional)
 

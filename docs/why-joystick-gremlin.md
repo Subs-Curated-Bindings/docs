@@ -7,7 +7,7 @@ Star Citizen's native binding system gives you a tap, a double-tap, and *sometim
 Joystick Gremlin is how I get that space back. It sits between your physical sticks and the game, and it does a handful of things SC's keybind menu simply can't do. This page walks through each one — what it does, and what you'd be giving up if you skipped it.
 
 !!! warning "These profiles need Joystick Gremlin R14"
-    The Enhanced profiles are built on the R14 profile format. The modes, tempo, and vJoy mappings below won't load correctly on older Joystick Gremlin builds. Grab the right version from the [Joystick Gremlin Installation](general-setup/software-installation/joystick-gremlin-installation.md) page.
+    The Enhanced profiles are built on the R14 profile format. The modes, tempo, and vJoy mappings below won't load correctly on older Joystick Gremlin builds. Grab the right version from the [Joystick Gremlin Installation](general-setup/software-installation/joystick-gremlin-installation.md){ data-preview } page.
 
 ## The short version
 
@@ -75,7 +75,7 @@ These two aren't optional extras — they're what makes the JG layer clean.
 
 It's also handy well beyond these binds. Think of HIDHide like a digital USB hub with power switches on each port — you can flip a device off, or just hide it, so a *different* game can't see it. Got a stick or button box that another title insists on grabbing and mis-binding? Hide it for that game and it disappears from that game's device list, no unplugging required.
 
-Neither has to stay running. Open the configs, set them to match the [Software Configuration](general-setup/software-configuration.md) screenshots, close them. Done.
+Neither has to stay running. Open the configs, set them to match the [Software Configuration](general-setup/software-configuration.md){ data-preview } screenshots, close them. Done.
 
 ## "But I don't want more software running"
 
@@ -85,7 +85,7 @@ Fair concern, quick answers:
 - **Forgot to launch it?** Start JG or flip the profile on mid-session — no SC restart needed.
 - **Set-and-forget:** There are settings to launch JG with Windows, start minimized to tray, and enable the profile when SC opens. Once it's configured, you stop thinking about it.
 
-More detail — and the rest of the common objections — lives in the [General FAQ](faq/general-joystick-star-citizen-faq.md#why-subliminal-uses-joystick-gremlin).
+More detail — and the rest of the common objections — lives in the [General FAQ](faq/general-joystick-star-citizen-faq.md#why-subliminal-uses-joystick-gremlin){ data-preview }.
 
 ## Bottom line
 
@@ -93,6 +93,6 @@ I don't make basic, vanilla-SC binds anymore, and I don't plan to. It's not gate
 
 Joystick Gremlin is what fixes that. Modes, modifiers, and tempo give every input a logical home, so the chart actually *teaches* you the stick instead of being a list of arbitrary placements to memorize. That's the whole reason these are the only binds I make now.
 
-And don't let the four-program list scare you off — the setup is easier than it looks. If you can read, you can do it. I don't have a video walkthrough for the R14 workflow yet, so for now your best path is the [General Setup](general-setup/download.md) guide. Follow it top to bottom, in order, and don't skip the configuration screenshots — that's where the handful of snags come from. It's about 20–30 minutes, one time, and then you've got a setup that carries across patches and games and basically maintains itself.
+And don't let the four-program list scare you off — the setup is easier than it looks. If you can read, you can do it. I don't have a video walkthrough for the R14 workflow yet, so for now your best path is the [General Setup](general-setup/download.md){ data-preview } guide. Follow it top to bottom, in order, and don't skip the configuration screenshots — that's where the handful of snags come from. It's about 20–30 minutes, one time, and then you've got a setup that carries across patches and games and basically maintains itself.
 
-Pick your hardware from the [Joysticks](joysticks/index.md) section, then start the [General Setup](general-setup/download.md) guide.
+Pick your hardware from the [Joysticks](joysticks/index.md){ data-preview } section, then start the [General Setup](general-setup/download.md){ data-preview } guide.

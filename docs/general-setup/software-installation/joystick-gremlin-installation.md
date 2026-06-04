@@ -3,12 +3,12 @@
 Joystick Gremlin maps your physical devices to virtual vJoy outputs for Star Citizen.
 
 !!! note
-    This page only covers installation. For profile loading, activation order, and exact configuration rules, use [Software Configuration](../software-configuration.md).
+    This page only covers installation. For profile loading, activation order, and exact configuration rules, use [Software Configuration](../software-configuration.md){ data-preview }.
 
 ## Prerequisites
 
-- [vJoy Installation](vjoy-installation.md)
-- [HIDHide Installation](hidhide-installation.md)
+- [vJoy Installation](vjoy-installation.md){ data-preview }
+- [HIDHide Installation](hidhide-installation.md){ data-preview }
 
 ## Install Steps
 
@@ -21,7 +21,7 @@ Joystick Gremlin maps your physical devices to virtual vJoy outputs for Star Cit
 
 - Launch Joystick Gremlin and confirm it opens successfully
 - Confirm no immediate startup errors
-- Continue to [Software Configuration](../software-configuration.md) before attempting final in-game validation
+- Continue to [Software Configuration](../software-configuration.md){ data-preview } before attempting final in-game validation
 
 ## Video Guide (Optional)
 

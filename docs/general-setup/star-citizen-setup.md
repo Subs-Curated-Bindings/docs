@@ -32,13 +32,13 @@ This file is empty by design — it wipes SC's binds so the joystick layout can 
 
 **Step 6. Load the joystick layout the same way.** Back on **Control Profiles**, click your stick's layout file (e.g. `ENH_NXT_480_LIVE`, `ENH_SOL-R2_480_LIVE`, etc.). Same dialog as Step 4 — **load to all four (Mouse, Keyboard, Joystick 1, Joystick 2)** unless you're keeping your kb/mouse profiles, in which case load to Joystick 1 + 2 only.
 
-**Step 7. Quick sanity check before you fly out.** Launch Arena Commander → Free Flight. Move your stick — pitch, roll, and yaw should respond. Push your throttle — forward thrust should register. Press a button you know is bound (e.g. landing gear). If anything's wrong here, fix it now rather than discovering it in the PU — head to [troubleshooting](../troubleshooting.md).
+**Step 7. Quick sanity check before you fly out.** Launch Arena Commander → Free Flight. Move your stick — pitch, roll, and yaw should respond. Push your throttle — forward thrust should register. Press a button you know is bound (e.g. landing gear). If anything's wrong here, fix it now rather than discovering it in the PU — head to [troubleshooting](../troubleshooting.md){ data-preview }.
 
 ### Keep my keyboard / mouse binds
 
 If you skipped Mouse + Keyboard in the load dialogs at steps 4 and 6, your existing keyboard / mouse profile stays intact. The trade-off: some layouts lean on a few keyboard keys staying bound to their Star Citizen defaults — mostly macros that press a key SC won't let you bind to a joystick. If you keep your own keyboard / mouse profile, you may need to re-add those keys by hand.
 
-**Which keys matter is specific to your stick.** Open your stick's page from the [joystick overview](../joysticks/index.md) and check its **Keyboard Binds Used** section for the list.
+**Which keys matter is specific to your stick.** Open your stick's page from the [joystick overview](../joysticks/index.md){ data-preview } and check its **Keyboard Binds Used** section for the list.
 
 If a macro stops doing what it says, the fastest check is **Options → Keybindings → Keyboard / Mouse**, search for the action, and confirm it's still bound to its default.
 
@@ -88,7 +88,7 @@ If you've never touched inversion in your vendor software, you'll usually only f
 
 ### Inverting in Star Citizen (the backup)
 
-You *can* flip axes in-game instead — the steps are in the FAQ: [My Throttle/Roll/Any Axis is inverted?](../faq/general-joystick-star-citizen-faq.md#my-throttlerollany-axis-is-inverted). Just know the trade-off: **SC-side inversions don't persist.** A reinstall, a wipe, or sometimes just a patch wipes them out and you're redoing it. Use it as a quick fix, not the permanent home.
+You *can* flip axes in-game instead — the steps are in the FAQ: [My Throttle/Roll/Any Axis is inverted?](../faq/general-joystick-star-citizen-faq.md#my-throttlerollany-axis-is-inverted){ data-preview }. Just know the trade-off: **SC-side inversions don't persist.** A reinstall, a wipe, or sometimes just a patch wipes them out and you're redoing it. Use it as a quick fix, not the permanent home.
 
 The specific axes that need flipping depend on your stick and base revision — for example, the non-EVO Gladiator NXT base reports a few axes inverted that the EVO doesn't. Your stick's own page lists the inversions recommended for that setup.
 
@@ -96,8 +96,8 @@ The specific axes that need flipping depend on your stick and base revision — 
 
 Axis *choices* (which physical axis drives yaw vs roll vs strafe) are subjective. This setup is optimized for dual-stick 6DOF spaceship control and may feel different if you come from traditional flight sims. To remap, head to **Advanced Controls Customization → Flight Movement → Pitch, Yaw, Roll, etc.** — it only takes a few seconds.
 
-If controls look doubled, incorrect, or missing, return to [Software Configuration](software-configuration.md) and re-check HIDHide plus vJoy visibility.
+If controls look doubled, incorrect, or missing, return to [Software Configuration](software-configuration.md){ data-preview } and re-check HIDHide plus vJoy visibility.
 
 ## Next: read your stick's README
 
-You're set up. Head to the [joystick overview](../joysticks/index.md), open the page for your stick, and read it through. That's the canonical source for what each input does, the Swap Devices flow, your vendor software's required defaults, the MFD fix script, and anything specific to your hardware. The general setup walkthrough gets you working; the stick page is where you actually learn the binds.
+You're set up. Head to the [joystick overview](../joysticks/index.md){ data-preview }, open the page for your stick, and read it through. That's the canonical source for what each input does, the Swap Devices flow, your vendor software's required defaults, the MFD fix script, and anything specific to your hardware. The general setup walkthrough gets you working; the stick page is where you actually learn the binds.

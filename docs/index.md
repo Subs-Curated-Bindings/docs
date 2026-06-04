@@ -6,7 +6,7 @@ This documentation helps you get into Star Citizen quickly with curated joystick
 
 !!! info "Choose your path"
 	- I just want to play (stable, tested): [subliminal.gg/bindings](https://subliminal.gg/bindings/)
-	- I want latest/experimental and to contribute: [Contributing](contributing.md)
+	- I want latest/experimental and to contribute: [Contributing](contributing.md){ data-preview }
 
 ## Before You Begin
 
@@ -17,10 +17,10 @@ This documentation helps you get into Star Citizen quickly with curated joystick
 
 ## Quick Start
 
-- [General Setup](general-setup/download.md) walks you through installation, configuration, and Star Citizen import.
+- [General Setup](general-setup/download.md){ data-preview } walks you through installation, configuration, and Star Citizen import.
 - Use the **Joysticks** section in the navigation for individual joystick README pages.
 - [Known Issues](known-issues.md#mfd-binds){ data-preview } covers active game/software/bind problems and workarounds.
-- [Enhanced Bindings FAQ](faq/enhanced-bindings-faq.md) and [General FAQ](faq/general-joystick-star-citizen-faq.md) cover setup and troubleshooting questions.
+- [Enhanced Bindings FAQ](faq/enhanced-bindings-faq.md){ data-preview } and [General FAQ](faq/general-joystick-star-citizen-faq.md){ data-preview } cover setup and troubleshooting questions.
 
 ## Just Need Your Stick README?
 
@@ -32,5 +32,5 @@ This documentation helps you get into Star Citizen quickly with curated joystick
 
 Community testing and PRs are welcome, especially during patch transition windows.
 
-- Start with [Contributing](contributing.md) for contribution expectations.
+- Start with [Contributing](contributing.md){ data-preview } for contribution expectations.
 - Open issues/PRs in GitHub for fixes, updates, and testing results.

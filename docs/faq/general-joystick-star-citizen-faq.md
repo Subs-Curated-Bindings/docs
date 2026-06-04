@@ -40,7 +40,7 @@ You can use HIDHide to hide devices from SC. See [HIDHide Installation](../gener
 If it is only two, enter AC or the PU and press `~` to open the console. Then type `pp_resortdevices joystick 1 2`.
 
 !!! warning "Check your connected devices first"
-    Before you run this, make sure SC is actually only seeing your two vJoy devices — [check what peripherals are connected](#how-to-check-what-peripherals-are-connected){ data-preview }. If a stray controller, hub, or un-hidden stick is still visible, `pp_resortdevices joystick 1 2` may not take, or it'll re-break later when the device order shifts again. Hide or unplug the extras first, then resort.
+    Before you run this, make sure SC is actually only seeing your two vJoy devices — [check what peripherals are connected](#how-to-check-what-peripherals-are-connected). If a stray controller, hub, or un-hidden stick is still visible, `pp_resortdevices joystick 1 2` may not take, or it'll re-break later when the device order shifts again. Hide or unplug the extras first, then resort.
 
 ### More than two devices
 

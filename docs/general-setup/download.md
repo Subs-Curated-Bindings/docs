@@ -22,4 +22,4 @@ Use this page to choose the right source for your bind files.
 
 ## Next Step
 
-Continue to [Software Installation](software-installation/vjoy-installation.md) to install vJoy, HIDHide, and Joystick Gremlin in the correct order.
+Continue to [Software Installation](software-installation/vjoy-installation.md){ data-preview } to install vJoy, HIDHide, and Joystick Gremlin in the correct order.

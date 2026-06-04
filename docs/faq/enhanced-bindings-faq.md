@@ -11,7 +11,7 @@ Installing the Enhanced binds is very simple but due to game bugs or slight user
 
 2. You may want to update your firmware, but that is usually optional. I’ll specify in your setup README if this is required.
 
-3. Make sure your HIDHide and vJoy settings look exactly like the images below (whitelisting JG, HIDHide, and VKBDev; hiding all but the virtual sticks; and having a second vJoy device with all the same params except button count). You can compare against [vJoy Configuration](../general-setup/software-configuration.md#vjoy-configuration) and [HIDHide Configuration](../general-setup/software-configuration.md#applications-allow-list).
+3. Make sure your HIDHide and vJoy settings look exactly like the images below (whitelisting JG, HIDHide, and VKBDev; hiding all but the virtual sticks; and having a second vJoy device with all the same params except button count). You can compare against [vJoy Configuration](../general-setup/software-configuration.md#vjoy-configuration){ data-preview } and [HIDHide Configuration](../general-setup/software-configuration.md#applications-allow-list){ data-preview }.
 
     !!! note "Image placeholders"
         - `IMG:VJOY_TAB_1`

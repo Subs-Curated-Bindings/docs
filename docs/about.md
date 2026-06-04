@@ -21,4 +21,4 @@ Star Citizen is a broken alpha, and joystick manufacturers make niche hardware t
 
 ## Want to Contribute?
 
-If you want to help test, report issues, or submit improvements, use the dedicated [Contributing](contributing.md) page.
+If you want to help test, report issues, or submit improvements, use the dedicated [Contributing](contributing.md){ data-preview } page.

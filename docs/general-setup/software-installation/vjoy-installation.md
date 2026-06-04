@@ -3,7 +3,7 @@
 vJoy creates virtual controllers that Joystick Gremlin outputs to. Star Citizen should read those virtual devices instead of your raw hardware.
 
 !!! note
-    This page only covers installation. For exact vJoy settings used with curated binds, use [Software Configuration](../software-configuration.md).
+    This page only covers installation. For exact vJoy settings used with curated binds, use [Software Configuration](../software-configuration.md){ data-preview }.
 
 ## Install Steps
 
@@ -22,7 +22,7 @@ vJoy creates virtual controllers that Joystick Gremlin outputs to. Star Citizen 
 
 - vJoy missing in `joy.cpl`: reinstall and reboot
 - Installer blocked by security software: allow or whitelist installer, then retry
-- vJoy appears but inputs are incorrect: continue to [Software Configuration](../software-configuration.md)
+- vJoy appears but inputs are incorrect: continue to [Software Configuration](../software-configuration.md){ data-preview }
 
 ## Video Guide (Optional)
 
