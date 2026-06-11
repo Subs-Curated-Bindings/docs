@@ -38,7 +38,7 @@ This list controls which programs are allowed to see physical devices.
     Do **not** add Star Citizen to this allow-list.
     Star Citizen must not see physical sticks directly when using curated vJoy-based binds.
 
-*Screenshot coming soon.*
+![HIDHide Applications tab — allow-list with joystick_gremlin.exe, the HidHide client/CLI, and manufacturer software](../assets/images/general-setup/hidhide-applications.png)
 
 ### Devices
 
@@ -57,6 +57,8 @@ This is where we blacklist all physical devices that might interfere with SC.
 
 !!! important "Re-plug your sticks after enabling Device Hiding"
     HIDHide only starts cloaking a device the **next time Windows enumerates it.** After the allow-list is done and **Enable Device Hiding** is ticked, **unplug your joysticks and plug them back in** (or reboot). Until you do, Star Citizen can still see the raw physical sticks — doubled inputs / wrong axes — even though HIDHide is configured correctly. This is a frequent "I did everything right but it's still broken" snag.
+
+![HIDHide Devices tab — physical sticks ticked (hidden), vJoy devices left unchecked, Enable device hiding on](../assets/images/general-setup/hidhide-devices.png)
 
 ## Joystick Gremlin Configuration
 
@@ -80,6 +82,9 @@ This is where we blacklist all physical devices that might interfere with SC.
 ## Quick Validation Before Launching Star Citizen
 
 1. `joy.cpl` (USB Game Controllers) shows the expected vJoy devices and no physical devices
+
+    ![Game Controllers (joy.cpl) — two vJoy Devices listed with status OK and no physical sticks](../assets/images/general-setup/joy-cpl.png){ width="380" }
+
 2. Open Joystick Gremlin `Input Viewer`, check `buttons` and `axis` for both vJoy devices, then move physical controls while the profile is active to verify output.
 
 ## Next Step
