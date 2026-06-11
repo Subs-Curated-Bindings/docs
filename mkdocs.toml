@@ -10,7 +10,6 @@ extra_css = ["stylesheets/extra.css"]
 nav = [
   { "Home" = "index.md" },
   { "About" = "about.md" },
-  { "Why Joystick Gremlin?" = "why-joystick-gremlin.md" },
   { "General Setup" = [
       { "Downloading Bindings" = "general-setup/download.md" },
       { "Software Installation" = [
@@ -40,7 +39,8 @@ nav = [
     { "General FAQ" = "faq/general-joystick-star-citizen-faq.md" }
     ] },
   { "Troubleshooting" = "troubleshooting.md" },
-    { "Contributing" = "contributing.md" },
+  { "Why Joystick Gremlin?" = "why-joystick-gremlin.md" },
+  { "Contributing" = "contributing.md" },
 ]
 
 [project.theme]
