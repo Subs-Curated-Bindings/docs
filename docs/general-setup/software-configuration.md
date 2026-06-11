@@ -62,16 +62,13 @@ This is where we blacklist all physical devices that might interfere with SC.
 
 1. Open Joystick Gremlin (R14.x — 14.3 or newer; R13 is no longer supported).
 2. Load the Joystick Gremlin profile from your stick's folder. The filename starts with `Joystick Gremlin Profile` and ends in `[R14].xml`. (The other `.xml` files in the folder — the `layout_ENH_*_exported.xml` ones — are for Star Citizen's keybind menu, not JG; don't pick them here.)
-3. Run **Tools → Swap Devices** to re-point the profile's bindings onto your physically connected hardware. The dialog has two dropdowns: **From profile device** (the device the profile was authored on) on top, and **To connected device** (the matching stick you have plugged in) below. Pick the pair, click **Swap Bindings**, and JG reports how many inputs it moved. Repeat once per stick — one swap for each physical device.
+3. Run **Tools → Swap Devices** to re-point the profile's bindings onto your physically connected hardware. For each swap: pick the **From profile device** (the device the profile was authored on), pick the matching **To connected device** (the stick you have plugged in), then click **Swap Bindings** — JG reports how many inputs it moved. Do this once per stick, as shown below.
 
-    === "Swap step 1"
-        ![Swap Devices dialog — selecting the profile device to swap from](../assets/images/general-setup/swap-devices-step-1.png)
+    === "First stick"
+        ![Swap Devices dialog — first stick: select the profile device, select the connected device, then click Swap Bindings](../assets/images/general-setup/swap-devices-1.png)
 
-    === "Swap step 2"
-        ![Swap Devices dialog — pairing the right stick to its connected device](../assets/images/general-setup/swap-devices-step-2.png)
-
-    === "Swap step 3"
-        ![Swap Devices dialog — pairing the left stick to its connected device](../assets/images/general-setup/swap-devices-step-3.png)
+    === "Second stick"
+        ![Swap Devices dialog — second stick: select the profile device, select the connected device, then click Swap Bindings](../assets/images/general-setup/swap-devices-2.png)
 
     **Save the profile** afterwards by clicking the Save icon in the toolbar — the page with a down arrow on it. Ctrl+S doesn't work in JG; the toolbar icon is the only save. Without the save you'll redo this every time JG starts.
 4. Verify each physical input resolves to the expected virtual output in JG's `Input Viewer`.
