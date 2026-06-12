@@ -63,7 +63,9 @@ This is where we blacklist all physical devices that might interfere with SC.
 ## Joystick Gremlin Configuration
 
 1. Open Joystick Gremlin (R14.x — 14.3 or newer; R13 is no longer supported).
-2. Load the Joystick Gremlin profile from your stick's folder. The filename starts with `Joystick Gremlin Profile` and ends in `[R14].xml`. (The other `.xml` files in the folder — the `layout_ENH_*_exported.xml` ones — are for Star Citizen's keybind menu, not JG; don't pick them here.)
+2. Load the Joystick Gremlin profile from your stick's folder. The filename starts with `Joystick Gremlin Profile` and ends in `[R14].xml`. (The other `.xml` files in the folder — the `layout_ENH_*_exported.xml` ones — are for Star Citizen's keybind menu, not JG; don't pick them here.) With the profile loaded, the main window should look like this — your physical stick(s), both vJoy devices, and Keyboard as device tabs:
+
+    ![Joystick Gremlin main window with a curated profile loaded — device tabs for the physical stick, vJoy Device 1 and 2, and Keyboard, with a Map to vJoy action shown](../assets/images/general-setup/joystick-gremlin.png)
 3. Run **Tools → Swap Devices** to re-point the profile's bindings onto your physically connected hardware. For each swap: pick the **From profile device** (the device the profile was authored on), pick the matching **To connected device** (the stick you have plugged in), then click **Swap Bindings** — JG reports how many inputs it moved. Do this once per stick, as shown below.
 
     === "First stick"
