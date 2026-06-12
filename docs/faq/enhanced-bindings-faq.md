@@ -13,11 +13,17 @@ Installing the Enhanced binds is very simple but due to game bugs or slight user
 
 3. Make sure your HIDHide and vJoy settings look exactly like the images below (whitelisting JG, HIDHide, and VKBDev; hiding all but the virtual sticks; and having a second vJoy device with all the same params except button count). You can compare against [vJoy Configuration](../general-setup/software-configuration.md#vjoy-configuration){ data-preview } and [HIDHide Configuration](../general-setup/software-configuration.md#applications-allow-list){ data-preview }.
 
-    !!! note "Image placeholders"
-        - `IMG:VJOY_TAB_1`
-        - `IMG:VJOY_TAB_2`
-        - `IMG:HIDHIDE_TAB_1`
-        - `IMG:HIDHIDE_TAB_2`
+    === "First vJoy Device"
+        ![vJoy Configuration — first device](../assets/images/general-setup/vjoy-device-1.png){ width="380" }
+
+    === "Second vJoy Device"
+        ![vJoy Configuration — second device](../assets/images/general-setup/vjoy-device-2.png){ width="380" }
+
+    === "HIDHide Applications"
+        ![HIDHide Applications tab — allow-list](../assets/images/general-setup/hidhide-applications.png)
+
+    === "HIDHide Devices"
+        ![HIDHide Devices tab — physical sticks hidden, vJoy visible](../assets/images/general-setup/hidhide-devices.png)
 
 4. Ensure you are loading the correct Joystick Gremlin profile for your setup. i.e. `Joystick Gremlin Profile [ENH][STICK_COMBO][X.Y.Z].xml` (for example: `Joystick Gremlin Profile [ENH][NXT][4.5.0].xml`).
 
@@ -105,9 +111,11 @@ Adding an audio clip to a button is simple:
 ??? tip "Save As, Pro Tip"
     It's a good practice to `Save As` whenever you make a change to my default config. That way if you break something you have it to fall back on. Also if you're doing lots of changes it's a good best practice to `Save As` occasionally in case you break something after spending an evening getting it just right. Since you can't *undo* your change if you corrupt a JG profile, you'll need to fix the syntax manually — that's a pain. Ask me how I know...
 
-## Can I add Rudder Pedals/Button Box to the Enhanced Binds?
+## Can I add Rudder Pedals, a Button Box, or an SEM to the Enhanced Binds?
 
-Absolutely — and if the game is already open, you don't need to restart it. One thing changed in JG R14 from older versions of Gremlin: it **no longer auto-picks the next available vJoy slot** when you add a Map to vJoy action. You have to choose a free vJoy axis (or button) explicitly. Here's the flow:
+Absolutely — pedals, button boxes, an SEM module on your stick, any extra HID device all follow the same flow, and if the game is already open you don't need to restart it. The core idea: the profile only uses part of what the two vJoy devices offer (16 axes, 255 buttons), so there's plenty of headroom — you map each new physical input to an **unused** vJoy slot, then bind that vJoy input in SC.
+
+One thing changed in JG R14 from older versions of Gremlin: it **no longer auto-picks the next available vJoy slot** when you add a Map to vJoy action. You have to choose a free vJoy axis (or button) explicitly. Here's the flow:
 
 **Step 1. Plug in your rudder pedals (or button box).** Joystick Gremlin picks the device up and adds a tab for it along the top.
 
@@ -127,7 +135,7 @@ If the Input Viewer feels fussy, the Windows control-panel shortcut **`joy.cpl`*
 
 **Step 5. Tell SC about the new axis.** Launch Star Citizen → **Options → Keybindings → Advanced Controls Customization → Flight Movement**. Find Roll or Yaw (whichever you're moving to the pedals — depends on which team you're on 😅), clear the existing joystick binding, then add a new one and move the rudder. SC captures the input. Save the keybind profile before exiting.
 
-For a button box, the flow is identical — just substitute "free vJoy button" for "free vJoy axis" in Step 2 (Input Viewer shows buttons in the same panel as axes) and "Map to vJoy" set to a button input ID in Step 3.
+For a button box or an SEM, the flow is identical — just substitute "free vJoy button" for "free vJoy axis" in Step 2 (Input Viewer shows buttons in the same panel as axes) and "Map to vJoy" set to a button input ID in Step 3. An SEM shows up as extra buttons/axes on the stick it's attached to rather than as its own device tab, but the mapping steps don't change. You can also *duplicate* an existing bind instead of adding a new one — point the new physical button at the same vJoy button an existing input already uses, and both will fire the same action.
 
 ??? tip "Save As, Pro Tip"
     It's a good practice to `Save As` whenever you make a change to my default config. That way if you break something you have it to fall back on. Also if you're doing lots of changes it's a good best practice to `Save As` occasionally in case you break something after spending an evening getting it just right. Since you can't *undo* your change if you corrupt a JG profile, you'll need to fix the syntax manually — that's a pain. Ask me how I know...

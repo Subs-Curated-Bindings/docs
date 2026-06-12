@@ -21,7 +21,7 @@ If your software is already installed, start here. This page provides the exact 
 !!! warning
     - You will almost certainly need to restart windows after making changes here.
 	- Two vJoy devices are needed for most joystick profiles due to the 8-axis-per-device limitation.
-	- Because Joystick Gremlin handles output mapping, you usually should not need to run `pp_resortdevices joystick 1 2` repeatedly.
+	- If your left/right sticks act swapped in game, fix the device order with the `pp_resortdevices` console command — see [Joystick order](star-citizen-setup.md#joystick-order-leftright-sticks-act-swapped){ data-preview }. It's a one-time fix; never edit the exported XML to work around it.
     - If Star Citizen detects more than two vJoy devices, users commonly run into sorting headaches. If you are adding rudder pedals on top of the config there should be enough axis between the two vjoys.
 
 ## HIDHide Configuration
@@ -48,6 +48,9 @@ This is where we blacklist all physical devices that might interfere with SC.
 - Hide non-joystick HID devices that may inject game input (for example: gamepads, Razer Tartarus, keyboards with optical/analog switches)
 - Do **not** hide vJoy devices
 - Enable Device Hiding only after the allow-list is complete
+
+!!! warning "Analog keyboards count as four game controllers"
+    Wooting and other analog keyboards enumerate as **4 joystick devices**, which pushes your vJoy devices down Star Citizen's joystick order (they show up as joystick 5 and 6 instead of 1 and 2). Hide the keyboard in this Devices tab — **it still types normally when hidden**; you only lose its analog-gamepad emulation, which Star Citizen doesn't support anyway.
 
 !!! warning
     Common breakpoints:
@@ -77,6 +80,9 @@ This is where we blacklist all physical devices that might interfere with SC.
     **Save the profile** afterwards by clicking the Save icon in the toolbar — the page with a down arrow on it. Ctrl+S doesn't work in JG; the toolbar icon is the only save. Without the save you'll redo this every time JG starts.
 4. Verify each physical input resolves to the expected virtual output in JG's `Input Viewer`.
 5. Activate the profile by clicking the **joystick icon** in the toolbar ( <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" style="vertical-align:text-bottom"><path d="M10 2a2 2 0 0 1-1.5 1.937v5.087c.863.083 1.5.377 1.5.726 0 .414-.895.75-2 .75s-2-.336-2-.75c0-.35.637-.643 1.5-.726V3.937A2 2 0 1 1 10 2"/><path d="M0 9.665v1.717a1 1 0 0 0 .553.894l6.553 3.277a2 2 0 0 0 1.788 0l6.553-3.277a1 1 0 0 0 .553-.894V9.665c0-.1-.06-.19-.152-.23L9.5 6.715v.993l5.227 2.178a.125.125 0 0 1 .001.23l-5.94 2.546a2 2 0 0 1-1.576 0l-5.94-2.546a.125.125 0 0 1 .001-.23L6.5 7.708l-.013-.988L.152 9.435a.25.25 0 0 0-.152.23"/></svg> ). It turns **blue** when the profile is live. If your axes don't move in the Input Viewer, it's off.
+
+!!! warning "Save after *every* profile edit — not just Swap Devices"
+    This applies to anything you change in JG: device swaps, axis inversions, remaps, added actions. Edits live only in memory until you click the toolbar **Save icon** (the page with a down arrow — Ctrl+S does nothing). Skip the save and your change silently reverts the next time JG restarts — a classic "it worked, then undid itself" support case.
 
 !!! note
     Run Joystick Gremlin with the same privilege level each launch to avoid inconsistent behavior.

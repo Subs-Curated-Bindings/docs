@@ -42,6 +42,21 @@ If you skipped Mouse + Keyboard in the load dialogs at steps 4 and 6, your exist
 
 If a macro stops doing what it says, the fastest check is **Options → Keybindings → Keyboard / Mouse**, search for the action, and confirm it's still bound to its default.
 
+## Joystick order — left/right sticks act swapped
+
+If your sticks pass the sanity check but the **wrong stick** is doing each job — throttle on the right, aiming on the left — Star Citizen has the two vJoy devices in the wrong order. The binds are fine; the device slots are flipped.
+
+Open the in-game console with `` ` `` (backtick) and run:
+
+```
+pp_resortdevices joystick 1 2
+```
+
+You only need to do this once — it persists until you reset your SC settings.
+
+!!! danger "Do not edit the exported XML to fix this"
+    Swapping `js1`/`js2` inside the `layout_*_exported.xml` looks like a fix, but it leaves your layout out of sync with the charts and every future update. Always fix device order in SC with the console command.
+
 ## Every-time-you-play startup order
 
 This is the order you'll follow **every session**. By default Joystick Gremlin doesn't start with Windows or with Star Citizen, so you bring it up and activate your profile yourself:

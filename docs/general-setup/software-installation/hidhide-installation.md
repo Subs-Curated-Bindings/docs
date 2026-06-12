@@ -11,6 +11,9 @@ HIDHide prevents games from seeing your physical controllers directly. This avoi
 2. Reboot Windows after install.
 3. Open `HIDHide Configuration Client` as Administrator.
 
+!!! warning "Already have HIDHide? Make sure it's current"
+    Old HIDHide versions can silently fail to cloak devices on current Windows builds — everything looks configured correctly, but `joy.cpl` keeps showing your physical sticks. If you installed HIDHide a while ago, grab the latest release before troubleshooting anything else.
+
 ## Verify Installation
 
 - Launch `HIDHide Configuration Client`

@@ -46,7 +46,7 @@ If it is only two, enter AC or the PU and press `~` to open the console. Then ty
 
 If you are using my enhanced binds you should only have two vJoy devices. 
 	- Error: If this is not intended check your [HIDHide Configuration](../general-setup/software-configuration.md#applications-allow-list){ data-preview }.
-	- Not Error: If you wish to add a third device to the setup you will need to map its buttons and axis inside Joystick Gremlin. Two vJoy devices has more than enough buttons and axis for 99% of setups. You *do not* need to add another vjoy. If you are adding rudder pedals to your setup check out the FAQ for [adding rudder pedals](enhanced-bindings-faq.md#can-i-add-rudder-pedalsbutton-box-to-the-enhanced-binds){ data-preview }
+	- Not Error: If you wish to add a third device to the setup you will need to map its buttons and axis inside Joystick Gremlin. Two vJoy devices has more than enough buttons and axis for 99% of setups. You *do not* need to add another vjoy. If you are adding rudder pedals to your setup check out the FAQ for [adding rudder pedals](enhanced-bindings-faq.md#can-i-add-rudder-pedals-a-button-box-or-an-sem-to-the-enhanced-binds){ data-preview }
 If your setup doesnt use Joystick Gremlin and you do use three peripherals check in game to see which devices are correct. If you have three devices, one stick may work while the other is unresponsive because it's int he wrong slot.
 Example flow:
 	- Let’s say the right stick is unresponsive but the left is fine.
