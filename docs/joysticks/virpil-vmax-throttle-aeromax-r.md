@@ -16,6 +16,16 @@ These binds use Joystick Gremlin to layer modifiers, mode switching, response cu
 
 ???+ abstract "Change Log"
 
+    **4.8.1 LIVE — June 2026**
+
+    * **New Bindings Toolkit replaces the single-purpose Fix MFD script.** `Bindings Toolkit [ENH][VMAX+AERO][4.8.1][LIVE]` is one menu that does the MFD-bind fix *plus* axis-invert reset, clear binds, restore-from-backup, a stack-health diagnostic, and old-backup pruning. The launcher self-elevates (accept the UAC prompt) and auto-finds its script, so a future patch rename won't break it. See [MFD bind fix](#mfd-bind-fix-workaround-for-sc-bug).
+    * **Eject is now Modifier + R-B1 (Aeromax thumb button) and must be held.** It moved off its old slot and became a game-side *hold* — a fumbled tap no longer punches you out of the seat.
+    * **Exit Seat and Exit Turret moved to Modifier + T-B3** (the throttle-base button), so "get out" is the same gesture whether you're seated or in a turret.
+    * **New Dock/Undock macro on throttle hat T-H2 (hold down).** Holds a Right Alt+N chord to fire SC's dock/undock toggle without taking a hand off the stick. Needs SC's docking key left at its default — see [Keyboard Binds Used](#keyboard-binds-used).
+    * **Flip trigger refined.** The Aeromax flip trigger now separates the flip from the pull, and releasing the flip drops you back to guns.
+    * **Binding chart is now generated on the website.** Rendered chart files (`.pdf` / `.png` / `.svg`) no longer ship in the zip — the [online chart viewer](#online-chart-viewer) always reflects the current binds. Chart labels were also re-derived from the physical controls in this pass.
+    * Rebadged to **SC Alpha 4.8.1**.
+
     **4.8.0 LIVE — May 2026**
 
     * **Light amplification toggle paired with scan ping** on VMAX throttle btn 2. Tempo + macro pattern (threshold 0.5s):
@@ -91,23 +101,23 @@ The 4.8.0 release strips out the SC-side `<options type="joystick">` invert over
 
 ## MFD bind fix (workaround for SC bug)
 
-!!! bug "SC `vehicle_mfd` wipe — worked around by the shipped fix script"
+!!! bug "SC `vehicle_mfd` wipe — worked around by the Bindings Toolkit"
     Star Citizen has a long-standing bug where the `vehicle_mfd` actionmap gets stripped every time you load a control profile over an existing one. The bug is silent — the keybind menu shows the actions normally, just unbound or missing. Most users find out when an MFD action stops working in-game.
 
-The shipped `Fix MFD Binds [ENH][VMAX+AERO][4.8.0][LIVE].bat` script puts them all back. Workflow:
+The shipped **Bindings Toolkit** (`Tools/Bindings Toolkit [ENH][VMAX+AERO][4.8.1][LIVE].bat`) puts them all back from its menu. Workflow:
 
 1. Load the VMAX+AERO layout in-game (Customization → Control Profiles → Use this profile).
 2. Fully close Star Citizen and the RSI Launcher.
-3. Double-click the `.bat`. Pick your SC channel at the prompt (LIVE / PTU / EPTU / HOTFIX / TECH-PREVIEW).
+3. Double-click the Toolkit `.bat`. It self-elevates — accept the UAC prompt — then shows a menu; pick **[1] Fix MFD binds** and choose your SC channel at the prompt (LIVE / PTU / EPTU / HOTFIX / TECH-PREVIEW).
 4. Launch SC. MFDs work.
 
 !!! tip "Star Citizen installed on a different drive?"
     If your install isn't at the default `C:\Program Files\Roberts Space Industries\StarCitizen\` location, the script prompts you for the path to your install folder (the one that contains `LIVE` / `PTU` / `EPTU` subfolders) before the channel prompt. Paste the path and continue as normal.
 
-The script:
+The MFD-fix step:
 
 * Makes a timestamped backup of `actionmaps.xml` before any change.
-* Refuses to run if SC or RSI Launcher is alive.
+* Refuses to run while SC or the RSI Launcher is alive (only the Diagnostic option is allowed with SC open).
 * Is **idempotent** — running it twice gives identical results, no double-bindings.
 * Self-heals if SC ever nukes the entire `vehicle_mfd` actionmap by rebuilding the block from scratch.
 
@@ -149,10 +159,15 @@ My main way to target in Star Citizen is via an eye tracker. Adds to immersion a
 
 ## Keyboard Binds Used
 
-A few binds in this layout depend on certain **keyboard** keys staying bound to their Star Citizen defaults — mostly macros that press a key SC won't let you bind to a joystick. If you loaded the Clear Bindings profile to your Keyboard slot (or run your own keyboard profile), you may need to re-add these.
+A few binds in this layout depend on certain **keyboard** keys staying bound to their Star Citizen defaults — these are macros that press a key SC won't let you bind to a joystick directly. If you loaded the Clear Bindings profile to your Keyboard slot (or run your own keyboard profile), re-add these so the macros fire:
 
-!!! note "TBD"
-    The exact list of keyboard binds this layout relies on is still being compiled. If a macro isn't firing, check **Options → Keybindings → Keyboard / Mouse**, search for the action, and confirm its SC default is still bound.
+| Bind (physical input) | Key chord the macro presses | Keep bound in SC to |
+| --- | --- | --- |
+| Dock/Undock — throttle hat **T-H2**, hold down | **Right Alt + N** | SC's dock/undock toggle |
+| Reset Freelook — throttle hat **T-H1**, hold press-in | **F4** (+ the freelook button) | SC's freelook / recenter default |
+
+!!! note "If a macro isn't firing"
+    Check **Options → Keybindings → Keyboard / Mouse**, search for the action above, and confirm its SC default is still bound. Also note keyboard macros only reach SC when **Joystick Gremlin is running as administrator** — SC runs elevated, and Windows blocks synthetic keystrokes from a non-elevated app to an elevated one. vJoy binds aren't affected, so if the joystick binds work but a keyboard-chord macro doesn't, JG elevation is the usual cause.
 
 ## Known Issues
 
