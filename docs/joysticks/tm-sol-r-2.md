@@ -185,6 +185,24 @@ Common joystick / Star Citizen issues and their fixes live in the [Peripheral FA
 !!! note
     If you have an issue not found in either FAQ, please read and follow the simple instructions in the pinned post in the [Enhanced Bindings Support Forum](https://discord.com/channels/303670222097874945/1006954369800998992) before posting.
 
+## Found a missing bind or a chart that doesn't match the game?
+
+These binds live in their own GitHub repository, so a report about *these binds* goes on the tracker — not in Discord. If a bind you'd expect is missing, or the chart says one thing and the game does another, open an issue.
+
+[**Open an issue for the Thrustmaster SOL-R 2 binds →**](https://github.com/Subs-Curated-Bindings/Thrustmaster-Dual-SOLR2/issues/new?title=Binds%2Fchart%3A%20%3Cshort%20summary%3E&body=%2A%2AStick%3A%2A%2A%20Thrustmaster%20SOL-R%202%0A%2A%2AStar%20Citizen%20patch%3A%2A%2A%20%3Ce.g.%204.8.1%20LIVE%3E%0A%0A%2A%2AWhat%20kind%20of%20report%20is%20this%3F%2A%2A%20%28keep%20one%29%0A-%20Missing%20bind%20%E2%80%94%20the%20action%20you%27re%20after%2C%20and%20where%20on%20the%20chart%20you%27d%20expect%20it%20to%20live%0A-%20Chart%20doesn%27t%20match%20in-game%20%E2%80%94%20what%20the%20chart%20shows%20vs.%20what%20the%20bind%20actually%20does%20%28or%20doesn%27t%20do%29%0A%0A%2A%2ADetails%3A%2A%2A%0A%0A%0A%3C%21--%20This%20tracker%20is%20for%20binding%20%26%20chart%20accuracy%20only.%20For%20install%2Fsetup%20help%2C%20follow%20the%20Setup%20Guide%3B%20if%20you%20get%20stuck%2C%20ask%20in%20Discord%3A%20https%3A%2F%2Fdiscord.subliminal.gg%20--%3E%0A)
+
+**This is the place for:**
+
+- **A bind you think is missing.** Tell me the action you want and where on the chart you'd expect it to sit. If it makes sense, I may add it in a future update.
+- **A chart that doesn't match in-game.** The chart shows one thing but the bind does another — or nothing.
+
+**Please *don't* open an issue for setup or usage problems:**
+
+- Installing or loading the profile, **Swap Devices**, blank binds, vJoy errors, axis inversion — work through the [Setup Guide](../general-setup/download.md). If you get snagged there, the fastest help is [Discord](https://discord.subliminal.gg).
+- "How do I use *X*?" — also [Discord](https://discord.subliminal.gg).
+
+The form opens pre-filled with a short template (stick, patch, what's missing or what's off) — fill it in and submit. See [Contributing](../contributing.md#reporting-a-binding-or-chart-issue) for the full breakdown.
+
 ## Binding Charts
 
 ### Online chart viewer
