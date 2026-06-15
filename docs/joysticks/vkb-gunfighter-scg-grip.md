@@ -170,8 +170,13 @@ My main way to target in Star Citizen is via an eye tracker. Adds to immersion a
 
 A few binds in this layout depend on certain **keyboard** keys staying bound to their Star Citizen defaults — mostly macros that press a key SC won't let you bind to a joystick. If you loaded the Clear Bindings profile to your Keyboard slot (or run your own keyboard profile), you may need to re-add these.
 
-!!! note "TBD"
-    The exact list of keyboard binds this layout relies on is still being compiled. If a macro isn't firing, check **Options → Keybindings → Keyboard / Mouse**, search for the action, and confirm its SC default is still bound.
+| Bind (physical input) | Key chord the macro presses | Keep bound in SC to |
+| --- | --- | --- |
+| Dock/Undock — left grip **L-A3**, hold down | **Right Alt + N** | *Docking (Initiate)* (Flight → Movement) |
+| Reset Freelook — left grip **L-A4**, hold press-in | **F4** (+ the freelook button) | *Cycle Camera View* (the F4 default) |
+
+!!! note "If a macro isn't firing"
+    Check **Options → Keybindings → Keyboard / Mouse**, search for the action above, and confirm its SC default is still bound. Also note keyboard macros only reach SC when **Joystick Gremlin is running as administrator** — SC runs elevated, and Windows blocks synthetic keystrokes from a non-elevated app to an elevated one. vJoy binds aren't affected, so if the joystick binds work but a keyboard-chord macro doesn't, JG elevation is the usual cause.
 
 ## Known Issues
 

@@ -195,8 +195,16 @@ My main way to target in Star Citizen is via an eye tracker. Adds to immersion a
 
 A few binds in this layout depend on certain **keyboard** keys staying bound to their Star Citizen defaults — mostly macros that press a key SC won't let you bind to a joystick. If you loaded the Clear Bindings profile to your Keyboard slot (or run your own keyboard profile), you may need to re-add these.
 
-!!! note "TBD"
-    The exact list of keyboard binds this layout relies on is still being compiled. If a macro isn't firing, check **Options → Keybindings → Keyboard / Mouse**, search for the action, and confirm its SC default is still bound.
+This layout leans on a single keyboard key:
+
+| Bind (physical input) | Key chord the macro presses | Keep bound in SC to |
+| --- | --- | --- |
+| Reset 3rd Person Camera — throttle **T-WPN**, double-tap up | **F4** (+ the camera button) | *Cycle Camera View* (the F4 default) |
+
+A single tap of T-WPN up just cycles the camera view; the double-tap runs the macro that holds F4 to recenter the 3rd-person camera. There's no Right Alt+N docking macro on this layout, so F4 is the only keyboard default it depends on.
+
+!!! note "If the camera-reset macro isn't firing"
+    Check **Options → Keybindings → Keyboard / Mouse**, search for the camera action above, and confirm **F4** is still bound to its SC default. Also note keyboard macros only reach SC when **Joystick Gremlin is running as administrator** — SC runs elevated, and Windows blocks synthetic keystrokes from a non-elevated app to an elevated one. vJoy binds aren't affected, so if the joystick binds work but this macro doesn't, JG elevation is the usual cause.
 
 ## Known Issues
 
