@@ -1,0 +1,56 @@
+name: Build and deploy Zensical docs site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-zensical-site
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build site with Zensical (Docker)
+        run: |
+          set -euo pipefail
+          docker run --rm \
+            --user "$(id -u):$(id -g)" \
+            -v "${{ github.workspace }}":/work \
+            -w /work \
+            zensical/zensical:latest \
+            build -f mkdocs.toml
+
+      - name: Verify build output
+        run: |
+          set -euo pipefail
+          test -d site
+          test -f site/index.html
+
+      - name: Prepare deploy branch
+        run: |
+          set -euo pipefail
+          cd site
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan gh-pages
+          git add --all
+          git commit -m "Deploy site: ${{ github.sha }}"
+
+      - name: Push to gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          cd site
+          git remote add deploy "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
+          git push --force deploy gh-pages

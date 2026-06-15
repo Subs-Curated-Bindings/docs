@@ -1,8 +1,8 @@
 [project]
 site_name = "Subliminal's Curated Bindings"
 site_description = "Sub's curated bindings for Star Citizen"
-site_url = "https://subliminalstv.github.io/Subs-Curated-Bindings/"
-repo_url = "https://github.com/SubliminalsTV/Subs-Curated-Bindings"
+site_url = "https://subs-curated-bindings.github.io/docs/"
+repo_url = "https://github.com/Subs-Curated-Bindings/docs"
 site_author = "SubliminalsTV"
 use_directory_urls = true
 dev_addr = "192.168.1.97:3000"

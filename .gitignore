@@ -1,3 +1,6 @@
 project-docs/site/
 project-docs/site/
 docs-site/site/
+
+# Zensical build output (now at repo root)
+/site/
