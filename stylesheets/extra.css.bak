@@ -1,0 +1,77 @@
+body[data-md-color-scheme="slate"],
+body[data-md-color-scheme="default"] {
+  position: relative;
+  min-height: 100vh;
+  background: #121217;
+}
+
+body[data-md-color-scheme="slate"]::before,
+body[data-md-color-scheme="default"]::before {
+  content: "";
+  position: fixed;
+  inset: -20px;
+  z-index: -2;
+  background: url("/assets/images/astro-ledge.jpg") center center / cover no-repeat;
+  filter: blur(16px) brightness(0.45) saturate(0.85);
+  transform: scale(1.06);
+}
+
+body[data-md-color-scheme="slate"]::after,
+body[data-md-color-scheme="default"]::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 12, 18, 0.72) 0%,
+    rgba(12, 14, 22, 0.84) 40%,
+    rgba(11, 13, 20, 0.9) 100%
+  );
+}
+
+body[data-md-color-scheme="slate"] .md-header,
+body[data-md-color-scheme="slate"] .md-tabs,
+body[data-md-color-scheme="default"] .md-header,
+body[data-md-color-scheme="default"] .md-tabs {
+  background: rgba(18, 22, 30, 0.46);
+  background-image: none !important;
+  backdrop-filter: blur(20px) saturate(170%) contrast(105%);
+  -webkit-backdrop-filter: blur(20px) saturate(170%) contrast(105%);
+}
+
+body[data-md-color-scheme="slate"] .md-tabs,
+body[data-md-color-scheme="default"] .md-tabs {
+  background-color: rgba(18, 22, 30, 0.42);
+}
+
+body[data-md-color-scheme="slate"] .md-header__title,
+body[data-md-color-scheme="slate"] .md-tabs__link,
+body[data-md-color-scheme="default"] .md-header__title,
+body[data-md-color-scheme="default"] .md-tabs__link {
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.32);
+}
+
+body[data-md-color-scheme="slate"] .md-content,
+body[data-md-color-scheme="slate"] .md-sidebar,
+body[data-md-color-scheme="slate"] .md-main,
+body[data-md-color-scheme="default"] .md-content,
+body[data-md-color-scheme="default"] .md-sidebar,
+body[data-md-color-scheme="default"] .md-main {
+  position: relative;
+  z-index: 1;
+}
+
+body[data-md-color-scheme="slate"] .md-footer,
+body[data-md-color-scheme="slate"] .md-footer-meta,
+body[data-md-color-scheme="slate"] .md-footer__inner,
+body[data-md-color-scheme="slate"] .md-footer-meta__inner,
+body[data-md-color-scheme="default"] .md-footer,
+body[data-md-color-scheme="default"] .md-footer-meta,
+body[data-md-color-scheme="default"] .md-footer__inner,
+body[data-md-color-scheme="default"] .md-footer-meta__inner {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none;
+}
