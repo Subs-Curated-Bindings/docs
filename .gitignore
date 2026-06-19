@@ -4,3 +4,4 @@ docs-site/site/
 
 # Zensical build output (now at repo root)
 /site/
+docs.code-workspace
