@@ -4,17 +4,35 @@ A tuned dual-stick keybind setup for Star Citizen built around the VKB Gunfighte
 
 These binds use Joystick Gremlin to layer modifiers, mode switching, response curves, and macros on top of SC's bind system. Ship combat, mining, salvage, ground vehicles, and turrets all run off the same physical inputs — once you learn the chart, the same hand positions carry across every gameplay loop.
 
-!!! warning "Requires Joystick Gremlin R14"
-    These binds run on Joystick Gremlin R14 (14.2 or later). R13 is no longer supported — if you're still on R13, update before loading this profile.
+!!! warning "Requires Joystick Gremlin R15"
+    As of the 4.10.0 release these binds need [Joystick Gremlin R15](https://github.com/WhiteMagic/JoystickGremlin/releases). R14 and older **cannot load this profile** — the Modifier layer uses a mode-switch form R14 doesn't understand. If you're still on R14, update before loading it.
 
 !!! note "First load: binds will look blank — that's intended"
-    When you first load this profile in JG R14, all the binds will look blank. That's intended, not broken. The profile ships against the device GUIDs of the sticks we exported on, so your hardware needs to be matched in.
+    When you first load this profile in JG, all the binds will look blank. That's intended, not broken. The profile ships against the device GUIDs of the sticks we exported on, so your hardware needs to be matched in.
 
     Run **Tools → Swap Devices** in JG, point each profile slot at your physical sticks. **Save the profile** afterwards by clicking the Save icon in the toolbar — the page with a down arrow on it. Ctrl+S doesn't work in JG; the toolbar icon is the only save. Without the save, you'll be redoing this every time JG starts.
 
     JG also opens the profile to **Auxiliary Mode** by default (the "Configuring mode" dropdown in the upper right of the JG window), which is intentionally blank. Switch the dropdown to **SCM Mode** to see the main binds.
 
 ???+ abstract "Change Log"
+
+    **4.10.0 LIVE — September 2026**
+
+    * **Requires Joystick Gremlin R15.** R14 and older can't load this profile.
+    * **Docking was rebuilt for 4.10.** CIG deleted the two old docking actions and replaced them with a single *Docking (Initiate)* bind. That one is bindable to a stick, so the Right Alt + N keyboard workaround is gone — and with it, **docking no longer needs JG running as administrator.**
+    * **Docking is now a double tap on the left grip L-A3 hat, down.** Single tap is still landing gear, press and hold is still autoland. The double tap is what keeps docking from clashing with the landing gear on that same button — bound as a plain press it silently did nothing in game.
+    * **ADS** on the left stick **L-B1** is now *Stable Max Zoom Hold* (was *ADS Hold*).
+    * **Modifier** (left pinky, **L-D1**) rewired for R15 — the old mode-pop stopped releasing the Modifier layer.
+    * **Axis polarity corrected** on left roll, left pitch and right pitch.
+    * The **Bindings Toolkit** now warns you if your Joystick Gremlin is older than R15.
+    * Every other bind was re-checked against 4.10 — none of them moved.
+
+    **4.8.1 LIVE — June 2026**
+
+    * **Dock/Undock added on the left grip L-A3 hat (down).** Tap/hold tempo cloned from the NXT; the hold fired SC's docking-request chord. *(Superseded in 4.10.0 — see above.)*
+    * **Salvage Beam Spacing Decrease** split onto its own input — moved to the **L-A4** hat (down); Increase stays on up.
+    * **New Bindings Toolkit** replaces the old single-purpose Fix MFD Binds script — MFD-wipe fix, reset inversions, clear/restore, stack diagnostic, prune backups. Self-elevating launcher. See [MFD bind fix](#mfd-bind-fix-workaround-for-sc-bug).
+    * Charts now render on demand in the website Chart Viewer, so the PDF/PNG/SVG exports were dropped from the download (~20 MB → 2.2 MB).
 
     **4.8.0 LIVE — May 2026**
 
@@ -103,12 +121,14 @@ Two MFD bindings (`v_mfd_soft_select_cast_left/right_short`) require a double-ta
 
     The bug is silent — the keybind menu shows the actions normally, just unbound or missing. Most users find out when an MFD action stops working in-game.
 
-The shipped `Fix MFD Binds [ENH][GF][4.8.0][LIVE].bat` script puts them all back. Workflow:
+The shipped **Bindings Toolkit** puts them all back — it's the `Bindings Toolkit [ENH][GF][4.10.0][LIVE].bat` in the `Tools` folder. Workflow:
 
 1. Load the Gunfighter layout in-game (Customization → Control Profiles → Use this profile).
 2. Fully close Star Citizen and the RSI Launcher.
-3. Double-click the `.bat`. Pick your SC channel at the prompt (LIVE / PTU / EPTU / HOTFIX / TECH-PREVIEW).
+3. Double-click the `.bat` and pick **Fix MFD binds** from the menu. It asks for your SC channel (LIVE / PTU / EPTU / HOTFIX / TECH-PREVIEW).
 4. Launch SC. MFDs work.
+
+The same Toolkit also resets axis inversions, clears and restores your binds, prunes old backups, and runs a diagnostic over your whole stack — Joystick Gremlin, vJoy, HIDHide and the SC channels it can see. The launcher elevates itself, so accept the UAC prompt when it appears.
 
 !!! tip "Star Citizen installed on a different drive?"
     If your install isn't at the default `C:\Program Files\Roberts Space Industries\StarCitizen\` location, the script prompts you for the path to your install folder (the one that contains `LIVE` / `PTU` / `EPTU` subfolders) before the channel prompt. Paste the path and continue as normal.
@@ -172,8 +192,10 @@ A few binds in this layout depend on certain **keyboard** keys staying bound to 
 
 | Bind (physical input) | Key chord the macro presses | Keep bound in SC to |
 | --- | --- | --- |
-| Dock/Undock — left grip **L-A3**, hold down | **Right Alt + N** | *Docking (Initiate)* (Flight → Movement) |
 | Reset Freelook — left grip **L-A4**, hold press-in | **F4** (+ the freelook button) | *Cycle Camera View* (the F4 default) |
+
+!!! success "Docking no longer needs a keyboard macro"
+    Up to 4.8.1, Dock/Undock was a **Right Alt + N** macro, because SC had no docking action you could put on a stick. Star Citizen 4.10 added one, so as of 4.10.0 docking is a normal joystick bind — a **double tap on the left grip L-A3 hat, down**. Nothing to keep bound on your keyboard for it, and it works whether or not JG is elevated.
 
 !!! note "If a macro isn't firing"
     Check **Options → Keybindings → Keyboard / Mouse**, search for the action above, and confirm its SC default is still bound. Also note keyboard macros only reach SC when **Joystick Gremlin is running as administrator** — SC runs elevated, and Windows blocks synthetic keystrokes from a non-elevated app to an elevated one. vJoy binds aren't affected, so if the joystick binds work but a keyboard-chord macro doesn't, JG elevation is the usual cause.
@@ -183,6 +205,8 @@ A few binds in this layout depend on certain **keyboard** keys staying bound to 
 ### JG R14 macro-editor "X Axis" rendering bug
 
 Project-wide — affects every stick in this pack. When you open a macro action in Joystick Gremlin R14's editor, the input-type dropdown on `<vjoy>` rows can render as **"X Axis"** even when the underlying XML correctly says **Button**. Visual-only — confirmed by saving from this state and byte-comparing the resulting XML, identical to before. The macro fires real button presses in-game regardless of what the dropdown shows.
+
+This was found in R14. We haven't re-tested it on R15, so treat it as "may still be there" rather than fixed — either way it's cosmetic and safe to ignore.
 
 If you see it: **ignore it.** Don't try to "fix" the dropdown unless you know what you're doing — saving from a misclick *might* commit the wrong type. Trust the in-game behavior. Reported upstream to WhiteMagic.
 
