@@ -4,11 +4,11 @@ A dual-stick keybind setup for Star Citizen built around the VKB Gladiator NXT E
 
 These binds use Joystick Gremlin to layer modifiers, mode switching, response curves, and macros on top of SC's bind system. The result: ship combat, mining, salvage, ground vehicles, and turrets all running off the same physical inputs — once you learn the chart, the same hand positions carry across every gameplay loop.
 
-!!! warning "Requires Joystick Gremlin R14"
-    These binds run on Joystick Gremlin R14 (14.2 or later). R13 is no longer supported — if you're still on R13, update before loading this profile.
+!!! warning "Requires Joystick Gremlin R15"
+    As of the 4.10.0 release these binds need [Joystick Gremlin R15](https://github.com/WhiteMagic/JoystickGremlin/releases). R14 and older **cannot load this profile** — the Modifier layer uses a mode-switch form R14 doesn't understand. If you're still on R14, update before loading it.
 
 !!! note "First load: binds will look blank — that's intended"
-    When you first load this profile in JG R14, all the binds will look blank. That's intended, not broken. The profile ships against the device GUIDs of the sticks we exported on, so your hardware needs to be matched in.
+    When you first load this profile in JG, all the binds will look blank. That's intended, not broken. The profile ships against the device GUIDs of the sticks we exported on, so your hardware needs to be matched in.
 
     Run **Tools → Swap Devices** in JG, point each profile slot at your physical sticks. **Save the profile** afterwards by clicking the Save icon in the toolbar — the page with a down arrow on it. Ctrl+S doesn't work in JG; the toolbar icon is the only save. Without the save, you'll be redoing this every time JG starts.
 
@@ -21,13 +21,24 @@ These binds use Joystick Gremlin to layer modifiers, mode switching, response cu
 
 ???+ abstract "Change Log"
 
+    **4.10.0 LIVE — September 2026**
+
+    * **Requires Joystick Gremlin R15.** R14 and older can't load this profile.
+    * **Docking is a real bind now.** CIG replaced the two old docking actions with a single *Docking (Initiate)* bind, and that one goes on a stick — so the Right Alt + N keyboard workaround is gone, and with it, **docking no longer needs JG running as administrator.**
+    * **Docking is a double tap on the left stick L-A3 hat, down.** Single tap is still landing gear, press and hold is still autoland. The double tap keeps docking from clashing with the landing gear on that same button — bound as a plain press, it silently did nothing in game.
+    * **Modifier** (left pinky, **L-D1**) rewired for R15 — the old mode-pop stopped releasing the Modifier layer.
+    * **Jettison Cargo** added on the right stick **R-F3** + Modifier, press and hold. Requested on the [issue tracker](https://github.com/Subs-Curated-Bindings/VKB-Dual-GladiatorNXT/issues/5). Double tap on the same button still toggles all door locks.
+    * **Refuel Operator Mode** now bound, on the same **A2** hold that already toggles mining and salvage mode. A ship is only ever in one operator mode, so the three share it cleanly. Also asked for on the [issue tracker](https://github.com/Subs-Curated-Bindings/VKB-Dual-GladiatorNXT/issues/4) — that bind does exist, it was just hiding under a raw `ui_` name until recently.
+    * The **Bindings Toolkit** now warns you if your Joystick Gremlin is older than R15.
+    * Every other bind was re-checked against 4.10 — none of them moved.
+
     **4.8.1 LIVE — June 2026**
 
     Star Citizen 4.8.1 added no new bindable actions, but plenty of refinement landed since the 4.8.0 release:
 
     * **Left-stick EN1 encoder is now a context dial** — it drives increase/decrease for scan focus level, bombing HUD range, and tractor-beam distance depending on the active mode.
     * **VTOL toggle is now bound** (`v_vtol_toggle`). It was meant to ship in 4.8.0 — a bug left it unbound. Now fixed.
-    * **Toggle Docking** added on the left stick (button 8), via a Right Alt+N macro.
+    * **Toggle Docking** added on the left stick (button 8), via a Right Alt+N macro. *(Superseded in 4.10.0 — see above.)*
     * **Salvage cycle-modifier binds** (left / right / structural) re-slotted and no longer rely on SC's double-tap activation.
     * **Turret ESP toggle and gyro-mode** re-slotted to clear conflicts in the turret context.
     * **13 accidental double-binds** swept out of the profile.
@@ -65,7 +76,7 @@ Most physical buttons just feed a single virtual button straight through to SC. 
 
 ### Modifier mode — doubles your usable binds
 
-Hold the modifier button (right stick base) and every other button on both sticks fires a *different* SC action. Without modifier you have around 50 useful buttons across the dual NXTs. With it, you effectively have around 100. The extra layer is where most of the niche binds live — engineering controls, advanced view options, vehicle-specific stuff.
+Hold the modifier button (left pinky, **L-D1**) and every other button on both sticks fires a *different* SC action. Without modifier you have around 50 useful buttons across the dual NXTs. With it, you effectively have around 100. The extra layer is where most of the niche binds live — engineering controls, advanced view options, vehicle-specific stuff.
 
 The chart shows the un-modified action in one color and the modified action in a contrasting color so you can read both layers at a glance.
 
@@ -131,7 +142,7 @@ Two MFD bindings (`v_mfd_soft_select_cast_left/right_short`) require a double-ta
 
     The bug is silent — the keybind menu shows the actions normally, just unbound or missing. Most users find out when an MFD action stops working in-game.
 
-The shipped `Bindings Toolkit [ENH][NXT][4.8.1][LIVE].bat` script (in the `Tools/` folder) puts them all back. Pick option 1 (Fix MFD binds) from the menu. Workflow:
+The shipped `Bindings Toolkit [ENH][NXT][4.10.0][LIVE].bat` script (in the `Tools/` folder) puts them all back. Pick option 1 (Fix MFD binds) from the menu. Workflow:
 
 1. Load the NXT layout in-game (Customization → Control Profiles → Use this profile).
 2. Fully close Star Citizen and the RSI Launcher.
@@ -203,8 +214,10 @@ A few binds in this layout depend on certain **keyboard** keys staying bound to 
 
 | Bind (physical input) | Key chord the macro presses | Keep bound in SC to |
 | --- | --- | --- |
-| Dock/Undock — left stick **L-A3**, hold down | **Right Alt + N** | *Docking (Initiate)* (Flight → Movement) |
 | Reset Freelook — left stick **L-A4**, hold press-in | **F4** (+ the freelook button) | *Cycle Camera View* (the F4 default) |
+
+!!! success "Docking no longer needs a keyboard macro"
+    Up to 4.8.1, Dock/Undock was a **Right Alt + N** macro, because SC had no docking action you could put on a stick. It has one now, so as of 4.10.0 docking is a normal joystick bind — a **double tap on the left stick L-A3 hat, down**. Nothing to keep bound on your keyboard for it, and it works whether or not JG is elevated.
 
 !!! note "If a macro isn't firing"
     Check **Options → Keybindings → Keyboard / Mouse**, search for the action above, and confirm its SC default is still bound. Also note keyboard macros only reach SC when **Joystick Gremlin is running as administrator** — SC runs elevated, and Windows blocks synthetic keystrokes from a non-elevated app to an elevated one. vJoy binds aren't affected, so if the joystick binds work but a keyboard-chord macro doesn't, JG elevation is the usual cause.
@@ -214,6 +227,8 @@ A few binds in this layout depend on certain **keyboard** keys staying bound to 
 ### JG R14 macro-editor "X Axis" rendering bug
 
 Project-wide — affects every stick in this pack, not just the NXTs. When you open a macro action in Joystick Gremlin R14's editor, the input-type dropdown on `<vjoy>` rows can render as **"X Axis"** even when the underlying XML correctly says **Button**. Visual-only — confirmed by saving from this state and byte-comparing the resulting XML, identical to before. The macro fires real button presses in-game regardless of what the dropdown shows.
+
+This was found in R14. We haven't re-tested it on R15, so treat it as "may still be there" rather than fixed — either way it's cosmetic and safe to ignore.
 
 If you see it: **ignore it.** Don't try to "fix" the dropdown unless you know what you're doing — saving from a misclick *might* commit the wrong type. Trust the in-game behavior. Reported upstream to WhiteMagic.
 
@@ -225,7 +240,7 @@ Two hardware-level differences from the EVO base mean a non-EVO NXT user has som
 
 * **Three axes report inverted relative to the EVO** — left stick X, left stick Y, and right stick Y. Two ways to flip them so flight feels the way the chart describes:
 
-    **Easy way (recommended for non-EVO users): use the Bindings Toolkit.** In the stick folder, open `Tools/Bindings Toolkit [ENH][NXT][4.8.1][LIVE].bat` and pick option **[7] Non-EVO axis flip**. It identifies the three affected axes after you confirm which physical stick is left vs right, backs up the profile, and flips all three response curves in one step. Close Joystick Gremlin first (the toolkit will refuse if JG is running).
+    **Easy way (recommended for non-EVO users): use the Bindings Toolkit.** In the stick folder, open `Tools/Bindings Toolkit [ENH][NXT][4.10.0][LIVE].bat` and pick option **[7] Non-EVO axis flip**. It identifies the three affected axes after you confirm which physical stick is left vs right, backs up the profile, and flips all three response curves in one step. Close Joystick Gremlin first (the toolkit will refuse if JG is running).
 
     **Manual way (if you'd rather do it in JG):**
 
